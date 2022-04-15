@@ -1,0 +1,277 @@
+@import url('http://fonts.cdnfonts.com/css/polentical-neon');
+
+
+.NavBar 
+{
+    position: fixed;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    margin-top: 50px;
+}
+
+.List 
+{
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TextNav {
+    width: auto;
+    font-size: 20px;
+}
+
+
+.RefNav{
+    position: relative;
+    display: inline-block;
+    padding: 25px 20px;
+    color: #03e9f4;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5;
+    letter-spacing: 4px;
+    font-family: 'Polentical Neon', sans-serif;
+}
+
+.Paragraphe {
+    margin: 0;
+    padding: 0;
+}
+
+
+.RefNav:hover {
+    color: white;
+    z-index: 0;            
+}               
+
+.RefNav.active span {
+    position: absolute;
+    display: block;
+}
+
+.RefNav.active span:nth-child(5){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.RefNav.active span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+.RefNav.active span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%
+    }
+
+    50% {
+        right: 100%;
+    }
+
+    100% {
+        right: 100%;
+    }
+}
+
+.RefNav.active span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%
+    }
+
+    50% {
+        bottom: 100%;
+    }
+
+    100% {
+        bottom: 100%;
+    }
+}
+
+.Logo 
+{
+    width: 400px;
+    height: 400px;
+    animation: scale 1s linear;
+}
+
+@keyframes scale 
+{
+    0%
+    {
+        transform: scale(0);
+    }
+
+    100%
+    {
+        transform: scale(1);
+    }
+}
+
+.User {
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: white;
+}
+
+.toggle 
+{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    display: none;
+}
+
+.toggle span 
+{
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    border-radius: 4px;
+    background: #ac956e;
+    transition: 0.5s;
+}
+
+.toggle span:nth-child(1)
+{
+    transform: translateY(-15px);
+    width: 40px;
+    left: 15px; 
+    background: #ac956e;
+}
+
+.toggle span:nth-child(2)
+{
+    transform: translateY(15px);
+    width: 40px;
+    left: 15px;
+    background: #ac956e; 
+}
+
+
+.toggle:hover span 
+{
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    border-radius: 4px;
+    background: #ac956e;
+    transition: 0.5s;
+}
+
+.toggle:hover span:nth-child(1)
+{
+    transform: translateY(-15px);
+    width: 40px;
+    left: 15px; 
+    background: #ac956e;
+}
+
+.toggle:hover span:nth-child(2)
+{
+    transform: translateY(15px);
+    width: 40px;
+    left: 15px;
+    background: #ac956e;
+}
+
+.toggle.active span:nth-child(1)
+{
+    width: 40px;
+    transform: translateY(0px) rotate(45deg);
+    transition-delay: 0.125s;
+    background: #ac956e;
+}
+
+.toggle.active span:nth-child(2)
+{
+    width: 40px;
+    transform: translateY(0px) rotate(315deg);
+    transition-delay: 0.25s;
+    background: #ac956e;
+}
+
+.toggle.active span:nth-child(3)
+{
+    transform: translateX(60px);
+    background: #ac956e;
+}
+
+.activeNav
+{
+    display: block !important;
+}

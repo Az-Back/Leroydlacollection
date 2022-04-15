@@ -1,0 +1,125 @@
+@import url('http://fonts.cdnfonts.com/css/polentical-neon');
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Polentical Neon', sans-serif;
+    overflow: hidden;
+}
+
+body
+{
+    height: 100%;
+    font-family: 'Polentical Neon', sans-serif;
+}
+
+.DragonBall {
+    display: none;
+    position: absolute;
+    z-index: 12;
+    transform: translate(-50%, -70%);
+    width: 8%;
+}
+
+.appear {
+    display: block;
+}
+
+.display {
+    display: none;
+}
+
+.Disapear 
+{
+    animation: disappear 2s linear;
+}
+
+@keyframes disappear 
+{
+    0%{
+        transform: translateY(0px);
+    }
+
+    100%
+    {
+        transform: translateY(-150px);
+    }
+}
+
+#sprite2
+{
+    position: absolute;
+    z-index: 12;
+    transform: translate(-30%, -30%);
+    width: 5%;
+}
+
+.Container 
+{
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.Text {
+    color: white;
+    font-size: 70px;
+    font-family: 'Polentical Neon', sans-serif;
+    text-shadow: 5px 5px 5px black;
+}
+
+#background-video 
+{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+
+.Scroll {
+    border: 1px solid black;
+    border-radius: 80%;
+    width: 62px;
+    height: 62px;
+    position: absolute;
+    left: 47%;
+    bottom: 0;
+    vertical-align: middle;
+}
+
+.Goldo
+{
+    opacity: 1;
+    animation: updown 2s linear infinite forwards;
+}
+
+@keyframes updown 
+{
+
+    0% 
+    {
+        transform: translateY(-5px);
+    }
+
+    50% 
+    {
+        transform: translateY(5px);
+    }
+
+    100% 
+    {
+        transform: translateY(5px);
+    }
+}
