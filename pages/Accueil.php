@@ -12,7 +12,7 @@ session_start();
     <title>Leroy d'la collection</title>
 </head>
 <body>
-<img class="DragonBall" src="../images/soucoupe.gif">
+<img class="Ufo" src="../images/soucoupe.gif">
 <?php include '../includes/navbar.php'; ?>
 
 <video id="background-video" autoplay loop muted>

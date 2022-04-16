@@ -1,0 +1,228 @@
+@import url('http://fonts.cdnfonts.com/css/polentical-neon');
+
+body 
+{
+    background-color: black;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Polentical Neon', sans-serif;
+}
+
+#background-video 
+{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.glitch {
+    position: relative;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 90px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    top: 30%
+}
+
+.glitch::before, .glitch:after
+{
+    content: "GAME OVER";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+.glitch::before
+{
+    left: 10px;
+    text-shadow: 5px 0 #f00;
+    animation: effect 3s infinite linear;
+}
+
+.glitch:after
+{
+    left: 4px;
+    text-shadow: -5px 0 #03e9f4;
+    animation: effect 2s infinite linear;
+}
+
+@-webkit-keyframes effect
+{
+    0%{
+        clip:rect(55px, 9999px, 56px, 0);
+    }
+    5%{
+        clip:rect(47px, 9999px, 30px, 0);
+    }
+    10%{
+        clip:rect(33px, 9999px, 36px, 0);
+    }
+    15%{
+        clip:rect(35px, 9999px, 9px, 0);
+    }
+    20%{
+        clip:rect(63px, 9999px, 59px, 0);
+    }
+    25%{
+        clip:rect(96px, 9999px, 98px, 0);
+    }
+    30%{
+        clip:rect(48px, 9999px, 77px, 0);
+    }
+    35%{
+        clip:rect(50px, 9999px, 34px, 0);
+    }
+    40%{
+        clip:rect(60px, 9999px, 72px, 0);
+    }
+    45%{
+        clip:rect(10px, 9999px, 81px, 0);
+    }
+    50%{
+        clip:rect(2px, 9999px, 60px, 0);
+    }
+    55%{
+        clip:rect(23px, 9999px, 59px, 0);
+    }
+    60%{
+        clip:rect(76px, 9999px, 90px, 0);
+    }
+    65%{
+        clip:rect(62px, 9999px, 30px, 0);
+    }
+    70%{
+        clip:rect(60px, 9999px, 73px, 0);
+    }
+    75%{
+        clip:rect(60px, 9999px, 87px, 0);
+    }
+    80%{
+        clip:rect(2px, 9999px, 14px, 0);
+    }
+    85%{
+        clip:rect(28px, 9999px, 87px, 0);
+    }
+    90%{
+        clip:rect(73px, 9999px, 50px, 0);
+    }
+    95%{
+        clip:rect(79px, 9999px, 70px, 0);
+    }
+    100%{
+        clip:rect(17px, 9999px, 79px, 0);
+    }
+}
+
+.glitch1 {
+    position: relative;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 90px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    top: 40%
+}
+
+.glitch1::before, .glitch1:after
+{
+    content: "PLEASE WAIT";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+.glitch1::before
+{
+    left: 10px;
+    text-shadow: 5px 0 #f00;
+    animation: effect 3s infinite linear;
+}
+
+.glitch1:after
+{
+    left: 4px;
+    text-shadow: -5px 0 #03e9f4;
+    animation: effect 2s infinite linear;
+}
+
+@-webkit-keyframes effect
+{
+    0%{
+        clip:rect(55px, 9999px, 56px, 0);
+    }
+    5%{
+        clip:rect(47px, 9999px, 30px, 0);
+    }
+    10%{
+        clip:rect(33px, 9999px, 36px, 0);
+    }
+    15%{
+        clip:rect(35px, 9999px, 9px, 0);
+    }
+    20%{
+        clip:rect(63px, 9999px, 59px, 0);
+    }
+    25%{
+        clip:rect(96px, 9999px, 98px, 0);
+    }
+    30%{
+        clip:rect(48px, 9999px, 77px, 0);
+    }
+    35%{
+        clip:rect(50px, 9999px, 34px, 0);
+    }
+    40%{
+        clip:rect(60px, 9999px, 72px, 0);
+    }
+    45%{
+        clip:rect(10px, 9999px, 81px, 0);
+    }
+    50%{
+        clip:rect(2px, 9999px, 60px, 0);
+    }
+    55%{
+        clip:rect(23px, 9999px, 59px, 0);
+    }
+    60%{
+        clip:rect(76px, 9999px, 90px, 0);
+    }
+    65%{
+        clip:rect(62px, 9999px, 30px, 0);
+    }
+    70%{
+        clip:rect(60px, 9999px, 73px, 0);
+    }
+    75%{
+        clip:rect(60px, 9999px, 87px, 0);
+    }
+    80%{
+        clip:rect(2px, 9999px, 14px, 0);
+    }
+    85%{
+        clip:rect(28px, 9999px, 87px, 0);
+    }
+    90%{
+        clip:rect(73px, 9999px, 50px, 0);
+    }
+    95%{
+        clip:rect(79px, 9999px, 70px, 0);
+    }
+    100%{
+        clip:rect(17px, 9999px, 79px, 0);
+    }
+}

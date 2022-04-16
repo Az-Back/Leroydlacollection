@@ -12,7 +12,7 @@ session_start();
 </head>
 <body>
 <?php include '../includes/navbar.php'; ?>
-<img class="DragonBall" src="../images/soucoupe.gif">
+<img class="Ufo" src="../images/soucoupe.gif">
 
 <video id="background-video" autoplay loop muted>
 

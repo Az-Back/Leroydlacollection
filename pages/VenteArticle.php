@@ -1,9 +1,11 @@
 <?php 
-session_start();     
+require('../actions/securityAction.php');
+require("../actions/publishArticleAction.php");     
 ?>
 <link rel="stylesheet" href="../styles/formulaire2.css">
+<link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <?php include '../includes/navbar.php'; ?>
 <body>
 <br><br>

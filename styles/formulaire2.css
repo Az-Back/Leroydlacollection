@@ -1,7 +1,10 @@
+@import url('http://fonts.cdnfonts.com/css/polentical-neon');
+
 body 
 {
     height: 100vh;
     overflow: hidden;
+    font-family: 'Polentical Neon', sans-serif;
 }
 
 #background-video 
@@ -16,6 +19,13 @@ body
     bottom: 0;
     z-index: -1;
 }
+
+.message {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
 
 .container2 
 {    
@@ -43,6 +53,7 @@ body
 {
     font-size: 40px;
     color: white;
+    font-family: 'Polentical Neon', sans-serif;
 }
 
 .form-control

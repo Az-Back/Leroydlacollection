@@ -1,5 +1,5 @@
 let anim = document.querySelectorAll(".TextNav");
-const dragon = document.querySelector(".DragonBall");
+const dragon = document.querySelector(".Ufo");
 const dragonball = document.querySelector("#sprite2");
 let list = document.querySelectorAll(".RefNav");
 let list2 = document.querySelectorAll(".Paragraphe");
@@ -22,11 +22,14 @@ list.forEach(end => {
     end.addEventListener('click', () => {
         let update = end.childNodes[1];
             update.classList.add("Disapear"); 
-    })
+    });
 });
 
-window.addEventListener('load', () => {
-    list3.classList.add("active");
+anim.forEach(upload => {
+    upload.addEventListener('load', () => {
+        let loading = upload.appendChild(a);
+            loading.classList.add("active");
+    });
 });
 
 const mousemove = document.querySelector(".mousemove")
