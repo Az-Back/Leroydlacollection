@@ -6,7 +6,7 @@ require('database.php');
 if(isset($_POST['validate'])){
 
     // Verifier si l'user a bien completer tous les champs !
-    if(!empty($_POST['pseudo']) && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['password']) && !empty($_POST['adress']) && !empty($_POST['postal'])){
+    if(!empty($_POST['pseudo']) && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['password']) && !empty($_POST['adress']) && !empty($_POST['postal']) && !empty($_FILES['image'])){
 
         // Les données de l'user
         $user_pseudo = htmlspecialchars($_POST['pseudo']);
@@ -15,6 +15,7 @@ if(isset($_POST['validate'])){
         $user_adress = htmlspecialchars($_POST['adress']);
         $user_city = htmlspecialchars($_POST['city']);
         $user_postal = htmlspecialchars($_POST['postal']);
+        $user_bin_image = file_get_contents($_FILES['image']['tmp_name']);
         $user_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         // Verifier si l'user existe deja
@@ -24,12 +25,12 @@ if(isset($_POST['validate'])){
         if($checkIfUserAlreadyExists->rowCount() == 0){
 
             // Inserer l'utilisateur dans la bdd
-            $insertUserOnWebsite = $bdd->prepare('INSERT INTO users(pseudo, lastname, firstname, password, adress, city, postal)VALUES(?, ?, ?, ?, ?, ?, ?)');
-            $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password, $user_adress, $user_city, $user_postal));
+            $insertUserOnWebsite = $bdd->prepare('INSERT INTO users(pseudo, lastname, firstname, password, adress, city, postal, bin)VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
+            $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password, $user_adress, $user_city, $user_postal, $user_bin_image));
 
             // Récuperer les infos de l'utilisateur (surtout l'id)
-            $getInfosOfThisUserReq = $bdd->prepare('SELECT id, pseudo, lastname, firstname, adress, city, postal FROM users WHERE lastname = ? && firstname = ? && pseudo = ? && adress = ? && city = ? && postal = ?');
-            $getInfosOfThisUserReq->execute(array($user_lastname, $user_firstname, $user_pseudo, $user_adress, $user_city, $user_postal  ));
+            $getInfosOfThisUserReq = $bdd->prepare('SELECT id, pseudo, lastname, firstname, adress, city, postal, bin FROM users WHERE lastname = ? && firstname = ? && pseudo = ? && adress = ? && city = ? && postal = ? && bin = ?');
+            $getInfosOfThisUserReq->execute(array($user_lastname, $user_firstname, $user_pseudo, $user_adress, $user_city, $user_postal, $user_bin_image));
 
             $userInfos = $getInfosOfThisUserReq->fetch();
             
@@ -42,6 +43,7 @@ if(isset($_POST['validate'])){
             $_SESSION['city'] = $userInfos['city'];
             $_SESSION['postal'] = $userInfos['postal'];
             $_SESSION['pseudo'] = $userInfos['pseudo'];
+            $_SESSION['bin'] = $userInfos['bin'];
 
             // Redirection sur index.php
             header('Location: ../pages/Accueil.php');

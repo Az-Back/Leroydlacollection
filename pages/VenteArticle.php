@@ -4,18 +4,21 @@ require("../actions/publishArticleAction.php");
 $nomDeLaPage = basename(__FILE__);     
 ?>
 <link rel="stylesheet" href="../styles/formulaire2.css">
+<link rel="stylesheet" href="../styles/index.css">
 <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="fr">
 <?php include '../includes/navbar.php'; ?>
 <body>
-<br><br>
-    
+<img class="Ufo" src="../images/soucoupe.gif">
+
 <video id="background-video" autoplay loop muted>
 
 <source src="../images/background2.mp4" type="video/mp4">
 
 </video>
+<div class="mousemove"></div>
+<img id="sprite2"  src="../images/goku.gif">
 <div class="container2">
 <form method="POST" enctype="multipart/form-data">
     <?php if(
@@ -55,5 +58,6 @@ $nomDeLaPage = basename(__FILE__);
 </div>        
 
 </form>
+<script src="../script/script.js"></script>
 </body>
 </html>

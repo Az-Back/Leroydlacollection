@@ -37,6 +37,7 @@ body
     margin-right: auto;
     justify-content: center;
     align-items: center;
+    z-index: 13;
 }
 
 .Menu 
@@ -47,6 +48,7 @@ body
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 13;
 }
 
 .form-label 
@@ -79,4 +81,5 @@ body
     background-color: white;
     color: black;
     font-size: 15px;
+    padding: 10px;
 }

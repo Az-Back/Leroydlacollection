@@ -11,7 +11,7 @@
 <source src="../images/background.mp4" type="video/mp4">
 
 </video>
-    <form class="container" method="POST">
+    <form class="container" method="POST" enctype="multipart/form-data">
 
     <?php if(isset($errorMsg)){echo '<p>'.$errorMsg.'</p>';} ?>
 
@@ -73,12 +73,18 @@
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                    <input type="text" name="postal" required="required">
+                    <input type="number" name="postal" required="required">
                     <span class="text">Code Postal</span>
                     <span class="line"></span>
                 </div>
             </div>
+
+            <div class="Image">
+                <label for="exampleInputEmail1" class="form-label">Photo</label>
+                <input type="file" class="form-image" name="image">
+            </div>
 </div>
+
             <div class="row100">
                 <div class="col">
                     <input type="submit" name="validate" value="Inscription">

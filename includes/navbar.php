@@ -1,14 +1,10 @@
 <?php
-require("../actions/allinfouser.php");
 ?>
 <link rel="stylesheet" href="../styles/navbar.css">
 <link rel="stylesheet" href="../styles/mediaqueries.css">
 <script src="https://kit.fontawesome.com/b64623b467.js" crossorigin="anonymous"></script>
 <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
-<?php 
 
-     $User = $getInfoOfUser->fetch()
-         ?>
 <nav class="NavBar">
 
 <div class="toggle">
@@ -57,9 +53,6 @@ require("../actions/allinfouser.php");
       </a>
     </li>
 
-    
-
-
         <?php 
         if(!isset($_SESSION['auth'])){
           ?>
@@ -98,7 +91,16 @@ require("../actions/allinfouser.php");
   </a>
     </li>
     <li class="TextNav"><a class="RefNav" href="../actions/logoutAction.php">Deconnexion</a></li>
-    <li class="TextNav"><a class="RefNav"><i class="fa-solid fa-user"></i><?= $User['pseudo']; ?></a></li>
+    <li class="TextNav"><a class="RefNav <?= ($nomDeLaPage == 'Utilisateur.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Utilisateur.php' },1000);">
+    <p class="Paragraphe">
+    <i class="fa-solid fa-user"></i>
+      <?= $_SESSION['pseudo']; ?></p>
+        <span></span>  
+        <span></span>  
+        <span></span>  
+        <span></span>
+    </a>
+  </li>
     <?php
         } 
           ?>
