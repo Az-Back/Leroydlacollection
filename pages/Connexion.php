@@ -13,7 +13,7 @@
 </video>
     <form class="container" method="POST">
 
-    <?php if(isset($errorMsg)){echo '<p>'.$errorMsg.'</p>';} ?>
+    <?php if(isset($errorMsg)){echo '<p class="message">'.$errorMsg.'</p>';} ?>
 
     <div class="container">
       <div class="row100">

@@ -39,7 +39,7 @@ if(isset($_POST['validate'])){
             }
 
         } else {
-            $errorMsg = "Le pseudo de l'utilisateur est deja utilisé";
+            $errorMsg = "Le pseudo de l'utilisateur est deja utilisé ou est incorrect";
         }
 
     } else {
