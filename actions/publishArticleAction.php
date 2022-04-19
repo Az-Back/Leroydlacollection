@@ -9,31 +9,31 @@ if(isset($_POST['validate'])){
     if(!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['content']) && !empty($_FILES['picture'])){
         
         // les données de la question
-        $question_title = htmlspecialchars($_POST['title']);
-        $question_description = nl2br(htmlspecialchars($_POST['description']));
-        $question_content = nl2br(htmlspecialchars($_POST['content']));
-        $question_image_name = $_FILES['picture']['name'];
-        $question_image_size = $_FILES['picture']['size'];
-        $question_image_type = $_FILES['picture']['type'];
-        $question_image_bin = file_get_contents($_FILES['picture']['tmp_name']);
-        $question_date = date('d/m/Y');
-        $question_id_author = $_SESSION['id'];
-        $question_pseudo_author = $_SESSION['pseudo'];
+        $article_title = htmlspecialchars($_POST['title']);
+        $article_description = nl2br(htmlspecialchars($_POST['description']));
+        $article_content = nl2br(htmlspecialchars($_POST['content']));
+        $article_image_name = $_FILES['picture']['name'];
+        $article_image_size = $_FILES['picture']['size'];
+        $article_image_type = $_FILES['picture']['type'];
+        $article_image_bin = file_get_contents($_FILES['picture']['tmp_name']);
+        $article_date = date('d/m/Y');
+        $article_id_author = $_SESSION['id'];
+        $article_pseudo_author = $_SESSION['pseudo'];
         
         // Inserer la question sur la question
-        $insertQuestionOnWebsite = $bdd->prepare('INSERT INTO articles(titre, description, contenu, nom_image, image_taille, type_image, bin, id_auteur, pseudo_auteur, date_publication)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-        $insertQuestionOnWebsite->execute(
+        $insertArticleOnWebsite = $bdd->prepare('INSERT INTO articles(titre, description, contenu, nom_image, image_taille, type_image, bin, id_auteur, pseudo_auteur, date_publication)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $insertArticleOnWebsite->execute(
             array(
-                $question_title, 
-                $question_description, 
-                $question_content,
-                $question_image_name,
-                $question_image_size,
-                $question_image_type,
-                $question_image_bin, 
-                $question_id_author, 
-                $question_pseudo_author, 
-                $question_date
+                $article_title, 
+                $article_description, 
+                $article_content,
+                $article_image_name,
+                $article_image_size,
+                $article_image_type,
+                $article_image_bin, 
+                $article_id_author, 
+                $article_pseudo_author, 
+                $article_date
             )
         );
 

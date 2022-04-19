@@ -1,6 +1,7 @@
 <?php 
     require('../actions/securityAction.php');
     require('../actions/allPersonnalArticlesAction.php');
+    $nomDeLaPage = basename(__FILE__);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -29,7 +30,7 @@
                 <div class="topimg">
                 <a href="ToArticle.php?id=<?= $myArticle['id']; ?>"><?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $myArticle['bin'] ) . '" />'; ?></a>
                 <h3><?= $myArticle['titre']; ?> </h3>
-                <h3><?= $myArticle['contenu']; ?></h3>
+                <h3><?= $myArticle['contenu']; ?>€</h3>
                 <p class="description"><?= $myArticle['description']; ?></p>
                 </div>
                 <?php 

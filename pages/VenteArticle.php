@@ -1,6 +1,7 @@
 <?php 
 require('../actions/securityAction.php');
-require("../actions/publishArticleAction.php");     
+require("../actions/publishArticleAction.php");
+$nomDeLaPage = basename(__FILE__);     
 ?>
 <link rel="stylesheet" href="../styles/formulaire2.css">
 <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
@@ -40,7 +41,7 @@ require("../actions/publishArticleAction.php");
 
     <div class="Menu">
             <label for="exampleInputEmail1" class="form-label">Prix de l'article</label>
-            <input type="text" class="form-control" name="content">
+            <input type="number" class="form-control" name="content">
     </div>
 
     <div class="Menu">

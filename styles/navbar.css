@@ -63,8 +63,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg,transparent,#fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    height: 3px;
+    background: linear-gradient(90deg,transparent, #f00);
     animation: animate1 1s linear infinite;
 }
 
@@ -85,9 +85,9 @@
 .RefNav.active span:nth-child(2){
     top: -100%;
     right: 0;
-    width: 2px;
+    width: 3px;
     height: 100%;
-    background: linear-gradient(180deg,transparent,#fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    background: linear-gradient(180deg,transparent, #f00);
     animation: animate2 1s linear infinite;
     animation-delay: 0.25s;
 }
@@ -110,8 +110,8 @@
     bottom: 0;
     right: -100%;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg,transparent,#fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    height: 3px;
+    background: linear-gradient(270deg,transparent,#f00);
     animation: animate3 1s linear infinite;
     animation-delay: 0.5s;
 }
@@ -133,9 +133,9 @@
 .RefNav.active span:nth-child(4){
     bottom: -100%;
     left: 0;
-    width: 2px;
+    width: 3px;
     height: 100%;
-    background: linear-gradient(360deg,transparent,#fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    background: linear-gradient(360deg,transparent,#f00);
     animation: animate4 1s linear infinite;
     animation-delay: 0.75s;
 }
@@ -181,7 +181,117 @@
     background-color: white;
 }
 
+.search {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 40px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 5px black;
+    overflow: hidden;
+}
 
+.search.active 
+{
+    width: 360px;
+}
+
+.search .icon 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search .icon::before 
+{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid black;
+    border-radius: 50%;
+    transform: translate(-4px, -4px) rotate(315deg);
+}
+
+.search .icon::after
+{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: 3px black;
+    border-radius: 50%;
+    transform: translate(6px,6px) rotate(315deg);;
+}
+
+.search .input
+{
+    position: relative;
+    width: 300px;
+    height: 40px;
+    left: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search .input input 
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.clear
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    right: 15px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear::before
+{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(45deg);
+}
+
+.clear::after
+{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(315deg);
+}
 
 .toggle 
 {

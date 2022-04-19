@@ -5,7 +5,6 @@ let list = document.querySelectorAll(".RefNav");
 let list2 = document.querySelectorAll(".Paragraphe");
 let list3 = document.querySelector(".RefNav");
 
-
 anim.forEach(change => 
     {
         change.addEventListener('click', () => {
@@ -19,9 +18,9 @@ anim.forEach(change =>
     });
 
 list.forEach(end => {
-    end.addEventListener('click', () => {
+    end.addEventListener('click', (e) => {
         let update = end.childNodes[1];
-            update.classList.add("Disapear"); 
+            update.classList.add("Disapear");                
     });
 });
 

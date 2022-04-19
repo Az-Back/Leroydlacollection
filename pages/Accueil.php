@@ -1,5 +1,6 @@
 <?php
 session_start();
+$nomDeLaPage = basename(__FILE__);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
