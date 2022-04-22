@@ -42,6 +42,7 @@ window.addEventListener('mousemove', (e) => {
     dragon.style.top = e.pageY + "px";
 });
 
+
 const txtAnim = document.querySelector('.Text');
 
 new Typewriter(txtAnim, {

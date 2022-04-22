@@ -95,15 +95,17 @@ body
     width: 62px;
     height: 62px;
     position: absolute;
-    left: 47%;
+    left: 48%;
     bottom: 0;
     vertical-align: middle;
+    z-index: 13;
 }
 
 .Goldo
 {
     opacity: 1;
     animation: updown 2s linear infinite forwards;
+    z-index: 13;
 }
 
 @keyframes updown 

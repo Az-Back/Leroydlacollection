@@ -174,3 +174,8 @@ input[type="submit"]
     color: black;
     background-color: white;
 }
+
+.message 
+{
+    color: white;
+}

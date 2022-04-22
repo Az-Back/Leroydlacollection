@@ -9,6 +9,7 @@ $nomDeLaPage = basename(__FILE__);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
     <title>Leroy d'la collection</title>
 </head>
@@ -25,10 +26,13 @@ $nomDeLaPage = basename(__FILE__);
 <img id="sprite2"  src="../images/goku.gif">
 <div class="Container">
 <div class="Text"></div>
-<div class="Scroll"><img class="Goldo" src="../images/goldoend.png"></div>
+<div class="Scroll"><a href="#Présentation"><img class="Goldo" src="../images/goldoend.png"></a></div>
 </div>
 
 <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 <script src="../script/script.js"></script>
+<script>
+  AOS.init();
+</script> 
 </body>
 </html>

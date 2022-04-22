@@ -1,12 +1,18 @@
 <?php
 session_start(); 
-    require('../actions/showArticleContent.php');
-    $nomDeLaPage = basename(__FILE__);
+require('../actions/showArticleContent.php');
+$nomDeLaPage = basename(__FILE__);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<link rel="stylesheet" href="../styles/toArticle.css">
-<link rel="stylesheet" href="../styles/index.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/toArticle.css">
+    <link rel="stylesheet" href="../styles/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>    
 <body>
 <img class="Ufo" src="../images/soucoupe.gif">  
 <?php include '../includes/navbar.php'; ?>
@@ -33,7 +39,7 @@ session_start();
         if(isset($_SESSION['auth'])){
           ?>
                 
-                <div class="button"><a href="" class="btn0">Acheter l'article</a></div>
+                <div class="button"><a href="../actions/buyArticle.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
             
             <?php
         } 
@@ -43,6 +49,7 @@ session_start();
         </div>
     </div>
 </div>
-<script src="../script/script.js"></script>            
+<script src="../script/script.js"></script>
+          
 </body>
 </html>

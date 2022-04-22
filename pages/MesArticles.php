@@ -5,8 +5,11 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../styles/articles.css">
-<link rel="stylesheet" href="../styles/index.css">
+<link rel="stylesheet" href="../styles/all.css">
 <body>
 <img class="Ufo" src="../images/soucoupe.gif">  
 <?php include '../includes/navbar.php'; ?>
@@ -29,8 +32,8 @@
                 <div class="menus">
                 <div class="topimg">
                 <a href="ToArticle.php?id=<?= $myArticle['id']; ?>"><?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $myArticle['bin'] ) . '" />'; ?></a>
-                <h3><?= $myArticle['titre']; ?> </h3>
-                <h3><?= $myArticle['contenu']; ?>€</h3>
+                <h3><?= $myArticle['title']; ?> </h3>
+                <h3><?= $myArticle['price']; ?>€</h3>
                 <p class="description"><?= $myArticle['description']; ?></p>
                 </div>
                 <?php 

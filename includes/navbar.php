@@ -4,14 +4,10 @@
 <link rel="stylesheet" href="../styles/mediaqueries.css">
 <script src="https://kit.fontawesome.com/b64623b467.js" crossorigin="anonymous"></script>
 <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <nav class="NavBar">
-
-<div class="toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-</div> 
+ 
   <ul class="List">
     <li class="TextNav">
     <a id="accueil" class="RefNav <?= ($nomDeLaPage == 'Accueil.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Accueil.php' },1000);">
@@ -108,7 +104,7 @@
 <?php 
         if($nomDeLaPage == 'Articles.php' OR $nomDeLaPage == 'MesArticles.php'){
           ?>
-  <form method="GET">
+  <form method="GET" class="research">
 
   <div class="search">
         <div class="icon"></div>
@@ -120,8 +116,12 @@
     <?php 
         }
           ?>
-</form>        
+</form>     
   </ul>
-  </div>
+  <div class="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>   
   <script src="../script/navbar.js"></script>
 </nav>

@@ -1,11 +1,19 @@
-<?php 
+<?php
+$nomDeLaPage = basename(__FILE__); 
 require('../actions/securityAction.php');
+require('../actions/getInfosOfEditedQuestionAction.php');
 require("../actions/modifArticleAction.php");     
 ?>
-<link rel="stylesheet" href="../styles/formulaire2.css">
-<link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
+
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/formulaire2.css">
+    <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
+</head>
 <?php include '../includes/navbar.php'; ?>
 <body>
 <br><br>
@@ -40,7 +48,7 @@ require("../actions/modifArticleAction.php");
 
     <div class="Menu">
             <label for="exampleInputEmail1" class="form-label">Prix de l'article</label>
-            <input type="text" class="form-control" name="content">
+            <input type="number" class="form-control" name="price">
     </div>
 
     <div class="Menu">
@@ -49,7 +57,7 @@ require("../actions/modifArticleAction.php");
     </div>
     <div class="Menu">
       <br><br>
-        <button type="submit" class="btn" name="validate">Vendre l'article</button>
+        <button type="submit" class="btn" name="validate">Modifier l'article</button>
     </div>
 </div>        
 

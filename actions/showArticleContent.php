@@ -2,6 +2,7 @@
 
 require('database.php');
 
+
 // Verifier si l'id de la question est rentrée dans l'URL
 if(isset($_GET['id']) && !empty($_GET['id'])){
 
@@ -19,8 +20,9 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
 
         // Stocker les données de la question dans des variables
-        $article_title = $articlesInfos['titre'];
-        $article_content = $articlesInfos['contenu'];
+        $article_id = $articlesInfos['id'];
+        $article_title = $articlesInfos['title'];
+        $article_content = $articlesInfos['price'];
         $article_description = $articlesInfos['description'];
         $article_id_author = $articlesInfos['id_auteur'];
         $article_pseudo_author = $articlesInfos['pseudo_auteur'];
