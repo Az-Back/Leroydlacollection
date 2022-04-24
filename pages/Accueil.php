@@ -11,6 +11,7 @@ $nomDeLaPage = basename(__FILE__);
     <link rel="stylesheet" href="../styles/index.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <title>Leroy d'la collection</title>
 </head>
 <body>
@@ -24,12 +25,42 @@ $nomDeLaPage = basename(__FILE__);
 </video>
 <div class="mousemove"></div>
 <img id="sprite2"  src="../images/goku.gif">
-<div class="Container">
-<div class="Text"></div>
-<div class="Scroll"><a href="#Présentation"><img class="Goldo" src="../images/goldoend.png"></a></div>
-</div>
+    <div class="Container">
+      <div class="Text"></div>
+        <div class="Scroll"><a href="#Infos" class="Fleche">
+          <div class="arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a></div>
+    </div>
 
+<div class="case">
+    <div class="Infos1" id="Infos" data-aos="fade-in" data-aos-delay="100" data-aos-easing="ease-in-out">
+      <div class="portail1">
+        <img id="portail1" src="../images/portail1.gif">
+          <h1 id="Text2">LEROY D'LA COLLECTION<h1>
+        <img id="gunorange" src="../images/gunorange.gif">
+        </div>
+      </div>
+          <br>
+    <div class="Infos2" id="Infos2" data-aos="fade-in" data-aos-delay="100" data-aos-easing="ease-in-out">
+      <div class="portail2">
+          <img id="portail2" src="../images/portail2.gif">
+          <h1 id="Text3">BOUTIQUE VINTAGE<h1>
+          <img id="gunbleu" src="../images/gunbleu.gif">
+        </div>
+    </div>
+
+    <div class="Infos3" id="Infos3" data-aos="fade-in" data-aos-delay="100" data-aos-easing="ease-in-out">
+      <div class="portail3">
+          <h1 id="Text4">ACHETER/VENDER<h1>
+          <img id="portail3" src="../images/portail3.gif">
+
+</div>
 <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="../script/script.js"></script>
 <script>
   AOS.init();

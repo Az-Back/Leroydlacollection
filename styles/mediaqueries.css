@@ -72,6 +72,21 @@
         letter-spacing: 2px;
         font-size: 14px;
     }
+    #Text2
+    {
+        font-size: 30px;
+    }
+
+    #Text3
+    {
+        font-size: 30px;
+    }
+
+    #Text4
+    {
+        font-size: 30px;
+    }
+
 
 }
 
@@ -127,5 +142,39 @@
         {
             display: none;
         }
+
+        #gunorange 
+        {
+        display: none;
+        }
+
+        #gunbleu 
+        {
+        display: none;
+        }
     
-}        
+}
+
+@media screen and (max-width: 600px){
+
+    .Text 
+    {
+        font-size: 25px;
+    }
+
+    .Logo
+    {
+        width: 200px;
+        height: 200px;
+    }
+
+}
+
+@media screen and (max-width: 340px){
+
+    #Text4
+    {
+        font-size: 25px;
+    }
+
+}

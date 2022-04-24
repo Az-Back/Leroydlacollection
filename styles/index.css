@@ -1,7 +1,5 @@
 @import url('http://fonts.cdnfonts.com/css/polentical-neon');
-html {
-    scroll-behavior: smooth;
-}
+
 
 * {
     margin: 0;
@@ -13,8 +11,9 @@ html {
 
 body
 {
-    height: 100vh;
+    height: 200vh;
     font-family: 'Polentical Neon', sans-serif;
+    overflow-x: hidden;
 }
 
 .Ufo {
@@ -90,39 +89,275 @@ body
 
 
 .Scroll {
-    border: 3px solid black;
-    border-radius: 80%;
     width: 62px;
     height: 62px;
     position: absolute;
-    left: 48%;
+    left: 49%;
     bottom: 0;
     vertical-align: middle;
     z-index: 13;
 }
 
-.Goldo
-{
-    opacity: 1;
-    animation: updown 2s linear infinite forwards;
+.arrow {
+    position: absolute;
+    cursor: pointer;
     z-index: 13;
 }
 
-@keyframes updown 
+.arrow span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid red;
+    border-right: 5px solid red;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: scroll1 2s infinite reverse;
+    cursor: pointer;
+    z-index: 13;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -.2s;
+    border-bottom: 5px solid red;
+    border-right: 5px solid red;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -.4s;
+    border-bottom: 5px solid #03e9f4;
+    border-right: 5px solid #03e9f4;
+}
+
+@keyframes scroll1 {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+}
+.case 
+{
+    margin-top: 100px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.Infos1 
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Infos2 
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    right: 0;
+}
+
+.Infos3 
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    right: 0;
+}
+
+.portail1
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+#gunorange {
+    width: 100%;
+    height: 150px;
+    margin-left: 20px;
+}
+
+.gunorange {
+    opacity: 0;
+    animation: come 1.5s linear;
+}
+
+@keyframes come 
+{
+    0%
+    {
+        opacity: 1;
+    }
+
+  100%
+  {
+      opacity: 1;
+  }
+}
+
+#gunbleu {
+    width: 100%;
+    height: 150px;
+    margin-right: 20px;
+}
+
+.gunbleu {
+    opacity: 0;
+    animation: come2 1.5s linear;
+}
+
+@keyframes come2 
+{
+    0%
+    {
+        opacity: 1;
+    }
+
+  100%
+  {
+      opacity: 1;
+  }
+}
+
+
+
+.portail2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.portail3
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+#portail1 {
+    width: 30px;
+    height: 200px;
+    z-index: 1;
+    opacity: 0;
+    animation: appear 4s linear forwards;
+}
+
+@keyframes appear 
+{
+  99%
+  {
+      opacity: 0;
+  }  
+
+  100%
+  {
+      opacity: 1;
+  }  
+}
+
+#portail2 {
+    width: 30px;
+    height: 200px;
+    z-index: 1;
+    opacity: 0;
+    animation: appear2 4s linear forwards;
+}
+
+@keyframes appear2 
+{
+  99%
+  {
+      opacity: 0;
+  }  
+
+  100%
+  {
+      opacity: 1;
+  }  
+}
+
+#portail3 {
+    width: 250px;
+    height: 50px;
+    z-index: 1;
+}
+
+.Text2 
+{
+    transform: translateX(-900px);
+    color: white;
+    text-shadow: 0 0 10px #ff7b00, 0 0 20px #ff7b00, 0 0 40px #ff7b00, 0 0 80px #ff7b00, 0 0 120px #ff7b00;
+    animation: slide 2s linear forwards;
+    animation-delay: 1.5s;
+    font-size: 50px;
+}
+
+@keyframes slide 
+{
+    100%
+    {
+        transform: translateX(0px);
+    }   
+}
+
+.Text3 
+{
+    transform: translateX(700px);
+    color: white;
+    text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;
+    animation: slide2 2s linear forwards;
+    animation-delay: 1.5s;
+    font-size: 50px;
+}
+
+@keyframes slide2
+{
+    100%
+    {
+        transform: translateX(0px);
+    }   
+}
+
+.Text4 
+{
+    transform: translateY(200px);
+    color: white;
+    text-shadow: 0 0 10px black, 0 0 20px black, 0 0 40px black, 0 0 80px black, 0 0 120px black;
+    animation: slide3 2s linear forwards;
+    opacity: 0;
+    animation-delay: 1.5s;
+    font-size: 50px;
+}
+
+@keyframes slide3
 {
 
-    0% 
+    100%
     {
-        transform: translateY(-5px);
-    }
-
-    50% 
-    {
-        transform: translateY(5px);
-    }
-
-    100% 
-    {
-        transform: translateY(5px);
-    }
+        opacity: 1;
+        transform: translateY(0px);
+    }   
 }

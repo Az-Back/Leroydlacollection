@@ -5,6 +5,13 @@ let list = document.querySelectorAll(".RefNav");
 let list2 = document.querySelectorAll(".Paragraphe");
 let list3 = document.querySelector(".RefNav");
 
+const text2 = document.querySelector("#Text2");
+const text3 = document.querySelector("#Text3");
+const text4 = document.querySelector("#Text4");
+
+const gun1 = document.querySelector("#gunorange");
+const gun2 = document.querySelector("#gunbleu");
+
 anim.forEach(change => 
     {
         change.addEventListener('click', () => {
@@ -60,4 +67,20 @@ new Typewriter(txtAnim, {
 .deleteChars(40)
 .start()
 
+
+
+window.addEventListener('scroll', () =>
+{
+    const scrollTop = document.scrollingElement.scrollTop;
+
+    if(scrollTop > 200)
+    {
+        text2.classList.add('Text2');
+        text3.classList.add('Text3');
+        text4.classList.add('Text4');
+        gun1.classList.add('gunorange');
+        gun2.classList.add('gunbleu');
+    }
+    
+});
 

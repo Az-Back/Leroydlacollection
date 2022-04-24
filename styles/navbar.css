@@ -1,5 +1,7 @@
 @import url('http://fonts.cdnfonts.com/css/polentical-neon');
-
+html {
+    scroll-behavior: smooth;
+}
 
 .NavBar 
 {
