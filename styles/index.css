@@ -11,7 +11,7 @@
 
 body
 {
-    height: 200vh;
+    height: 170vh;
     font-family: 'Polentical Neon', sans-serif;
     overflow-x: hidden;
 }
@@ -240,8 +240,31 @@ body
   }
 }
 
+#gunnoir 
+{
+    width: 10%;
+    height: 125px;
+    transform: rotate(90deg);
+}
 
 
+.gunnoir {
+    opacity: 0;
+    animation: come3 1.5s linear;
+}
+
+@keyframes come3 
+{
+    0%
+    {
+        opacity: 1;
+    }
+
+  100%
+  {
+      opacity: 1;
+  }
+}
 .portail2 {
     display: flex;
     flex-direction: row-reverse;
@@ -262,7 +285,10 @@ body
     height: 200px;
     z-index: 1;
     opacity: 0;
-    animation: appear 4s linear forwards;
+}
+
+.portail1active {
+    animation: appear 1.5s linear forwards;
 }
 
 @keyframes appear 
@@ -283,7 +309,10 @@ body
     height: 200px;
     z-index: 1;
     opacity: 0;
-    animation: appear2 4s linear forwards;
+}
+
+.portail2active {
+    animation: appear2 1.5s linear forwards;
 }
 
 @keyframes appear2 
@@ -303,7 +332,27 @@ body
     width: 250px;
     height: 50px;
     z-index: 1;
+    opacity: 0;
+    
 }
+
+.portail3active {
+    animation: appear3 1.5s linear forwards;
+}
+
+@keyframes appear3 
+{
+  99%
+  {
+      opacity: 0;
+  }  
+
+  100%
+  {
+      opacity: 1;
+  }  
+}
+
 
 .Text2 
 {

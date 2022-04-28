@@ -19,11 +19,12 @@ $nomDeLaPage = basename(__FILE__);
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background2.mp4" type="video/mp4">
+<source src="../images/background3.mp4" type="video/mp4">
 
 </video>
 <div class="mousemove"></div>
 <img id="sprite2"  src="../images/goku.gif">
+<?php if(isset($errorMsg)){echo '<p class="message">'.$errorMsg.'</p>';} ?>
 <div class="block1">
     <div class="block-inside1">
          <div class="menu-container">
@@ -34,6 +35,7 @@ $nomDeLaPage = basename(__FILE__);
                 <h3 class="contenu"><?= $article_content ?> €</h3>
                 <p class="description"><?= $article_description ?></p>
                 <p class="By"> Publié par <?= $article_pseudo_author ?> le <?= $article_publication_date ?></p>
+                <div class="button"><a href="Articles.php" class="btn1">Retour en arriére</a></div>
                 </div>
                 <?php 
         if(isset($_SESSION['auth'])){

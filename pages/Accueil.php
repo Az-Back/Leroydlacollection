@@ -20,7 +20,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background2.mp4" type="video/mp4">
+<source src="../images/background1.mp4" type="video/mp4">
 
 </video>
 <div class="mousemove"></div>
@@ -55,6 +55,7 @@ $nomDeLaPage = basename(__FILE__);
 
     <div class="Infos3" id="Infos3" data-aos="fade-in" data-aos-delay="100" data-aos-easing="ease-in-out">
       <div class="portail3">
+      <img id="gunnoir" src="../images/gunblack.gif">
           <h1 id="Text4">ACHETER/VENDER<h1>
           <img id="portail3" src="../images/portail3.gif">
 
@@ -67,3 +68,4 @@ $nomDeLaPage = basename(__FILE__);
 </script> 
 </body>
 </html>
+

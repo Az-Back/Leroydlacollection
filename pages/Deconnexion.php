@@ -7,10 +7,10 @@
     <link href="../styles/deco.css" rel="stylesheet">
     <title>Deconnexion</title>
 </head>
-<body onLoad="setTimeout('RedirectionJavascript()', 3000)">
+<body onLoad="setTimeout('RedirectionJavascript()', 2000)">
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background4.mp4" type="video/mp4">
+<source src="../images/background2.mp4" type="video/mp4">
 
 </video>  
 <h3 class="glitch">GAME OVER</h3>

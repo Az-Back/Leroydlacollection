@@ -70,6 +70,21 @@ body
     padding: 10px;
 }
 
+.RefUse{
+    position: relative;
+    display: inline-block;
+    padding: 25px 20px;
+    color: #03e9f4;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5;
+    letter-spacing: 4px;
+    font-family: 'Polentical Neon', sans-serif;
+    cursor: pointer;
+}
+
 .allimg 
 {
     width: 20%;

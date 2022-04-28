@@ -18,7 +18,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         $articlesInfos = $checkIfArticleExists->fetch();
         if($articlesInfos['id_auteur'] == $_SESSION['id']){
 
-            $article_title = $articlesInfos['titre'];
+            $article_title = $articlesInfos['title'];
             $article_description = $articlesInfos['description'];
             $article_content = $articlesInfos['price'];
             $article_image_bin = $articlesInfos['bin'];

@@ -31,7 +31,7 @@ if(isset($_POST['validate'])){
                 $_SESSION['adress'] = $usersInfos['adress'];
                 $_SESSION['city'] = $usersInfos['city'];
                 $_SESSION['postal'] = $usersInfos['postal'];
-
+                sleep(2);
                 header('Location: ../pages/Accueil.php');
 
             } else {

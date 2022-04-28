@@ -20,7 +20,7 @@ require("../actions/getAllInfoUser.php");
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background2.mp4" type="video/mp4">
+<source src="../images/background1.mp4" type="video/mp4">
 
 </video>
 <div class="mousemove"></div>
@@ -37,6 +37,8 @@ require("../actions/getAllInfoUser.php");
             <div class="profil">
                     <div class="info">
                     <?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $user['bin'] ) . '" />'; ?></a>
+                    <div class="MyArticles"><a class="RefUse" href="../pages/MesArticles.php">Mes Articles</a></div>
+                    <div class="MyCommandes"><a class="RefUse" href="../pages/MesCommandes.php">Mes Commandes</a></div>
                         <h3>Nom: 
                             <br><br>
                             <?= $user['lastname']; ?>

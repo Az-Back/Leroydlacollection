@@ -1,7 +1,8 @@
 body 
 {
-    overflow: hidden;
-    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    height: 100vh;
 }
 
 #background-video 
@@ -178,4 +179,18 @@ input[type="submit"]
 .message 
 {
     color: white;
+}
+
+@media screen and (max-width: 600px){
+    .container 
+    {
+        padding-top: 0px;
+    }
+    
+    .container .row100 .col
+    {
+        width: auto;
+    } 
+
+    
 }

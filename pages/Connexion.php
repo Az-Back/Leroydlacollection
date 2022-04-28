@@ -11,7 +11,7 @@
 <br><br>
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background.mp4" type="video/mp4">
+<source src="../images/background6.mp4" type="video/mp4">
 
 </video>
     <form class="container" method="POST">
@@ -37,7 +37,7 @@
        </div>
        <div class="row100">
     <div class="col">
-   <input type="submit" name="validate" value="Connexion">
+   <input type="submit" id="Connect" name="validate" value="Connexion">
    <div class="col">
    <a href="Inscription.php">Je n'ai pas de compte, je m'inscris</a>
    <br><br>
@@ -46,5 +46,7 @@
     </div>
     </form>
     </div>
+    <audio id="audio1" src="../Sound/Bienvenue.mp3"></audio>
+<script src="../script/connect.js"></script>    
 </body>
 </html>

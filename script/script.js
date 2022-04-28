@@ -11,6 +11,11 @@ const text4 = document.querySelector("#Text4");
 
 const gun1 = document.querySelector("#gunorange");
 const gun2 = document.querySelector("#gunbleu");
+const gun3 = document.querySelector("#gunnoir");
+
+const portail1 = document.querySelector("#portail1");
+const portail2 = document.querySelector("#portail2");
+const portail3 = document.querySelector("#portail3");
 
 anim.forEach(change => 
     {
@@ -80,7 +85,13 @@ window.addEventListener('scroll', () =>
         text4.classList.add('Text4');
         gun1.classList.add('gunorange');
         gun2.classList.add('gunbleu');
+        gun3.classList.add('gunnoir');
+        portail1.classList.add('portail1active');
+        portail2.classList.add('portail2active');
+        portail3.classList.add('portail3active');
     }
     
 });
+
+
 

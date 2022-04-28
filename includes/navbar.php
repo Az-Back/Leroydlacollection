@@ -10,8 +10,13 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <nav class="NavBar">
- 
+
   <ul class="List">
+  <video id="background-videonav" autoplay loop muted>
+
+<source src="../images/background5.mp4" type="video/mp4">
+
+</video>
     <li class="TextNav">
     <a id="accueil" class="RefNav <?= ($nomDeLaPage == 'Accueil.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Accueil.php' },1000);">
       <p class="Paragraphe">Accueil</p>
@@ -23,7 +28,7 @@
   </li>
 
       <li class="TextNav">
-      <a class="RefNav <?= ($nomDeLaPage == 'Propos.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Propos.php' },1000);">
+      <a class="RefNav <?= ($nomDeLaPage == 'Apropos.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Apropos.php' },1000);">
       <p class="Paragraphe">A propos</p>
       <span></span>  
         <span></span>  
@@ -71,15 +76,6 @@
           <?php 
         if(isset($_SESSION['auth'])){
           ?>
-    <li class="TextNav">
-      <a class="RefNav <?= ($nomDeLaPage == 'MesArticles.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/MesArticles.php' },1000);">
-    <p class="Paragraphe">Mes Articles</p>
-        <span></span>  
-        <span></span>  
-        <span></span>  
-        <span></span>
-  </a>
-  </li>
     <li class="TextNav">
       <a class="RefNav <?= ($nomDeLaPage == 'VenteArticle.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/VenteArticle.php' },1000);">
     <p class="Paragraphe">Vendre un Article</p>

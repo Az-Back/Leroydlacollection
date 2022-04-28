@@ -1,9 +1,14 @@
 @import url('http://fonts.cdnfonts.com/css/polentical-neon');
 
+*
+{
+    font-family: 'Polentical Neon', sans-serif;
+}
+
 body 
 {
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: 'Polentical Neon', sans-serif;
 }
 
@@ -38,6 +43,7 @@ body
     justify-content: center;
     align-items: center;
     z-index: 13;
+    
 }
 
 .Menu 
@@ -65,6 +71,7 @@ body
     margin-bottom: 20px;
     height: 50px;
     border: 2px solid black;
+    font-family: 'Polentical Neon', sans-serif;
 }
 
 .form-image

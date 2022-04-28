@@ -102,7 +102,6 @@
         .List
         {
         position: fixed;
-        background-image: url('../images/neon1.gif');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 50%;
@@ -113,7 +112,13 @@
         text-align: center;
         transition: all 0.5s ease-in-out;
         display: block;
-        padding-top: 80px;
+        padding-top: 20px;
+        }
+
+        #background-videonav 
+        {
+        display: block;
+        opacity: 1;
         }
 
         .RefNav
@@ -124,11 +129,19 @@
             letter-spacing: 4px;
             padding: 20px;
             color: white;
+            cursor: pointer;
+            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white, 0 0 120px white;   
         }
     
         .List.active
         {
             left: 0;
+        }
+
+        .research{
+            text-align: center;
+            display: flex;
+            justify-content: center;
         }
     
         .toggle
@@ -136,11 +149,6 @@
             display: flex;
             z-index: 999;
             margin-top: 20px;
-        }
-
-        .research 
-        {
-            display: none;
         }
 
         #gunorange 
@@ -152,10 +160,38 @@
         {
         display: none;
         }
+
+        #gunnoir
+        {
+        display: none;
+        }
     
 }
 
+@media screen and (max-width: 750px){
+    #presentation-video
+    {
+        width: 300px;
+    }
+}
+
 @media screen and (max-width: 600px){
+
+
+    .Discover1
+    {
+        font-size: 35px;
+    }
+
+    .titlevideo 
+    {
+        font-size: 35px;
+    }
+
+    .banner 
+    {
+        font-size: 35px;
+    }
 
     .Text 
     {
@@ -168,9 +204,30 @@
         height: 200px;
     }
 
+    .glitch1 {
+        font-size: 40px;
+    }
+
+    .Text2 {
+        text-shadow: 0 0 10px #ff7b00;
+    }
+
+    .Text3 {
+        text-shadow: 0 0 10px #00b3ff;
+    }
+
 }
 
 @media screen and (max-width: 340px){
+
+    .container2 
+    {
+        top: 10%;
+    }
+
+    .form-image {
+        width: 100%;
+    }
 
     #Text4
     {
