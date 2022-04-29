@@ -177,6 +177,9 @@
 
 @media screen and (max-width: 600px){
 
+    .allimg {
+        max-width: 250px;
+    }
 
     .Discover1
     {
