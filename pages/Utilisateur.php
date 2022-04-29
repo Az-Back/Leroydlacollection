@@ -37,6 +37,7 @@ require("../actions/getAllInfoUser.php");
             <div class="profil">
                     <div class="info">
                     <?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $user['bin'] ) . '" />'; ?></a>
+                    <div class="TextNav"><a class="RefUse" href="../actions/logoutAction.php">Deconnexion</a><div>
                     <div class="MyArticles"><a class="RefUse" href="../pages/MesArticles.php">Mes Articles</a></div>
                     <div class="MyCommandes"><a class="RefUse" href="../pages/MesCommandes.php">Mes Commandes</a></div>
                         <h3>Nom: 

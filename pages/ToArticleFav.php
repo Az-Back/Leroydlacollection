@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-require('../actions/showArticleContent.php');
+require('../actions/getArticleFav.php');
 $nomDeLaPage = basename(__FILE__);
 ?>
 <!DOCTYPE html>
@@ -35,13 +35,13 @@ $nomDeLaPage = basename(__FILE__);
                 <h3 class="contenu"><?= $article_content ?> €</h3>
                 <p class="description"><?= $article_description ?></p>
                 <p class="By"> Publié par <?= $article_pseudo_author ?> le <?= $article_publication_date ?></p>
-                <div class="button"><a href="Articles.php" class="btn1">Retour en arriére</a></div>
+                <div class="button"><a href="Favoris.php" class="btn1">Retour en arriére</a></div>
                 </div>
                 <?php 
         if(isset($_SESSION['auth'])){
           ?>
-                <div class="button"><a href="../actions/addFav.php?id=<?= $article_id; ?>" class="btn2">Ajouter au favoris</a></div>
-                <div class="button"><a href="../actions/buyArticle.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
+                <div class="button"><a href="../actions/deleteFavoris.php?id=<?= $article_id; ?>" class="btn2">Supprimer le favoris</a></div>
+                <div class="button"><a href="../actions/buyArticleFav.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
             <?php
         }
           ?>

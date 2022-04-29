@@ -40,11 +40,14 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     $deleteThisArticle = $bdd->prepare('DELETE FROM articles WHERE id = ?');
     $deleteThisArticle->execute(array($idOfArticle));
 
+    $deleteThisFavArticle = $bdd->prepare('DELETE FROM favoris WHERE id = ?');
+    $deleteThisFavArticle->execute(array($idOfArticle));
+
     echo '<script type="text/javascript">'; 
     echo 'alert("Article Acheter");';
-    echo 'window.location.href = "../pages/Articles.php";';
+    echo 'window.location.href = "../pages/Favoris.php";';
     echo '</script>';
     } else {
-        header('Location: ../pages/Articles.php'); 
+        header('Location: ../pages/Favoris.php'); 
     }
 }

@@ -85,7 +85,15 @@
         <span></span>
   </a>
     </li>
-    <li class="TextNav"><a class="RefNav" href="../actions/logoutAction.php">Deconnexion</a></li>
+    <li class="TextNav">
+      <a class="RefNav <?= ($nomDeLaPage == 'Favoris.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Favoris.php' },1000);">
+    <p class="Paragraphe">Favoris</p>
+        <span></span>  
+        <span></span>  
+        <span></span>  
+        <span></span>
+  </a>
+    </li>
     <li class="TextNav"><a class="RefNav <?= ($nomDeLaPage == 'Utilisateur.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Utilisateur.php' },1000);">
     <p class="Paragraphe">
     <i class="fa-solid fa-user"></i>

@@ -82,7 +82,8 @@ body
 .allimg 
 {
     border-radius: 10%;
-    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
 }
 
 .allimg:hover 
@@ -134,6 +135,20 @@ h3
 }
 
 .btn0:hover
+{
+    cursor: pointer;
+}
+
+
+.btn2
+{
+    color: #f00;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.btn2:hover
 {
     cursor: pointer;
 }
