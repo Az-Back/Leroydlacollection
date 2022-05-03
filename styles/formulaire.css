@@ -145,10 +145,20 @@ input[type="submit"]
     border-radius: 2px;
 }
 
+input:hover 
+{
+    color: red;
+}
+
 .col a {
     text-decoration: none;
     font-size: 20px;
     color: white;
+}
+
+.col a:hover
+{
+    color: red;
 }
 
 .Image
@@ -182,6 +192,11 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 600px){
+    .container .row100 .col input
+    {
+        display: flex;
+        justify-content: center;
+    }
     .container 
     {
         padding-top: 0px;

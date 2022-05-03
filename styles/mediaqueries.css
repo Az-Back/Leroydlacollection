@@ -219,6 +219,24 @@
         text-shadow: 0 0 10px #00b3ff;
     }
 
+    .Title1Contact 
+    {
+        font-size: 38px;
+    }
+
+    .Title2Contact 
+    {
+        font-size: 40px;
+    }
+
+    .goku1
+    {
+        width: 150px;
+    }
+    .goku2
+    {
+        width: 150px;
+    }
 }
 
 @media screen and (max-width: 340px){

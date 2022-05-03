@@ -1,0 +1,81 @@
+@import url('http://fonts.cdnfonts.com/css/polentical-neon');
+
+.Container 
+{
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.Text1Contact {
+    font-family: 'Polentical Neon', sans-serif;
+    text-shadow: 5px 5px 5px black;
+    z-index: 13;
+    margin-top: 200px;
+}
+
+.Text2Contact {
+    font-family: 'Polentical Neon', sans-serif;
+    text-shadow: 5px 5px 5px black;
+    z-index: 13;
+    
+}
+
+.Title1Contact
+{
+    color: white;
+    font-size: 70px;
+}
+
+.facebook 
+{
+    text-decoration: none;
+}
+
+.fa-facebook
+{
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.fa-facebook:hover
+{
+    color: red;
+}
+
+#facebook
+{
+    display: none;
+}
+
+.Title2Contact
+{
+    margin-top: 50px;
+    color: white;
+    font-size: 70px;
+}
+
+.goku1 
+{
+    width: 250px;
+    height: 85px;
+    display: none;
+}
+
+.goku2 
+{
+    width: 250px;
+    height: 85px;
+    display: none;
+}
+
+.come {
+    display: inherit;
+}
+
+iframe {
+    margin-top: 50px;
+}

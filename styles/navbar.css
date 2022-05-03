@@ -171,25 +171,6 @@ html {
     }
 }
 
-.Logo 
-{
-    width: 400px;
-    height: 400px;
-    animation: scale 1s linear;
-}
-
-@keyframes scale 
-{
-    0%
-    {
-        transform: scale(0);
-    }
-
-    100%
-    {
-        transform: scale(1);
-    }
-}
 
 .User {
     width: 50px;

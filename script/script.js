@@ -1,5 +1,5 @@
 let anim = document.querySelectorAll(".TextNav");
-const dragon = document.querySelector(".Ufo");
+const ufo = document.querySelector(".Ufo");
 const dragonball = document.querySelector("#sprite2");
 let list = document.querySelectorAll(".RefNav");
 let list2 = document.querySelectorAll(".Paragraphe");
@@ -20,10 +20,10 @@ const portail3 = document.querySelector("#portail3");
 anim.forEach(change => 
     {
         change.addEventListener('click', () => {
-            dragon.classList.add("appear");
+            ufo.classList.add("appear");
             dragonball.classList.add("display");
             setTimeout(() =>{
-                dragon.classList.remove("appear");
+                ufo.classList.remove("appear");
                 dragonball.classList.remove("display");
             },1000);
         });
@@ -50,8 +50,8 @@ window.addEventListener('mousemove', (e) => {
     mousemove.style.top = e.pageY + "px";
     sprite2.style.left = e.pageX + "px";
     sprite2.style.top = e.pageY + "px";
-    dragon.style.left = e.pageX + "px";
-    dragon.style.top = e.pageY + "px";
+    ufo.style.left = e.pageX + "px";
+    ufo.style.top = e.pageY + "px";
 });
 
 
@@ -68,7 +68,7 @@ new Typewriter(txtAnim, {
 .typeString('<strong>BIENVENUE CHEZ<br></strong>')
 .pauseFor(200)
 .typeString('<img class="Logo" src="../images/LogoEnd.png"></img>')
-.pauseFor(2000)
+.pauseFor(1700)
 .deleteChars(40)
 .start()
 
