@@ -109,7 +109,7 @@
           ?>
 
 <?php 
-        if($nomDeLaPage == 'Articles.php' OR $nomDeLaPage == 'MesArticles.php'){
+        if($nomDeLaPage == 'Articles.php' OR $nomDeLaPage == 'MesArticles.php' OR $nomDeLaPage == 'MesCommandes.php'){
           ?>
   <form method="GET" class="research">
 

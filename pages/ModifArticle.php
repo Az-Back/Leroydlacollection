@@ -1,7 +1,7 @@
 <?php
 $nomDeLaPage = basename(__FILE__); 
 require('../actions/securityAction.php');
-require('../actions/getInfosOfEditedQuestionAction.php');
+require('../actions/getInfosOfEditedArticleAction.php');
 require("../actions/modifArticleAction.php");     
 ?>
 
