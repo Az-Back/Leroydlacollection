@@ -85,14 +85,13 @@ tbody tr:nth-child(even){
     cursor: pointer;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1100px) {
   body {
     align-items: flex-start;
   }
   .table-style  {
     width: 100%;
     margin: 0px;
-    font-size: 15px;
     display: flex;
   }
   th, td {
@@ -102,6 +101,27 @@ tbody tr:nth-child(even){
     tbody tr, td, th {
     border: 1px solid #ddd;
     display: flow-root;
+    font-size: 15px;
     }
 
 }
+
+@media screen and (max-width: 600px) {
+    body {
+      align-items: flex-start;
+    }
+    .table-style  {
+      width: 100%;
+      margin: 0px;
+      display: flex;
+    }
+    th, td {
+      padding: 10px 7px;
+  }
+  
+      tbody tr, td, th {
+      border: 1px solid #ddd;
+      display: flow-root;
+      font-size: 10px;
+      }
+  }
