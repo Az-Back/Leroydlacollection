@@ -10,6 +10,12 @@ session_start();
 // Allows you to call the action and use it for the database 
 
 require('../actions/getArticleFav.php');
+
+// Permet de recuperer le nom de la page
+
+// Allow to pick-up the name of the page
+
+$nomDeLaPage = basename(__FILE__);
 ?>
 
 <!DOCTYPE html>

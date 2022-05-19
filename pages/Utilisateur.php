@@ -95,34 +95,34 @@ require("../actions/getAllInfoUser.php");
 
                                 <div class="MyCommandes"><a class="RefUse" href="../pages/MesCommandes.php">Mes Commandes</a></div>
 
-                                <h3>Nom: 
+                                <h3>Nom : 
                                     <br><br>
                                     <?= $user['lastname']; ?>
                                     <br><br> 
                                 </h3>
 
-                                <h3>Prenom: 
+                                <h3>Prenom : 
                                     <br><br>
                                     <?= $user['firstname']; ?>
                                     <br><br> 
                                 </h3>
 
                                 <p class="Adress">
-                                    Adresse: 
+                                    Adresse : 
                                     <br><br>
                                     <?= $user['adress']; ?>
                                     <br><br>
                                 </p>
 
                                 <p class="City">
-                                    Ville:
+                                    Ville :
                                     <br><br>  
                                     <?= $user['city']; ?>
                                     <br><br>
                                 </p>
                                         
                                 <p class="Postal">
-                                    Code postal:
+                                    Code postal :
                                     <br><br> 
                                     <?= $user['postal']; ?>
                                 </p>
