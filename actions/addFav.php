@@ -35,7 +35,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     header('Location: ../pages/Favoris.php'); 
 }   else {
     echo '<script type="text/javascript">'; 
-    echo 'alert("Vous ne pouvez pas mettre un de vos article en favoris!");';
+    echo 'alert("Vous ne pouvez pas mettre un de vos articles en favoris!");';
     echo 'window.location.href = "../pages/Articles.php";';
     echo '</script>';
 }

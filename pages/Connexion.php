@@ -30,9 +30,9 @@ require('../actions/loginAction.php'); ?>
 
 </video>
 
-<!-- Conteneur qui represente le formulaire d'inscription -->
+<!-- Conteneur qui represente le formulaire de connexion -->
 
-<!-- Container that represents the registration form -->
+<!-- Container that represents the connexion form -->
 
 <!-- Methode POST pour envoyer des données dans la base de données -->
 
@@ -41,13 +41,15 @@ require('../actions/loginAction.php'); ?>
     <form class="container" method="POST">
 
 
-<!-- Permet d'afficher une message si la variable errorMsg existe et si tout les champs ne sont pas remplis -->
+<!-- Permet d'afficher une message si la variable errorMsg existe -->
 
-<!-- Displays a message if the errorMsg variable exists and all fields are not filled in -->
+<!-- Displays a message if the errorMsg variable exists  -->
     <?php if(isset($errorMsg)){echo '<p class="message">'.$errorMsg.'</p>';} ?>
 
 
 <!-- Conteneur global -->
+
+<!-- Global container -->
     <div class="container">
 
 <!-- INPUT 1 -->    

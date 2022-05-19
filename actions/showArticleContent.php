@@ -22,7 +22,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         // Stocker les données de la question dans des variables
         $article_id = $articlesInfos['id'];
         $article_title = $articlesInfos['title'];
-        $article_content = $articlesInfos['price'];
+        $article_price = $articlesInfos['price'];
         $article_description = $articlesInfos['description'];
         $article_id_author = $articlesInfos['id_auteur'];
         $article_pseudo_author = $articlesInfos['pseudo_auteur'];

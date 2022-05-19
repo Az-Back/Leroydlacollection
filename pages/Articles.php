@@ -1,7 +1,7 @@
 <?php
-// Permet de demarrer une session
+// Démarre une nouvelle session ou reprend une session existante
 
-// Allows you to start a session
+// Starts a new session or resumes an existing session
     session_start();
     
 // Permet d'appeler l'action et de l'utiliser pour la base de données
@@ -57,7 +57,7 @@
 
 <div class="mousemove"></div>
 
-<!-- image necessaire qui suut le mouvement de la souris via le script javascript voir Script.js ligne 46 a 55 -->
+<!-- image necessaire qui suit le mouvement de la souris via le script javascript voir Script.js ligne 46 a 55 -->
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
