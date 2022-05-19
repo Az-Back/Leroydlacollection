@@ -130,7 +130,7 @@
             padding: 20px;
             color: white;
             cursor: pointer;
-            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white, 0 0 120px white;   
+            text-shadow: 0 0 10px black, 0 0 20px black, 0 0 40px black, 0 0 80px black, 0 0 120px black;   
         }
     
         .List.active
@@ -207,8 +207,12 @@
         height: 200px;
     }
 
+    .glitch {
+        font-size: 60px;
+    }
+
     .glitch1 {
-        font-size: 40px;
+        font-size: 60px;
     }
 
     .Text2 {
@@ -255,4 +259,21 @@
         font-size: 25px;
     }
 
+    #Text3 
+    {
+        font-size: 25px;
+    }
+
+}
+
+@media screen and (max-height: 768px) {
+    .Container
+    {
+        height: 150vh;
+    }
+
+    .RefNav
+    {
+        margin: 10px 0;
+    }
 }

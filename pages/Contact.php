@@ -1,28 +1,66 @@
 <?php
+// Permet de demarrer une session
+
+// Allows you to start a session
+
 session_start();
+
+
+// Permet de recuperer le nom de la page
+
+// Allow to pick-up the name of the page
+
 $nomDeLaPage = basename(__FILE__);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- css necessaire -->
+
+<!-- css needed -->
+
     <link rel="stylesheet" href="../styles/all.css">
     <link rel="stylesheet" href="../styles/contact.css">
+
+
     <title>Contact</title>
 </head>
 <body>
 
+<!-- Permet d'inclure la barre de navigation dans la page sans recopier tout le code -->
+
+<!-- Allows to include the navigation bar in the page without copying all the code -->
 <?php include '../includes/navbar.php'; ?>
+
+<!-- image necessaire pour l'animation de la barre de navigation via le script javascript voir Script.js ligne 46 to 55 -->
+
+<!-- image needed for navigation bar animation via the javascript script see Script.js line 46 to 55 -->
 <img class="Ufo" src="../images/soucoupe.gif">
+
+
+<!-- Video en background
+ Video on background -->
 
 <video id="background-video" autoplay loop muted>
 
 <source src="../images/background2.mp4" type="video/mp4">
 
 </video>
+
+<!-- div necessaire pour suivre le mouvement de la souris via le script javascript voir Script.js ligne 46 to 55 -->
+
+<!-- div neeeded to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
+
 <div class="mousemove"></div>
+
+<!-- image necessaire qui suut le mouvement de la souris via le script javascript voir Script.js ligne 46 a 55 -->
+
+<!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
+
 <img id="sprite2"  src="../images/goku.gif">
 
 <div class="Container">

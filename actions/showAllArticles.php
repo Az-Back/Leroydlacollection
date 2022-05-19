@@ -14,4 +14,8 @@ if(isset($_GET['search']) && !empty($_GET['search'])){
     // Recuperer toutes les questions qui correspondent a la recherche (en fonction du titre)
     $getAllArticles = $bdd->query('SELECT id, id_auteur, title, description, price, bin, pseudo_auteur, date_publication FROM articles WHERE title LIKE "%'.$usersSearch.'%" ORDER BY id DESC');
 
-} 
+} elseif(isset($_GET['search']) && empty($_GET['search']))
+
+{
+    header('Location: ../pages/Articles.php'); 
+}

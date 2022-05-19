@@ -11,7 +11,7 @@
 <body>
 <video id="background-video" loop muted>
 
-<source src="../images/Loading1.mp4" type="video/mp4">
+<source src="images/Loading1.mp4" type="video/mp4">
 
 </video>
 <div class="Head">  
