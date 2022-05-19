@@ -2,16 +2,19 @@
 // Démarre une nouvelle session ou reprend une session existante
 
 // Starts a new session or resumes an existing session
+
 session_start();
 
 // Permet de recuperer le nom de la page
 
 // Allow to pick-up the name of the page
+
 $nomDeLaPage = basename(__FILE__);
 
 // Permet d'appeler l'action ou les actions et de les utiliser pour la base de données
 
 // Allows you to call the action or actions and use it for the database 
+
 require("../actions/getCommands.php");
 require("../actions/deleteCommands.php");
 ?>

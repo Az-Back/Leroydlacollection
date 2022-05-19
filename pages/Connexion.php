@@ -44,6 +44,7 @@ require('../actions/loginAction.php'); ?>
 <!-- Permet d'afficher une message si la variable errorMsg existe -->
 
 <!-- Displays a message if the errorMsg variable exists  -->
+
     <?php if(isset($errorMsg)){echo '<p class="message">'.$errorMsg.'</p>';} ?>
 
 

@@ -65,6 +65,7 @@ require("../actions/modifArticleAction.php");
         <!-- Permet d'afficher une message si la variable errorMsg ou successMsg et dependant si l'action a marcher ou non -->
 
             <!-- Displays a message if the variable errorMsg or successMsg and depending on whether the action has worked or not  -->
+            
             <?php 
             if(
             isset($errorMsg))
