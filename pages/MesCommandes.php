@@ -124,7 +124,7 @@ require("../actions/deleteCommands.php");
                             <!-- Juste un bouton pour supprimer la commande correspondante "celle du dessous" --> 
 
                             <!-- Just a button for delete the command under -->
-                            <div class="button"><a href="../actions/deleteCommands.php?id=<?= $Commande['id']; ?>" class="btn2">Supprimer la commande</a></div>
+                            <div class="button"><a href="../actions/deleteCommands.php?id=<?= $Commande['id']; ?>" class="btn3"><i class="fa-solid fa-xmark"></i></a></div>
 </table>
                 </div>
             </div>

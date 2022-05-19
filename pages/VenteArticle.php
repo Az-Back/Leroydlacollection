@@ -136,10 +136,11 @@ $nomDeLaPage = basename(__FILE__);
       <br><br>
         <button type="submit" class="btn" name="validate">Vendre l'article</button>
     </div>
-    
+
 </div>        
 
 </form>
 <script src="../script/script.js"></script>
 </body>
 </html>
+

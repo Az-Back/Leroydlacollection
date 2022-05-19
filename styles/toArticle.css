@@ -67,7 +67,7 @@ body
 
 .menu {
     padding: 10px;
-    background-color: #222;
+    background-color: rgba(0, 0, 0, .7);
     line-height: 1.1em;
     border: 1px solid white;
     padding: 10px;

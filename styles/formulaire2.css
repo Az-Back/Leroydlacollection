@@ -92,3 +92,8 @@ body
     padding: 10px;
     font-family: 'Polentical Neon', sans-serif;
 }
+
+.btn:hover 
+{
+    cursor: pointer;
+}
