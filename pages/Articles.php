@@ -97,7 +97,7 @@
                             <!-- Affichage de l'image de l'article -->
 
                             <!-- Displaying the image of the article -->
-                            <?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $Article['bin'] ) . '" />'; ?>
+                            <?= '<img class="allimg clickimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $Article['bin'] ) . '" />'; ?>
                             </a>
 
                             <!-- Affichage du titre de l'article -->
