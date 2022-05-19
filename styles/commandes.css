@@ -78,12 +78,16 @@ tbody tr:nth-child(even){
     text-decoration: none;
     width: 100%;
     padding: 10px;
-    font-size: 40px;
 }
 
 .btn3:hover
 {
     cursor: pointer;
+}
+
+#cross
+{
+   font-size: 40px;
 }
 
 @media screen and (max-width: 1100px) {
