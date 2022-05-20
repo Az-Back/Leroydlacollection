@@ -221,6 +221,8 @@
 
     .Text3 {
         text-shadow: 0 0 10px #00b3ff;
+        font-size: 25px;
+        text-align: end;
     }
 
     .Title1Contact 
@@ -259,10 +261,6 @@
         font-size: 25px;
     }
 
-    #Text3 
-    {
-        font-size: 25px;
-    }
 
 }
 

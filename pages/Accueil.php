@@ -66,7 +66,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- First container -->
 
-    <div class="Container">
+    <div class="ContainerHome">
 
 <!-- Div necessaire pour le Typescript voir Script.js ligne 58 a 73 -->
 
