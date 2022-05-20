@@ -1,5 +1,9 @@
 @import url('http://fonts.cdnfonts.com/css/polentical-neon');
 
+/* Premier conteneur 
+
+ First container */
+
 .Container 
 {
     height: 100vh;
@@ -20,7 +24,6 @@
     font-family: 'Polentical Neon', sans-serif;
     text-shadow: 5px 5px 5px black;
     z-index: 13;
-    
 }
 
 .Title1Contact

@@ -71,6 +71,7 @@ require("../actions/deleteCommands.php");
 <!-- Conteneur global -->
 
 <!-- Global container -->
+
 <div class="block1">
     <div class="block-inside1">
 

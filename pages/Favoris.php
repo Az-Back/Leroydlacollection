@@ -100,6 +100,8 @@
                         <?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $Fav['bin'] ) . '" />'; ?>
                         </a>
 
+                        <br>
+
                             <!-- Affichage du titre de l'article -->
 
                             <!-- Displaying the title of the article -->
@@ -110,10 +112,14 @@
                             <!-- Displaying the price of the article -->
                         <h3><?= $Fav['price']; ?> €</h3>
 
+                        <br>
+
                             <!-- Affichage de la description de l'article -->
 
                             <!-- Displaying the description of the article -->
                         <p class="description"><?= $Fav['description']; ?></p>
+
+                        <br>
 
                             <!-- Affichage du pseudo du vendeur ainsi que la date de publication de l'article -->
 

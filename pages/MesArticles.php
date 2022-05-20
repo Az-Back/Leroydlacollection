@@ -93,6 +93,8 @@
                             <?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $myArticle['bin'] ) . '" />'; ?>
                             </a>
 
+                            <br>
+
                             <!-- Affichage du titre de l'article -->
 
                             <!-- Displaying the title of the article -->
@@ -103,6 +105,8 @@
                             <!-- Displaying the price of the article -->
 
                             <h3><?= $myArticle['price']; ?>€</h3>
+
+                            <br>
 
                             <!-- Affichage de la description de l'article -->
 

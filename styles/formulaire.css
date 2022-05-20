@@ -51,8 +51,7 @@ body
     color: white;
 }
 
-.container .row100 .inputBox input,
-.container .row100 .inputBox.textarea textarea
+.container .row100 .inputBox input
 {
     position: absolute;
     width: 100%;
@@ -106,32 +105,6 @@ body
     height: 100%;
 }
 
-.container .row100 .inputBox.textarea
-{
-    position: relative;
-    width: 100%;
-    height: 100px;
-    padding: 10px 0;
-}
-
-.container .row100 .inputBox.textarea textarea
-{
-    height: 100%;
-    resize: none;
-}
-
-.container .row100 .inputBox textarea:focus + .text,
-.container .row100 .inputBox textarea:valid + .text
-{
-    top: -35px;
-    left: -10px;
-}
-
-.container .row100 .inputBox textarea:focus ~ .line,
-.container .row100 .inputBox textarea:valid ~ .line
-{
-    height: 100%;
-}
 
 input[type="submit"]
 {
@@ -191,6 +164,8 @@ input:hover
     color: white;
 }
 
+/* MediaQueries */
+
 @media screen and (max-width: 600px){
     .container .row100 .col input
     {
@@ -206,6 +181,5 @@ input:hover
     {
         width: auto;
     } 
-
     
 }

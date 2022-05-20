@@ -6,10 +6,29 @@
     cursor: url('../images/sword2.png'), auto;
 }
 
-body
+/* Classe et id globales necessaires a toutes les pages
+
+    Class and global id required for all pages */
+
+#sprite2
+{
+    position: absolute;
+    z-index: 12;
+    transform: translate(-30%, -20%);
+    width: 10%;
+}
+
+#background-video 
 {
     height: 100vh;
-    font-family: 'Polentical Neon', sans-serif;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 .Ufo {
@@ -19,6 +38,10 @@ body
     transform: translate(-50%, -70%);
     width: 8%;
 }
+
+/* Classes necessaires pour le Script.js en javascript voir ligne 20 et 32
+
+    Classes required for Script.js in javascript see line 20 and 32 */
 
 
 .appear {
@@ -46,23 +69,5 @@ body
     }
 }
 
-#sprite2
-{
-    position: absolute;
-    z-index: 12;
-    transform: translate(-30%, -30%);
-    width: 5%;
-}
+/* ////////////////////////////////////////////////////////////////////// */
 
-#background-video 
-{
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-}

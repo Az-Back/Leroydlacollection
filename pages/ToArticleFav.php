@@ -87,6 +87,8 @@ $nomDeLaPage = basename(__FILE__);
 
                             <?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $article_image_bin) . '" />'; ?>
 
+                            <br>
+
                             <!-- Affichage du titre de l'article -->
 
                             <!-- Displaying the title of the article -->
@@ -98,11 +100,15 @@ $nomDeLaPage = basename(__FILE__);
 
                             <h3 class="contenu"><?= $article_price ?> €</h3>
 
+                            <br>
+
                             <!-- Affichage de la description de l'article -->
 
                             <!-- Displaying the description of the article -->
 
                             <p class="description"><?= $article_description ?></p>
+
+                            <br>
 
                             <!-- Affichage du pseudo du vendeur ainsi que la date de publication de l'article -->
 

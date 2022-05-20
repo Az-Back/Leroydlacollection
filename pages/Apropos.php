@@ -23,6 +23,7 @@ $nomDeLaPage = basename(__FILE__);
 <!-- css needed -->
 
     <link rel="stylesheet" href="../styles/apropos.css">
+    <link rel="stylesheet" href="../styles/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>A propos</title>

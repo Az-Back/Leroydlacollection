@@ -101,7 +101,7 @@ body{
     animation: effect 2s infinite linear;
 }
 
-@-webkit-keyframes effect
+@keyframes effect
 {
     0%{
         clip:rect(55px, 9999px, 56px, 0);

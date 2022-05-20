@@ -1,3 +1,7 @@
+/* Conteneur global 
+
+ Global container */
+
 .block1 
 {
     margin-right: auto;
@@ -20,13 +24,9 @@
     margin: 0;
 }
 
-.menus {
-    width: auto;
-    height: auto;
-    display: grid;
-    justify-content: center;
-    grid-gap: 10px;
-}
+/* Conteneur qui va être crée a chaque nouvelle commande avec les infos de la nouvelle commande a l'intérieur
+            
+    Container that will be created with each new order with the information of the new order inside */
 
 .menu-container {
     display: inline-block;
@@ -43,6 +43,21 @@
     line-height: 1.1em;
     padding: 10px;
 }
+
+
+
+.menus {
+    width: auto;
+    height: auto;
+    display: grid;
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+
+/* Creation d'un tableau qui va comporter 6 champs a remplir avec les données recupérer dans la base de données
+
+     Creation of a table that will have 6 fields to fill with the data retrieved in the database */
 
 .table-style  {
     border-collapse: collapse;
@@ -89,6 +104,8 @@ tbody tr:nth-child(even){
 {
    font-size: 40px;
 }
+
+/* MediaQueries */
 
 @media screen and (max-width: 1100px) {
   body {

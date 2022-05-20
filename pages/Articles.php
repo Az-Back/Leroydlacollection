@@ -100,11 +100,14 @@
                             <?= '<img class="allimg clickimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $Article['bin'] ) . '" />'; ?>
                             </a>
 
+                            <br>
+
                             <!-- Affichage du titre de l'article -->
 
                             <!-- Displaying the title of the article -->
 
                             <h3><?= $Article['title']; ?> </h3>
+
 
                             <!-- Affichage du prix de l'article -->
 
@@ -112,11 +115,15 @@
 
                             <h3><?= $Article['price']; ?> €</h3>
 
+                            <br>
+
                             <!-- Affichage de la description de l'article -->
 
                             <!-- Displaying the description of the article -->
 
-                            <p class="description"><?= $Article['description']; ?></p>
+                            <p class="description" id="desc"><?= $Article['description']; ?></p>
+
+                            <br>
 
                             <!-- Affichage du pseudo du vendeur ainsi que la date de publication de l'article -->
 
@@ -136,6 +143,7 @@
     ?>
         </div>
     </div>
-<script src="../script/script.js"></script>            
+<script src="../script/script.js"></script>
+<script src="../script/articles.js"></script>              
 </body>
 </html>

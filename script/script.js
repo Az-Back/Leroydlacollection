@@ -5,6 +5,8 @@ let list = document.querySelectorAll(".RefNav");
 let list2 = document.querySelectorAll(".Paragraphe");
 let list3 = document.querySelector(".RefNav");
 
+let desc = document.querySelector("#desc");
+
 const text2 = document.querySelector("#Text2");
 const text3 = document.querySelector("#Text3");
 const text4 = document.querySelector("#Text4");
@@ -53,6 +55,7 @@ window.addEventListener('mousemove', (e) => {
     ufo.style.left = e.pageX + "px";
     ufo.style.top = e.pageY + "px";
 });
+
 
 
 const txtAnim = document.querySelector('.Text');

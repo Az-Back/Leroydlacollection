@@ -1,7 +1,5 @@
 @import url('http://fonts.cdnfonts.com/css/polentical-neon');
 
-
-
 body 
 {
     height: 100vh;
@@ -11,29 +9,9 @@ body
     z-index: -2;
 }
 
-#background-video 
-{
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-}
+/* Conteneur global 
 
-
-
-.form {
-    position: absolute;
-    top: 15%;
-    left: 40%;
-    display: flex;
-    flex-direction: row;
-    z-index: 13;
-}
+ Global container */
 
 .block1 
 {
@@ -55,6 +33,12 @@ body
     margin: 0;
 }
 
+
+
+/* Conteneur qui va être crée a chaque nouvel article avec les infos du nouvel article a l'intérieur 
+            
+    Container that will be created with each new article with the info of the new article inside */
+            
 .menus {
     width: auto;
     height: auto;

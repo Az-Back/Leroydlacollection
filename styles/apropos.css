@@ -2,74 +2,15 @@ html {
     scroll-behavior: smooth;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Polentical Neon', sans-serif;
-    cursor: url('../images/sword2.png'), auto;
-}
-
 body
 {
     height: 250vh;
     font-family: 'Polentical Neon', sans-serif;
 }
 
-.Ufo {
-    display: none;
-    position: absolute;
-    z-index: 12;
-    transform: translate(-50%, -70%);
-    width: 8%;
-}
+/* Premier conteneur
 
-
-.appear {
-    display: block;
-}
-
-.display {
-    display: none;
-}
-
-.Disapear 
-{
-    animation: disappear 2s linear;
-}
-
-@keyframes disappear 
-{
-    0%{
-        transform: translateY(0px);
-    }
-
-    100%
-    {
-        transform: translateY(-150px);
-    }
-}
-
-#sprite2
-{
-    position: absolute;
-    z-index: 12;
-    transform: translate(-30%, -30%);
-    width: 5%;
-}
-
-#background-video 
-{
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-}
+ First container */
 
 .Head 
 {
@@ -130,6 +71,11 @@ h2 {
     }
 }
 
+
+/* Deuxiéme conteneur 
+
+ Second container */
+
 .case 
 {
     margin-top: 100px;
@@ -179,6 +125,12 @@ h2 {
     color: #fff;
     margin-top: 100px;
 }
+
+/* Troisiéme conteneur
+
+ Third container
+
+ Carrousel */
 
 .container {
     width: auto;

@@ -21,6 +21,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- css needed -->
     <link rel="stylesheet" href="../styles/accueil.css">
+    <link rel="stylesheet" href="../styles/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
     
