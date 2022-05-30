@@ -117,7 +117,7 @@ require("../actions/deleteCommands.php");
                                     <td><?= $Commande['id']; ?></td>
                                     <td><?= $Commande['id_article']; ?></td>
                                     <td><?= $Commande['title']; ?></td>
-                                    <td><?= $Commande['price']; ?> €</td>
+                                    <td><?= number_format($Commande['price'], 2); ?> €</td>
                                     <td><?= $Commande['pseudo_auteur']; ?></td>
                                     <td><?= $Commande['date_buy']; ?></td>
                                     
