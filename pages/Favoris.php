@@ -9,7 +9,9 @@
 
 // Allows you to call the action and use it for the database 
     
+    require('../actions/securityAction.php');
     require('../actions/getFav.php');
+
 
 // Permet de recuperer le nom de la page
 
@@ -110,7 +112,7 @@
                             <!-- Affichage du prix de l'article -->
 
                             <!-- Displaying the price of the article -->
-                        <h3><?= $Fav['price']; ?> €</h3>
+                        <h3><?= number_format($Fav['price'], 2); ?> €</h3>
 
                         <br>
 

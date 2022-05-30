@@ -13,8 +13,10 @@ $nomDeLaPage = basename(__FILE__);
 
 // Permet d'appeler l'action ou les actions et de les utiliser pour la base de données
 
-// Allows you to call the action or actions and use it for the database 
+// Allows you to call the action or actions and use it for the database
 
+
+require("../actions/securityAction.php");
 require("../actions/getCommands.php");
 require("../actions/deleteCommands.php");
 ?>

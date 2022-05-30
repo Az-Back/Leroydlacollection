@@ -1,4 +1,10 @@
 <?php
+// Démarre une nouvelle session ou reprend une session existante
+
+// Starts a new session or resumes an existing session
+
+session_start();
+
 // Permet de recuperer le nom de la page
 
 // Allow to pick-up the name of the page

@@ -13,7 +13,9 @@ $nomDeLaPage = basename(__FILE__);
 
 // Permet d'appeler l'action et de l'utiliser pour la base de données
 
-// Allows you to call the action and use it for the database 
+// Allows you to call the action and use it for the database
+
+require("../actions/securityAction.php"); 
 require("../actions/getAllInfoUser.php");
 ?>
 <!DOCTYPE html>

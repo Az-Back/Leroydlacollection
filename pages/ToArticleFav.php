@@ -9,6 +9,7 @@ session_start();
 
 // Allows you to call the action and use it for the database 
 
+require('../actions/securityAction.php');
 require('../actions/getArticleFav.php');
 
 // Permet de recuperer le nom de la page
@@ -98,7 +99,7 @@ $nomDeLaPage = basename(__FILE__);
 
                             <!-- Displaying the price of the article -->
 
-                            <h3 class="contenu"><?= $article_price ?> €</h3>
+                            <h3 class="contenu"><?= number_format($article_price, 2); ?> €</h3>
 
                             <br>
 

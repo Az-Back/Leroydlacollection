@@ -113,7 +113,7 @@
 
                             <!-- Displaying the price of the article -->
 
-                            <h3><?= $Article['price']; ?> €</h3>
+                            <h3><?= number_format($Article['price'], 2); ?> €</h3>
 
                             <br>
 

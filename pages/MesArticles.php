@@ -1,4 +1,9 @@
 <?php
+// Démarre une nouvelle session ou reprend une session existante
+
+// Starts a new session or resumes an existing session
+
+session_start();
 // Permet d'appeler l'action ou les actions et de les utiliser pour la base de données
 
 // Allows you to call the action or actions and use it for the database
