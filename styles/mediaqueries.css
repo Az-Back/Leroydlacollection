@@ -132,10 +132,15 @@
             cursor: pointer;
             text-shadow: 0 0 10px black, 0 0 20px black, 0 0 40px black, 0 0 80px black, 0 0 120px black;   
         }
+
+        .color {
+            color: #fff !important;
+        }
     
         .List.active
         {
             left: 0;
+            padding-top: 0px;
         }
 
         .research{

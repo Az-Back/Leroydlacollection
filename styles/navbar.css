@@ -13,6 +13,18 @@ html {
     margin-top: 50px;
 }
 
+.color {
+    color: #0f4 !important;
+}
+
+.color:hover {
+    color: white !important;
+}
+
+.background {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 #background-videonav 
 {
     height: 100vh;
