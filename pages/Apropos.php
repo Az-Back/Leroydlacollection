@@ -41,7 +41,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <?php include '../includes/navbar.php'; ?>
 
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 
 <video id="background-video" autoplay loop muted>
@@ -60,7 +60,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite2"  src="../images/goku.gif">
+<img id="sprite"  src="../images/voiture.gif">
 
 
 <!-- Premier conteneur -->

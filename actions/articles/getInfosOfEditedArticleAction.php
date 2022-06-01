@@ -1,6 +1,6 @@
 <?php
 
-require('database.php');
+require('../actions/database/database.php');
 
 // Verifier si l'id de la question est bien passer en parametre dans l'url
 if(isset($_GET['id']) && !empty($_GET['id'])){

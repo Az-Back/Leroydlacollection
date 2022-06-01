@@ -18,7 +18,7 @@
 <!--Event at page loading followed by redirection after 2 seconds -->
 <body onLoad="setTimeout('RedirectionJavascript()', 2000)">
 
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 <video id="background-video" autoplay loop muted>
 

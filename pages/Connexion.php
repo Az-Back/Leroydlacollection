@@ -4,7 +4,7 @@
 
 // Allows you to call the action and use it for the database 
 
-require('../actions/loginAction.php'); ?>
+require('../actions/users/loginAction.php'); ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,7 +22,7 @@ require('../actions/loginAction.php'); ?>
 <body>
 <br><br>
 
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 <video id="background-video" autoplay loop muted>
 
@@ -45,7 +45,7 @@ require('../actions/loginAction.php'); ?>
 
 <!-- Displays a message if the errorMsg variable exists  -->
 
-    <?php if(isset($errorMsg)){echo '<p class="message">'.$errorMsg.'</p>';} ?>
+    <?php if(isset($errorMsg)){echo '<p class="messageErr">'.$errorMsg.'</p>';} ?>
 
 
 <!-- Conteneur global -->

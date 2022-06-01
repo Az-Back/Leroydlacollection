@@ -8,8 +8,8 @@ session_start();
 
 // Allows you to call the action or actions and use it for the database
 
-    require('../actions/securityAction.php');
-    require('../actions/allPersonnalArticlesAction.php');
+    require('../actions/security/securityAction.php');
+    require('../actions/articles/allPersonnalArticlesAction.php');
   
 // Permet de recuperer le nom de la page
 
@@ -44,7 +44,7 @@ session_start();
 <?php include '../includes/navbar.php'; ?>
 
 
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 
 <video id="background-video" autoplay loop muted>
@@ -62,7 +62,7 @@ session_start();
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite2"  src="../images/goku.gif">
+<img id="sprite"  src="../images/voiture.gif">
 
 <!-- Conteneur global -->
 
@@ -131,7 +131,7 @@ session_start();
 
                     <div class="button"><a href="ModifArticle.php?id=<?= $myArticle['id']; ?>" class="btn1">Modifier l'article</a></div>
                 
-                    <div class="button"><a href="../actions/deleteArticle.php?id=<?= $myArticle['id']; ?>" class="btn2">Supprimer l'article</a></div>
+                    <div class="button"><a href="../actions/articles/deleteArticle.php?id=<?= $myArticle['id']; ?>" class="btn2">Supprimer l'article</a></div>
             
             <?php
         } 

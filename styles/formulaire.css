@@ -159,9 +159,14 @@ input:hover
     background-color: white;
 }
 
-.message 
+.messageSucc
 {
-    color: white;
+    color: #0f4;
+}
+
+.messageErr
+{
+    color: red;
 }
 
 /* MediaQueries */

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('database.php');
+require('../actions/database/database.php');
 
 // Validation du formulaire
 if(isset($_POST['validate'])){

@@ -1,6 +1,6 @@
 <?php
 
-require('database.php');
+require('../actions/database/database.php');
 
 // Sert a savoir si l'utilisateur a bien cliquer sur le bouton
 if(isset($_POST['validate'])){
@@ -38,8 +38,9 @@ if(isset($_POST['validate'])){
         );
 
         $successMsg = 'Votre article a bien eté publiée sur le site';
+        header( "refresh:1.5; url=Articles.php" );
     } else {
-        $errorMsg = 'Veuilez remplir tous les champs !';
+        $errorMsg = 'Veuillez remplir tous les champs !';
     }
 
 }

@@ -14,9 +14,9 @@ $nomDeLaPage = basename(__FILE__);
 // Permet d'appeler l'action ou les actions et de les utiliser pour la base de données
 
 // Allows you to call the action or actions and use it for the database 
-require('../actions/securityAction.php');
-require('../actions/getInfosOfEditedArticleAction.php');
-require("../actions/modifArticleAction.php");     
+require('../actions/security/securityAction.php');
+require('../actions/articles/getInfosOfEditedArticleAction.php');
+require("../actions/articles/modifArticleAction.php");     
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ require("../actions/modifArticleAction.php");
 <?php include '../includes/navbar.php'; ?>  
 <br><br>
     
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 
 <video id="background-video" autoplay loop muted>
@@ -66,7 +66,7 @@ require("../actions/modifArticleAction.php");
     <!-- Enctype permet d'envoyer n'importe quelle type de données, ici on en a besoin pour l'image -->
 
     <!-- Enctype allows to send any type of data, here we need it for the image -->
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" name="formmodif" enctype="multipart/form-data">
 
         <!-- Permet d'afficher une message si la variable errorMsg ou successMsg et dependant si l'action a marcher ou non -->
 
@@ -76,16 +76,16 @@ require("../actions/modifArticleAction.php");
             if(
             isset($errorMsg))
             {
-              echo '<p class="message">'.$errorMsg.'</p>';
+              echo '<p class="messageErr">'.$errorMsg.'</p>';
             } elseif(isset($successMsg)) 
             {
-              echo '<p class="message">'.$successMsg.'</p>';
+              echo '<p class="messageSucc">'.$successMsg.'</p>';
             }
             ?>
 
 <!-- INPUT 1 --> 
             <div class="Menu">
-                    <label for="exampleInputEmail1" class="form-label">Titre de l'article</label>
+                    <label for="" class="form-label">Titre de l'article</label>
                     <input type="text" class="form-control" name="title">
             </div>
 

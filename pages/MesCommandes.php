@@ -16,9 +16,8 @@ $nomDeLaPage = basename(__FILE__);
 // Allows you to call the action or actions and use it for the database
 
 
-require("../actions/securityAction.php");
-require("../actions/getCommands.php");
-require("../actions/deleteCommands.php");
+require("../actions/security/securityAction.php");
+require("../actions/commands/getCommands.php");
 ?>
 
 
@@ -49,7 +48,7 @@ require("../actions/deleteCommands.php");
 
 <?php include '../includes/navbar.php'; ?>
 
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 
 <video id="background-video" autoplay loop muted>
@@ -67,8 +66,8 @@ require("../actions/deleteCommands.php");
 <!-- image necessaire qui suit le mouvement de la souris via le script javascript voir Script.js ligne 46 a 55 -->
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
-<img id="sprite2"  src="../images/goku.gif">
 
+<img id="sprite"  src="../images/voiture.gif">
 
 <!-- Conteneur global -->
 
@@ -127,7 +126,8 @@ require("../actions/deleteCommands.php");
                             <!-- Juste un bouton pour supprimer la commande correspondante "celle du dessous" --> 
 
                             <!-- Just a button for delete the command under -->
-                            <div class="button"><a href="../actions/deleteCommands.php?id=<?= $Commande['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
+
+                            <div class="button"><a href="../actions/commands/deleteCommands.php?id=<?= $Commande['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
 </table>
                 </div>
             </div>

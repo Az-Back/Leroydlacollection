@@ -1,6 +1,6 @@
 let anim = document.querySelectorAll(".TextNav");
 const ufo = document.querySelector(".Ufo");
-const dragonball = document.querySelector("#sprite2");
+const car = document.querySelector("#sprite");
 let list = document.querySelectorAll(".RefNav");
 let list2 = document.querySelectorAll(".Paragraphe");
 let list3 = document.querySelector(".RefNav");
@@ -21,12 +21,14 @@ const portail3 = document.querySelector("#portail3");
 
 anim.forEach(change => 
     {
-        change.addEventListener('click', () => {
+        change.addEventListener('click', (e) => {
             ufo.classList.add("appear");
-            dragonball.classList.add("display");
+            ufo.style.left = e.pageX + "px";
+            ufo.style.top = e.pageY + "px";
+            car.classList.add("display");
             setTimeout(() =>{
                 ufo.classList.remove("appear");
-                dragonball.classList.remove("display");
+                car.classList.remove("display");
             },1000);
         });
     });
@@ -50,10 +52,8 @@ const mousemove = document.querySelector(".mousemove")
 window.addEventListener('mousemove', (e) => {
     mousemove.style.left = e.pageX + "px";
     mousemove.style.top = e.pageY + "px";
-    sprite2.style.left = e.pageX + "px";
-    sprite2.style.top = e.pageY + "px";
-    ufo.style.left = e.pageX + "px";
-    ufo.style.top = e.pageY + "px";
+    car.style.left = e.pageX + "px";
+    car.style.top = e.pageY + "px";
 });
 
 

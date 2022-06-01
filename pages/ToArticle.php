@@ -8,7 +8,7 @@ session_start();
 
 // Allows you to call the action and use it for the database 
 
-require('../actions/showArticleContent.php');
+require('../actions/articles/showArticleContent.php');
 
 // Permet de recuperer le nom de la page
 
@@ -42,7 +42,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <?php include '../includes/navbar.php'; ?>
 
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 
 <video id="background-video" autoplay loop muted>
@@ -61,7 +61,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite2"  src="../images/goku.gif">
+<img id="sprite"  src="../images/voiture.gif">
 
 <!-- Permet d'afficher une message si la variable errorMsg existe -->
 
@@ -129,8 +129,8 @@ $nomDeLaPage = basename(__FILE__);
                   <!-- Effectue les actions ecrite dans le a sur la base de données en fonction de l'id de l'article -->
 
                   <!-- Performs the actions written in the a on the database based on the article id -->
-                  <div class="button"><a href="../actions/addFav.php?id=<?= $article_id; ?>" class="btn2">Ajouter au favoris</a></div>
-                  <div class="button"><a href="../actions/buyArticle.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
+                  <div class="button"><a href="../actions/fav/addFav.php?id=<?= $article_id; ?>" class="btn2">Ajouter au favoris</a></div>
+                  <div class="button"><a href="../actions/articles/buyArticle.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
                 <?php
         }
           ?>

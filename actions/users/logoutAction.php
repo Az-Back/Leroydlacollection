@@ -2,5 +2,5 @@
 session_start();
 $_SESSION = [];
 session_destroy();
-header('Location: ../pages/Deconnexion.php');
+header('Location: ../../pages/Deconnexion.php');
 ?>

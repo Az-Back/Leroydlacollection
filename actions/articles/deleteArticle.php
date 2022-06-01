@@ -1,8 +1,8 @@
 <?php
 session_start();
-require('securityAction.php');
+require('../security/securityAction.php');
 
-require('database.php');
+require('../database/database.php');
 // Sert a verifier si la variable est declarer
 if(isset($_GET['id']) && !empty($_GET['id'])){
     
@@ -24,16 +24,16 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             $deleteThisQuestion->execute(array($idOfTheQuestion));
 
             // Rediriger l'utilisateur vers ses questions
-            header('Location: ../pages/MesArticles.php');
+            header('Location: ../../pages/MesArticles.php');
 
         } else {
-            $errorMsg = 'Vous ne pouvez pas supprimer la question';
+            $errorMsg = "Vous ne pouvez pas supprimer l'article";
         }
 
     } else {
-        $errorMsg = 'Vous ne pouvez pas supprimer la question';
+        $errorMsg = "Vous ne pouvez pas supprimer l'article";
     }
 
 } else {
-    $errorMsg = 'Vous ne pouvez pas supprimer la question';
+    $errorMsg = "Vous ne pouvez pas supprimer l'article";
 }

@@ -10,7 +10,7 @@
 
     Class and global id required for all pages */
 
-#sprite2
+#sprite
 {
     position: absolute;
     z-index: 12;
@@ -65,7 +65,7 @@
 
     100%
     {
-        transform: translateY(-150px);
+        transform: translateY(-150px) scale(-1, 4);
     }
 }
 

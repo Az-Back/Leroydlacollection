@@ -9,8 +9,8 @@
 
 // Allows you to call the action and use it for the database 
     
-    require('../actions/securityAction.php');
-    require('../actions/getFav.php');
+    require('../actions/security/securityAction.php');
+    require('../actions/fav/getFav.php');
 
 
 // Permet de recuperer le nom de la page
@@ -48,7 +48,7 @@
 
 <?php include '../includes/navbar.php'; ?>
 
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 
 <video id="background-video" autoplay loop muted>
@@ -67,7 +67,7 @@
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite2"  src="../images/goku.gif">
+<img id="sprite"  src="../images/voiture.gif">
 
 
 <!-- Conteneur global -->

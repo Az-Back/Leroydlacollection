@@ -1,5 +1,5 @@
 <?php
-require('database.php');
+require('../actions/database/database.php');
 
 // Recuperer les questions par défaut sans recherche
 $getInfoOfUser = $bdd->prepare('SELECT * FROM users WHERE id = ?');

@@ -15,8 +15,8 @@ $nomDeLaPage = basename(__FILE__);
 
 // Allows you to call the action and use it for the database
 
-require("../actions/securityAction.php"); 
-require("../actions/getAllInfoUser.php");
+require("../actions/security/securityAction.php"); 
+require("../actions/users/getAllInfoUser.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,7 +45,7 @@ require("../actions/getAllInfoUser.php");
 
 <?php include '../includes/navbar.php'; ?>
 
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 
 <video id="background-video" autoplay loop muted>
@@ -64,7 +64,7 @@ require("../actions/getAllInfoUser.php");
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite2"  src="../images/goku.gif">
+<img id="sprite"  src="../images/voiture.gif">
 
 <!-- Conteneur global -->
 
@@ -91,7 +91,7 @@ require("../actions/getAllInfoUser.php");
 
                                 <?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $user['bin'] ) . '" />'; ?></a>
 
-                                <div class="TextNav"><a class="RefUse" href="../actions/logoutAction.php">Deconnexion</a><div>
+                                <div class="TextNav"><a class="RefUse" href="../actions/users/logoutAction.php">Deconnexion</a><div>
 
                                 <div class="MyArticles"><a class="RefUse" href="../pages/MesArticles.php">Mes Articles</a></div>
 

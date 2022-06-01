@@ -1,6 +1,7 @@
 <?php
 
-require('database.php');
+require('../database/database.php');
+
 // Sert a verifier si la variable est declarer
 if(isset($_GET['id']) && !empty($_GET['id'])){
     
@@ -19,5 +20,5 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             $deleteThisFav->execute(array($idOfTheFav));
 
             // Rediriger l'utilisateur vers ses questions
-            header('Location: ../pages/Favoris.php');
+            header('Location: ../../pages/Favoris.php');
 }            

@@ -3,7 +3,7 @@
 
 // Allows you to call the action and use it for the database 
 
-require('../actions/signupAction.php');
+require('../actions/users/signupAction.php');
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ require('../actions/signupAction.php');
 <body>
 <br><br>
 
-<!-- Video en background
+<!-- Video en arrière-plan
  Video on background -->
 
 <video id="background-video" autoplay loop muted>
@@ -48,7 +48,7 @@ require('../actions/signupAction.php');
 
 <!-- Displays a message if the errorMsg variable exists  -->
 
-    <?php if(isset($errorMsg)){echo '<p>'.$errorMsg.'</p>';} ?>
+    <?php if(isset($errorMsg)){echo '<p class="messageErr">'.$errorMsg.'</p>';} ?>
 
 
 <!-- Conteneur global -->
