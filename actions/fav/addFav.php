@@ -56,23 +56,37 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     // Condition if the username of the account currently connect is not the same as the one that published the article then we create an article in favorites
 
-    if($articleInfos['pseudo_auteur'] != $_SESSION['pseudo']){
+    $checkIfThisFavAlreadyExists = $bdd->prepare('SELECT id_article FROM favoris WHERE id_article = ?');
+        $checkIfThisFavAlreadyExists->execute(array($idOfArticle));
 
-     // Insertion de toutes les données de l'article en question dans la table favoris   
+        if($checkIfThisFavAlreadyExists->rowCount() == 0){
 
-     // Insert all the data of the article in the favorite table   
+            if($articleInfos['pseudo_auteur'] != $_SESSION['pseudo']){
 
-    $inportAll = $bdd->prepare('INSERT INTO favoris(id_article, id_session, title, price, description, bin, pseudo_auteur, date_publication)VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
-    $inportAll->execute(array($idOfArticle, $get_id, $article_title, $article_price, $article_description, $article_image, $article_pseudo_author, $article_date));
+            // Insertion de toutes les données de l'article en question dans la table favoris   
 
-    header('Location: ../../pages/Favoris.php');
+            // Insert all the data of the article in the favorite table   
 
-    }   else {
-        echo '<script type="text/javascript">'; 
-        echo 'alert("Vous ne pouvez pas mettre un de vos articles en favoris!");';
-        echo 'window.location.href = "../../pages/Articles.php";';
-        echo '</script>';
-    }
+            $inportAll = $bdd->prepare('INSERT INTO favoris(id_article, id_session, title, price, description, bin, pseudo_auteur, date_publication)VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
+            $inportAll->execute(array($idOfArticle, $get_id, $article_title, $article_price, $article_description, $article_image, $article_pseudo_author, $article_date));
+
+            
+            header('Location: ../../pages/Favoris.php');
+
+            }   else {
+                echo '<script type="text/javascript">'; 
+                echo 'alert("Vous ne pouvez pas mettre un de vos articles en favoris!");';
+                echo 'window.location.href = "../../pages/Articles.php";';
+                echo '</script>';
+            }
+
+        }       
+                else {
+                echo '<script type="text/javascript">'; 
+                echo 'alert("Vous ne pouvez pas mettre 2x un article en favoris!");';
+                echo 'window.location.href = "../../pages/Articles.php";';
+                echo '</script>';
+        }
 } 
         
 
