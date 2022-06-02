@@ -1,14 +1,27 @@
 <?php
 
+// Récupération du fichier database.php pour avoir accés a la base de données
+
+// Recovery of the database.php file to have access to the database
+
 require('../actions/database/database.php');
 
-// Sert a savoir si l'utilisateur a bien cliquer sur le bouton
+// Sert a verifier si la variable est declarer 
+
+// Used to check if the variable is declared
+
 if(isset($_POST['validate'])){
 
-    // Verifier si les champs ne sont pas vides
+    // Verifier si l'utilisateur a bien completer tous les champs !
+
+    // Check if the user has completed all fields!
+
     if(!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_FILES['picture'])){
         
-        // les données de la question
+        // Les données de l'article
+
+        // Article data
+
         $article_title = htmlspecialchars($_POST['title']);
         $article_description = nl2br(htmlspecialchars($_POST['description']));
         $article_content = nl2br(htmlspecialchars($_POST['price']));
@@ -20,7 +33,9 @@ if(isset($_POST['validate'])){
         $article_id_author = $_SESSION['id'];
         $article_pseudo_author = $_SESSION['pseudo'];
         
-        // Inserer la question sur la question
+        // Inserer l'article dans la base de données
+
+        // Insert the article in the database
         $insertArticleOnWebsite = $bdd->prepare('INSERT INTO articles(title, description, price, nom_image, image_taille, type_image, bin, id_auteur, pseudo_auteur, date_publication)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
         $insertArticleOnWebsite->execute(
             array(

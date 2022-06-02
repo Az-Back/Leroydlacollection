@@ -140,7 +140,7 @@ require('../actions/users/signupAction.php');
 
             <div class="Image">
                 <label for="exampleInputEmail1" class="form-label">Photo</label>
-                <input type="file" class="form-image" name="image">
+                <input type="file" class="form-image" name="image" accept="image/png, image/jpeg, image/jpg">
             </div>
 </div>
 

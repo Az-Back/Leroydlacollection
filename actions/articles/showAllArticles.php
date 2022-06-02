@@ -30,5 +30,5 @@ if(isset($_GET['search']) && !empty($_GET['search'])){
 } elseif (isset($_GET['search']) && empty($_GET['search']))
 
 {
-    header('Location: ../pages/Articles.php'); 
+    $getAllArticles = $bdd->query('SELECT * FROM articles ORDER BY id DESC');
 }

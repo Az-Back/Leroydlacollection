@@ -1,15 +1,31 @@
 <?php
 
+// Récupération du fichier database.php pour avoir accés a la base de données
+
+// Recovery of the database.php file to have access to the database
+
 require('../actions/database/database.php');
 
-// Validation du formulaire
+// Sert a verifier si la variable est declarer
+
+// Used to check if the variable is declared
+
 if(isset($_POST['validate']))
 {
-    
+    // Condition qui empeche un autre utilisateur que celui qui a ecris l'article de le modifier
+
+    // Condition that prevents a user other than the one who wrote the article from modifying it
+
+    if($articlesInfos['id_auteur'] == $_SESSION['id']){
+        
+    // Plusieurs conditions en fonctions de si tel ou tel champs sont remplis
+
+    // Several conditions in function of whether such or such fields are fulfilled
+
     if (empty($_POST['title']) && empty($_POST['description']) && empty($_POST['price']) && empty($_FILES['picture']['tmp_name'])) {
         $errorMsg = "Veuillez modifier au moins un champs !";
             }
-            // Verifier si les champs sont remplis
+            
             elseif (!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_FILES['picture']['tmp_name'])){
                 $new_article_title = htmlspecialchars($_POST['title']);
                 $new_article_description = nl2br(htmlspecialchars($_POST['description']));
@@ -93,5 +109,7 @@ if(isset($_POST['validate']))
                 $successMsg = "Image Modifier";
                 header( "refresh:1.5; url=MesArticles.php" );
             }
-     
+        } else {
+            $errorMsg = "Vous ne pouvez pas modifier cet article";
+        }
 }            

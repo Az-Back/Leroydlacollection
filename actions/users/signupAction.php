@@ -12,6 +12,7 @@ if(isset($_POST['validate'])){
     // Verifier si l'utilisateur a bien completer tous les champs !
 
     // Check if the user has completed all fields!
+    
     if(!empty($_POST['pseudo']) && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['password']) && !empty($_POST['adress']) && !empty($_POST['postal']) && !empty($_FILES['image'])){
 
         // Les données de l'utilisateur

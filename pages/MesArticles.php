@@ -109,7 +109,7 @@ session_start();
 
                             <!-- Displaying the price of the article -->
 
-                            <h3><?= $myArticle['price']; ?>€</h3>
+                            <h3><?= number_format($myArticle['price'], 2); ?>€</h3>
 
                             <br>
 
@@ -148,7 +148,7 @@ session_start();
 <!-- Script js avec toutes les animations -->
 
 <!-- Js script with all animations -->
-<script src="../script/script.js"></script>            
+<script src="../script/script.js"></script>              
 </body>
 </html>
 

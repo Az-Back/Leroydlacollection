@@ -19,7 +19,10 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     $idOfTheArticle = $_GET['id'];
 
-    // Récupération et vérification des données de l'article et
+    // Récupération et vérification des données de l'article en fonction de l'id
+
+    // Retrieving and verifying article data based on id
+
     $checkIfArticleExists = $bdd->prepare('SELECT * FROM articles WHERE id = ?');
     $checkIfArticleExists->execute(array($idOfTheArticle));
 
@@ -39,9 +42,9 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         $article_image_bin = $articlesInfos['bin'];
 
     } else {
-        $errorMsg = "Aucune question n'a été trouvée";
+        $errorMsg = "Aucun article n'a été trouvé";
     }
 
 } else {
-    $errorMsg = "Aucune question n'a été trouvée";
+    $errorMsg = "Aucun article n'a été trouvé";
 }

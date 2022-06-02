@@ -1,20 +1,32 @@
 <?php
 
+// Récupération du fichier database.php pour avoir accés a la base de données
+
+// Recovery of the database.php file to have access to the database
+
 require('../actions/database/database.php');
 
-// Verifier si l'id de la question est bien passer en parametre dans l'url
+// Sert a verifier si la variable est declarer et si l'id recuperer n'est pas vide
+
+// Used to check if the variable is declared and if the id recover is not empty
+
 if(isset($_GET['id']) && !empty($_GET['id'])){
 
     $idOfTheArticle = $_GET['id'];
 
-    // Verifier si la question existe
+    // Récupération et vérification des données de l'article en fonction de l'id
+
+    // Retrieving and verifying article data based on id
+
     $checkIfArticleExists = $bdd->prepare('SELECT * FROM articles WHERE id = ?');
     $checkIfArticleExists->execute(array($idOfTheArticle));
 
     if($checkIfArticleExists->rowCount() > 0){
 
 
-        // Recuperer les données de la question
+        // Recuperer les données l'article
+
+        // Retrieve the data
         $articlesInfos = $checkIfArticleExists->fetch();
         if($articlesInfos['id_auteur'] == $_SESSION['id']){
 
@@ -27,7 +39,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             $article_content = str_replace('<br />', '', $article_content);
 
         } else {
-            $errorMsg = "Vous n'êtes pas l'auteur de cette article !";
+            $errorMsg = "Vous n'êtes pas l'auteur de cet article !";
         }
 
     } else {

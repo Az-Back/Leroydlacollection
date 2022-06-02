@@ -85,21 +85,21 @@ require("../actions/articles/modifArticleAction.php");
 
 <!-- INPUT 1 --> 
             <div class="Menu">
-                    <label for="" class="form-label">Titre de l'article</label>
+                    <label for="title" class="form-label">Titre de l'article</label>
                     <input type="text" class="form-control" name="title">
             </div>
 
 <!-- INPUT 2 -->             
 
             <div class="Menu">
-                    <label for="exampleInputEmail1" class="form-label">Description de l'article</label>
+                    <label for="description" class="form-label">Description de l'article</label>
                     <textarea class="form-control" name="description"></textarea>
             </div>
 
 <!-- INPUT 3 -->             
 
             <div class="Menu">
-                    <label for="exampleInputEmail1" class="form-label">Prix de l'article</label>
+                    <label for="price" class="form-label">Prix de l'article</label>
                     <input type="number" class="form-control" name="price">
             </div>
 
@@ -108,7 +108,7 @@ require("../actions/articles/modifArticleAction.php");
 <!--  INPUT 4, of file type to be able to have a file "an image" -->         
 
             <div class="Menu">
-                    <label for="exampleInputEmail1" class="form-label">Photo</label>
+                    <label for="picture" class="form-label">Photo</label>
                     <input type="file" class="form-image" name="picture">
             </div>
 
