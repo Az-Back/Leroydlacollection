@@ -1,3 +1,7 @@
+// Toutes les variables necessaires
+
+// All variables needed
+
 let anim = document.querySelectorAll(".TextNav");
 const ufo = document.querySelector(".Ufo");
 const car = document.querySelector("#sprite");
@@ -19,6 +23,12 @@ const portail1 = document.querySelector("#portail1");
 const portail2 = document.querySelector("#portail2");
 const portail3 = document.querySelector("#portail3");
 
+//////////////////////////////////////////
+
+// Pour chaque .TextNav et au click on va donner une classe et placer un element en fonction de la ou est la souris sur l'écran puis au bout d'une seconde on les retire
+
+// For each . TextNav and at the click we will give a class and place an element according to where is the mouse on the screen then after a second we remove them
+
 anim.forEach(change => 
     {
         change.addEventListener('click', (e) => {
@@ -33,6 +43,10 @@ anim.forEach(change =>
         });
     });
 
+// Pour chaque .RefNav et au click on donne la classe au premier enfant
+
+// For each . RefNav and click the class is given to the first child
+
 list.forEach(end => {
     end.addEventListener('click', (e) => {
         let update = end.childNodes[1];
@@ -40,12 +54,20 @@ list.forEach(end => {
     });
 });
 
+// Pour chaque .TextNav au chargement on donne a l'élement a qui est sont enfant la classe active
+
+// For each . TextNav at loading we give to the element a who is child the active class
+
 anim.forEach(upload => {
     upload.addEventListener('load', () => {
         let loading = upload.appendChild(a);
             loading.classList.add("active");
     });
 });
+
+// Évenement avec effet en fonction de la ou se trouve la souris
+
+// Event with effect depending on where the mouse is located
 
 const mousemove = document.querySelector(".mousemove")
 
@@ -56,7 +78,9 @@ window.addEventListener('mousemove', (e) => {
     car.style.top = e.pageY + "px";
 });
 
+// Évenement pour le texte de la page d'accueil
 
+// Event for the home page text
 
 const txtAnim = document.querySelector('.Text');
 
@@ -75,7 +99,9 @@ new Typewriter(txtAnim, {
 .deleteChars(40)
 .start()
 
+// Évenement au scroll pour la page d'accueil
 
+// Scroll event for home page
 
 window.addEventListener('scroll', () =>
 {

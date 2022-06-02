@@ -15,8 +15,6 @@
 <!-- Script needed -->
 <script src="https://kit.fontawesome.com/b64623b467.js" crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <nav class="NavBar">
 
 <ul class="List">

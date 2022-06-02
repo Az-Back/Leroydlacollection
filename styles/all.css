@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Polentical Neon', sans-serif;
-    cursor: url('../images/sword2.png'), auto;
+    cursor: url('../images/sword2.png') 5 13, auto;
 }
 
 /* Classe et id globales necessaires a toutes les pages
@@ -39,9 +39,9 @@
     width: 8%;
 }
 
-/* Classes necessaires pour le Script.js en javascript voir ligne 20 et 32
+/* Classes necessaires pour le Script.js en javascript voir ligne 32 et 50
 
-    Classes required for Script.js in javascript see line 20 and 32 */
+    Classes required for Script.js in javascript see line 32 and 50 */
 
 
 .appear {

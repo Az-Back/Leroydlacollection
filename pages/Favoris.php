@@ -145,6 +145,7 @@
 <!-- Script js avec toutes les animations -->
 
 <!-- Js script with all animations -->
-<script src="../script/script.js"></script>            
+<script src="../script/script.js"></script>
+<script src="../script/articles.js"></script>              
 </body>
 </html>

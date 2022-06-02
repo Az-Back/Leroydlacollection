@@ -1,21 +1,30 @@
 <?php
 
+// Récupération du fichier database.php pour avoir accés a la base de données
+
+// Recovery of the database.php file to have access to the database
+
 require('../actions/database/database.php');
 
 
-// Verifier si l'id de la question est rentrée dans l'URL
+// Sert a verifier si la variable est declarer et si l'id recuperer n'est pas vide
+
+// Used to check if the variable is declared and if the id recover is not empty
+
 if(isset($_GET['id']) && !empty($_GET['id'])){
 
-    // Recupérer l'identifiant de la question
+    // l'id de l'article en parametre
+
+    // The article id in parameter
+
     $idOfTheArticle = $_GET['id'];
 
-    // Verifier si la question existe
+    // Récupération et vérification des données de l'article et
     $checkIfArticleExists = $bdd->prepare('SELECT * FROM articles WHERE id = ?');
     $checkIfArticleExists->execute(array($idOfTheArticle));
 
     if($checkIfArticleExists->rowCount() > 0) {
 
-        // Récupérer toutes les données de la question
         $articlesInfos = $checkIfArticleExists->fetch();
 
 
