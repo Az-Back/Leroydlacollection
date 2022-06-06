@@ -54,6 +54,7 @@ body
     text-align: center;
     vertical-align: top;
     text-align: center;
+    z-index: 2;
 }
 
 .menu {
@@ -64,6 +65,30 @@ body
     border: 1px solid white;
     padding: 10px;
     border-radius: 10%;
+}
+
+.Gate {
+    display: none;
+    z-index: 3;
+    transform: rotateX(100deg);
+}
+
+.GateOp {
+    display: block;
+    width: 100%;
+    z-index: 3;
+}
+
+.MenuDisappear {
+    animation: app 2s linear;
+    
+}
+
+@keyframes app {
+
+    100%{
+        transform: translateY(-380px) scale(0);
+    }
 }
 
 .allimg 

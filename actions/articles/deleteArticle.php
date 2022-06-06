@@ -22,7 +22,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             // Supprimer la question en fonction de son id rentré en paramétre
             $deleteThisQuestion = $bdd->prepare('DELETE FROM articles WHERE id = ?');
             $deleteThisQuestion->execute(array($idOfTheQuestion));
-
+            usleep(1800000);
             // Rediriger l'utilisateur vers ses questions
             header('Location: ../../pages/MesArticles.php');
 

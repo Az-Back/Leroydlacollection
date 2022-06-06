@@ -80,7 +80,9 @@ session_start();
          <!-- Conteneur qui va être crée a chaque nouvel article avec les infos du nouvel article a l'intérieur -->
             
             <!-- Container that will be created with each new article with the info of the new article inside -->
+            
          <div class="menu-container">
+         <div class="gateclose"> <img class="Gate" src="../images/gate.gif"></div>
             <div class="menu">
                 <div class="menus">
                         <div class="topimg">
@@ -99,7 +101,7 @@ session_start();
                             </a>
 
                             <br>
-
+                            
                             <!-- Affichage du titre de l'article -->
 
                             <!-- Displaying the title of the article -->
@@ -129,15 +131,18 @@ session_start();
 
                     <!-- Performs the actions written in the a on the database based on the article id or returns to the page to modify the corresponding article -->
 
+                    <div class="button"><a href="ToMyArticle.php?id=<?= $myArticle['id']; ?>" class="btn1">Voir l'article</a></div>
+
                     <div class="button"><a href="ModifArticle.php?id=<?= $myArticle['id']; ?>" class="btn1">Modifier l'article</a></div>
                 
-                    <div class="button"><a href="../actions/articles/deleteArticle.php?id=<?= $myArticle['id']; ?>" class="btn2">Supprimer l'article</a></div>
+                    <div class="button" id="suppr"><a href="../actions/articles/deleteArticle.php?id=<?= $myArticle['id']; ?>" class="btn2">Supprimer l'article</a></div>
             
             <?php
         } 
           ?>
                 </div>
              </div>
+    
         </div>
         <?php
     }
@@ -148,7 +153,8 @@ session_start();
 <!-- Script js avec toutes les animations -->
 
 <!-- Js script with all animations -->
-<script src="../script/script.js"></script>              
+<script src="../script/script.js"></script>
+<script src="../script/articles.js"></script>              
 </body>
 </html>
 

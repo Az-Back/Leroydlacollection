@@ -123,7 +123,7 @@ $nomDeLaPage = basename(__FILE__);
 
     <div class="Menu">
             <label for="price" class="form-label">Prix de l'article</label>
-            <input type="number" class="form-control" name="price" max="7" placeholder=" 7 chiffres max">
+            <input type="number" class="form-control" name="price" min="1" placeholder=" 7 chiffres max">
     </div>
 
 <!-- INPUT 4, de type file pour pouvoir avoir un fichier "une image" -->
@@ -132,7 +132,7 @@ $nomDeLaPage = basename(__FILE__);
 
     <div class="Menu">
             <label for="picture" class="form-label">Photo</label>
-            <input type="file" class="form-image" name="picture" accept="image/png, image/jpeg, image/jpg">
+            <input type="file" class="form-image" name="picture" accept="image/png, image/jpeg, image/jpg" required="required">
     </div>
 
 <!-- INPUT 5, de type submit pour envoyer les données du formulaire -->

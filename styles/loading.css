@@ -17,157 +17,145 @@ body{
     background-color: black;
 }
 
-.Title1
-{
-    font-size: 50px;
-    color: azure;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* Conteneur global
+
+ Global container */
+
+.Head {
+    width: auto;
+    height: 100%;
 }
 
-#Title 
+/* Image */
+
+.Delorean {
+    width: auto;
+    height: auto;
+}
+
+/* Conteneur pour les barres de progressions
+
+Container for progress bars  */
+
+.ContainerIn
 {
     margin-top: 20px;
+    width: 100%;
+}
+
+/* Arrière-plan de la barre de progression
+
+Background of progress bar */
+
+.progress {
+    padding: 6px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+    animation: slide 6s linear forwards;
+    opacity: 0;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes slide {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+/* Barre de progression pour le texte
+
+Progress-bar for the text */
+  
+  .progress-bar {
+    height: 40px;
+    border-radius: 30px;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    background-image:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    transition: 0.2s linear;
+    transition-property: width, background-color;
+    cursor: pointer;
+  }
+  
+  .progress-bar::before{
+    content: " ";
+    animation: progressAnim 19s forwards;
+    transition: 1s ease-in-out;
+  }
+  
+  @keyframes progressAnim {
+    0% {
+      content: "Accés en cours...";
+      color: black;
+      opacity: 1;
+      transition: 0.5s ease;
+    }
+    100% {
+      content: "Autorisation Accordée";
+      color: black;
+      opacity: 2;
+      transition: 0.5s ease;
+    }
+  }
+  
+/* Mise en couleur de la barre de progression
+
+Color setting of the progress bar */
+  
+  .progress-bar{
+    background-color: #0f4;
+    animation: progressAnimation 5.5s forwards;
+  }
+  
+  @keyframes progressAnimation {
+      0%   { width: 0%; background-color: #f1ecec00;}
+    99% { width: 99%; background-color: #ff0000;}
+    100%  {
+        width: 100%;
+      display: block;
+    }
+  }
+
+.Link {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.LinkButton {
+    width: auto;
+    height: 100%;
+    padding: 20px;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    opacity: 0;
+    animation: up 6s linear forwards;
+    transform: translateY(200px);
     cursor: pointer;
 }
 
-.span1 
-{
-    color: red;
-    animation: color 2s linear infinite;
-}
-
-@keyframes color {
-    100%
-    {
-        filter: hue-rotate(360deg);
-    }
-}
-
-.span2
-{
-    color: red;
-    animation: color2 2s linear infinite;
-}
-
-@keyframes color2 {
-    100%
-    {
-        filter: hue-rotate(360deg);
-    }
-}
-
-.glitch {
-    position: relative;
-    margin: 0 auto;
-    color: #fff;
-    font-size: 90px;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    top: 30%;
-    height: 50px;
-    line-height: 48px;
-    background: black;
-    letter-spacing: 4px;
-    text-decoration: none;
-}
-
-.glitch::before, .glitch:after
-{
-    content: "ICI";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    color: #fff;
-}
-
-.glitch::before
-{
-    left: 10px;
-    text-shadow: 5px 0 #f00;
-    animation: effect 3s infinite linear;
-}
-
-.glitch:after
-{
-    left: 4px;
-    text-shadow: -5px 0 #03e9f4;
-    animation: effect 2s infinite linear;
-}
-
-@keyframes effect
-{
+@keyframes up {
     0%{
-        clip:rect(55px, 9999px, 56px, 0);
+        opacity: 0;
     }
-    5%{
-        clip:rect(47px, 9999px, 30px, 0);
-    }
-    10%{
-        clip:rect(33px, 9999px, 36px, 0);
-    }
-    15%{
-        clip:rect(35px, 9999px, 9px, 0);
-    }
-    20%{
-        clip:rect(63px, 9999px, 59px, 0);
-    }
-    25%{
-        clip:rect(96px, 9999px, 98px, 0);
-    }
-    30%{
-        clip:rect(48px, 9999px, 77px, 0);
-    }
-    35%{
-        clip:rect(50px, 9999px, 34px, 0);
-    }
-    40%{
-        clip:rect(60px, 9999px, 72px, 0);
-    }
-    45%{
-        clip:rect(10px, 9999px, 81px, 0);
-    }
-    50%{
-        clip:rect(2px, 9999px, 60px, 0);
-    }
-    55%{
-        clip:rect(23px, 9999px, 59px, 0);
-    }
-    60%{
-        clip:rect(76px, 9999px, 90px, 0);
-    }
-    65%{
-        clip:rect(62px, 9999px, 30px, 0);
-    }
-    70%{
-        clip:rect(60px, 9999px, 73px, 0);
-    }
-    75%{
-        clip:rect(60px, 9999px, 87px, 0);
-    }
-    80%{
-        clip:rect(2px, 9999px, 14px, 0);
-    }
-    85%{
-        clip:rect(28px, 9999px, 87px, 0);
-    }
-    90%{
-        clip:rect(73px, 9999px, 50px, 0);
-    }
-    95%{
-        clip:rect(79px, 9999px, 70px, 0);
+    99%{
+        opacity: 0;
     }
     100%{
-        clip:rect(17px, 9999px, 79px, 0);
+        opacity: 1;
+        transform: translateY(0px);
     }
 }
 
+/* Vidéo */
 
 #background-video 
 {
@@ -182,3 +170,23 @@ body{
     z-index: -1;
     opacity: 0;
 }
+
+/* MediaQueries */
+
+@media screen and (max-width: 450px){
+   .progress-bar::before{
+       font-size: 18px;
+   }
+}
+
+@media screen and (max-width: 800px){
+    .Head {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .Delorean {
+        width: 100%;
+        height: auto;
+    }
+ }

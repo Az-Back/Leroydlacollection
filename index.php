@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Images/LogoRouge.jpg">
 <!-- css necessaire -->
 
 <!-- css needed -->
@@ -27,12 +28,14 @@
 
 <!-- Global container -->
 
-<div class="Head">  
-  <div class="Title1">
-    <h1>DES <br> OBJETS <br> A VENDRE ?<br> A ACHETER ? <br> CLIQUEZ</h1>
-  </div>  
-    <div class="Title" id="Title" onClick="setTimeout('RedirectionJavascript()', 3000)">
-    <h1 class="glitch"><span class="span1">→</span>&nbsp;ICI&nbsp;<span class="span2">←</span></h1>
+<div class="Head" onClick="setTimeout('RedirectionJavascript()', 3000)"> <!--Sert a la redirection qui s'effectue aprés 9,2s depuis le chargement de la page -->  
+  <img class="Delorean" src="images/Delorean.gif">
+  <br>
+  <div class="ContainerIn">
+    <div class="progress progress-moved">
+      <div class="progress-bar"></div>
+    </div>
+    <div class="Link"><button class="LinkButton">Cliquez <br>ICI</button></div>
   </div>
 </div> 
 

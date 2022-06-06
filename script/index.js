@@ -1,4 +1,4 @@
-const title = document.querySelector("#Title");
+const link = document.querySelector(".LinkButton");
 const video = document.querySelector("#background-video");
 const head = document.querySelector(".Head");
 
@@ -6,7 +6,7 @@ const head = document.querySelector(".Head");
 
 // Click event who display none the texte and put opacity for the video and launch it 
 
-title.addEventListener('click', () => {
+link.addEventListener('click', () => {
     head.style.display = "none";
     video.style.opacity = "1";
     video.play();
