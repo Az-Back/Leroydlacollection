@@ -1,34 +1,54 @@
 <?php
+// Démarre une nouvelle session ou reprend une session existante
+
+// Starts a new session or resumes an existing session
+
 session_start();
+
+
 require('../security/securityAction2.php');
 
+// Récupération du fichier database.php pour avoir accés a la base de données
+
+// Recovery of the database.php file to have access to the database
+
 require('../database/database.php');
-// Sert a verifier si la variable est declarer
+
+// Sert a verifier si la variable existe
+
+// Used to check if the variable exists
+
 if(isset($_GET['id']) && !empty($_GET['id'])){
     
-    // l'id de la question en parametre
-    $idOfTheQuestion = $_GET['id'];
+    // Récupération de l'id de l'article
 
-    // Verifier si la question existe
-    $checkIfQuestionExists = $bdd->prepare('SELECT pseudo_auteur FROM articles WHERE id = ?');
-    $checkIfQuestionExists->execute(array($idOfTheQuestion));
+    // Retrieving the item id
 
-    if($checkIfQuestionExists->rowCount() > 0){
+    $idOfTheArticle= $_GET['id'];
 
-        // Recuperer les infos de la question
-        $questionsInfos = $checkIfQuestionExists->fetch();
+    // Verifier si l'article existe et recuperer les infos de l'article
+
+    // Check if the article exists and get the article info
+
+    $checkIfArticleExists = $bdd->prepare('SELECT pseudo_auteur FROM articles WHERE id = ?');
+    $checkIfArticleExists->execute(array($idOfTheArticle));
+
+    if($checkIfArticleExists->rowCount() > 0){
+
+        $articlesInfos = $checkIfArticleExists->fetch();
         if(isset($_SESSION['admin'])){
+        
+            // Supprimer l'article en fonction de son id rentré en paramétre
 
-            // Supprimer la question en fonction de son id rentré en paramétre
-            $deleteThisQuestion = $bdd->prepare('DELETE FROM articles WHERE id = ?');
-            $deleteThisQuestion->execute(array($idOfTheQuestion));
+            $deleteThisArticle = $bdd->prepare('DELETE FROM articles WHERE id = ?');
+            $deleteThisArticle->execute(array($idOfTheArticle));
             usleep(1800000);
             // Rediriger l'utilisateur vers ses questions
-            header('Location: ../../pages/AllArticles.php');
+            header('Location: ../../pages/allArticles.php');
 
         } else {
             $errorMsg = "Vous ne pouvez pas supprimer l'article";
-            header('Location: ../../pages/ConnexionAdmin.php');
+            header('Location: ../../pages/allArticles.php');
         }
 
     } else {

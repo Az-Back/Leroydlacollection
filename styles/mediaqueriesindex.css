@@ -1,3 +1,11 @@
+
+@media screen and (max-width: 987px){
+    .progress-bar 
+        {
+            font-size: 25px;
+        }
+}
+
 @media screen and (max-width: 650px){
     .Title1
     {
@@ -8,4 +16,8 @@
     {
         font-size: 40px;
     }
+    .progress-bar 
+        {
+            font-size: 20px;
+        }
 }

@@ -1,4 +1,13 @@
 <?php
+// Démarre une nouvelle session ou reprend une session existante
+
+// Starts a new session or resumes an existing session
+
+session_start();
+
+
+require('../security/securityAction2.php');
+
 // Récupération du fichier database.php pour avoir accés a la base de données
 
 // Recovery of the database.php file to have access to the database
@@ -33,8 +42,10 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             $deleteThisCommand->execute(array($idOfTheCommand));
 
             header('Location: ../../pages/AllCommands.php');
-            // Rediriger l'utilisateur vers les commandes
-        } else
+            // Rediriger l'admin vers les commandes
+        } else {
+            $errorMsg = "Vous ne pouvez pas supprimer cet article";
+        }
             
             
 }            

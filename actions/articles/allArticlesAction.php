@@ -6,8 +6,8 @@
 
 require('../actions/database/database.php');
 
-// Récuperation des articles en fonction de l'id de la session actuelle
+// Récuperation des articles 
 
-// Retrieve items based on current session id
+// Retrieve items
 
 $getAllArticles = $bdd->query('SELECT * FROM articles ORDER BY id DESC');

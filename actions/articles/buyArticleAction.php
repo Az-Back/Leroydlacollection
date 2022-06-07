@@ -1,12 +1,33 @@
 <?php
+// Démarre une nouvelle session ou reprend une session existante
+
+// Starts a new session or resumes an existing session
+
 session_start();
+
+// Récupération du fichier database.php pour avoir accés a la base de données
+
+// Recovery of the database.php file to have access to the database
+
 require('../database/database.php');
-// Sert a verifier si la variable est declarer
+
+
+// Sert a verifier si la variable existe
+
+// Used to check if the variable exists
+
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    // l'id de la question en parametre
+
+    // Récupération de l'id de l'article
+
+    // Retrieving the item id
+
     $idOfArticle = $_GET['id'];
 
-    // Verifier si la question existe
+    // Récuperer les données de l'article
+
+    // Retrieve the item data
+
     $checkIfQuestionExists = $bdd->prepare('SELECT title, price, description, id_auteur, bin, pseudo_auteur, date_publication FROM articles WHERE id = ?');
     $checkIfQuestionExists->execute(array($idOfArticle));
 
@@ -21,6 +42,9 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     $article_date = $articleInfos['date_publication'];
     $article_date_buy = date('d/m/Y');
 
+    // Récupérer les données de l'utilisateur
+
+    // Retrieve the user data
 
     $getAllInfoUser = $bdd->prepare('SELECT id, pseudo, lastname, firstname FROM users WHERE id = ?');
     $getAllInfoUser->execute(array($_SESSION['id']));
@@ -32,7 +56,13 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     $get_lastname = $getAllInfoUser['lastname'];
     $get_firstname = $getAllInfoUser['firstname'];
 
+    // Condition
+
     if($articleInfos['pseudo_auteur'] != $_SESSION['pseudo']){
+
+    // Insertion des infos dans la table commande et suppréssion dans la table article
+    
+    // Inserting information in the command table and delete in the article table  
 
     $inportAll = $bdd->prepare('INSERT INTO commandes(id_client, id_article, pseudo_acheteur, title, price, description, bin, id_auteur, pseudo_auteur, date_publication, lastname, date_buy, firstname)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $inportAll->execute(array($get_id, $idOfArticle, $get_pseudo, $article_title, $article_price, $article_description, $article_image, $article_id_author, $article_pseudo_author, $article_date , $get_lastname, $article_date_buy, $get_firstname));

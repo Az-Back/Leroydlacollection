@@ -81,6 +81,7 @@ Progress-bar for the text */
     transition: 0.2s linear;
     transition-property: width, background-color;
     cursor: pointer;
+    width: 100%;
   }
   
   .progress-bar::before{
@@ -91,13 +92,11 @@ Progress-bar for the text */
   
   @keyframes progressAnim {
     0% {
-      content: "Accés en cours...";
       color: black;
       opacity: 1;
       transition: 0.5s ease;
     }
     100% {
-      content: "Autorisation Accordée";
       color: black;
       opacity: 2;
       transition: 0.5s ease;
@@ -109,18 +108,22 @@ Progress-bar for the text */
 Color setting of the progress bar */
   
   .progress-bar{
-    background-color: #0f4;
     animation: progressAnimation 5.5s forwards;
+    width: 100%;
   }
   
   @keyframes progressAnimation {
       0%   { width: 0%; background-color: #f1ecec00;}
-    99% { width: 99%; background-color: #ff0000;}
+
+    60% { width: 75%; background-color: #ff0000;}
+
+    90% { width: 99%; background-color: cyan;}
     100%  {
         width: 100%;
-      display: block;
+        background-color: #0f4;
     }
   }
+
 
 .Link {
     width: auto;

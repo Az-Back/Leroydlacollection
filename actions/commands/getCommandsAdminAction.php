@@ -5,10 +5,9 @@
 
 require('../actions/database/database.php');
 
-// Récuperation des données de commandes en fonction de l'id de la session actuelle
+// Récuperation des données de commandes 
 
-// // Retrieve command data based on current session id
-
+// // Retrieve command data
 $getAllCommand = $bdd->query('SELECT id, id_article, pseudo_acheteur, title, price, pseudo_auteur, date_buy FROM commandes ORDER BY id DESC');
 
 

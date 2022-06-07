@@ -91,14 +91,6 @@ require('../actions/users/loginAdminAction.php'); ?>
     </div>
 </div>
 </form>
-
-<!-- Audio qui se lance une fois que l'on clique sur le bouton Connexion -->
-
-<!-- Audio that starts once the Connect button is clicked -->
-<audio id="audio1" src="../Sound/Bienvenue.mp3"></audio>
-
-
-<script src="../script/connect.js"></script>
     
 </body>
 </html>
