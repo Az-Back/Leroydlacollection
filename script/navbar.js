@@ -6,6 +6,8 @@ const clear = document.querySelector('.clear');
 
 const text = document.querySelector('#mysearch');
 
+const form = document.querySelector(".research");
+
 const topText = document.querySelectorAll(".RefNav");
 
 let topNav = document.querySelectorAll(".TextNav");
@@ -20,33 +22,29 @@ let navList = document.querySelector(".List");
 
 window.addEventListener('scroll', () =>
 {
-    const scrollTop = document.scrollingElement.scrollTop;
+    const scrollTop = window.scrollY;
 
-    if(window.innerWidth > 947) {
-    
-        if(scrollTop > 10)
-        {
-            topNav.forEach(back => {
-                back.classList.add("background");
-            })
-            topText.forEach(color => {
-                color.classList.add("color");
-            })
-        }  else {
-            topNav.forEach(back => {
-                back.classList.remove("background");
-            })
-            topText.forEach(color => {
-                color.classList.remove("color");
-            })
+        if((window.innerWidth > 947 && scrollTop > 10) || (window.innerWidth < 947 && scrollTop >= 0)) {
+        
+            
+                topNav.forEach(back => {
+                    back.classList.add("background");
+                })
+
+                topText.forEach(color => {
+                    color.classList.add("color");
+                }) 
         }
-        }   else if (window.innerHeight < 947 && scrollTop > 1) {
-            topNav.forEach(back => {
-        back.classList.add("background");
-            })
-        }
-       
-});
+        
+                else if ((window.innerWidth > 947 && scrollTop < 10))  {
+                    topNav.forEach(back => {
+                        back.classList.remove("background");
+                    })
+                    topText.forEach(color => {
+                        color.classList.remove("color");
+                    })
+                }
+        });   
 
 // Donne la classe active au toggle et a .List si on clique sur le toggle et les retires une fois que l'on clique a nouveau
 
@@ -54,8 +52,17 @@ window.addEventListener('scroll', () =>
 
 toggle.addEventListener('click', () => {
     toggle.classList.toggle("active");
-    navList.classList.toggle("active");
-});
+        navList.classList.toggle("active");
+            const scrollTop = window.scrollY;
+                if(navList.classList.contains("active") && scrollTop >= 0){
+                    topNav.forEach(back => {
+                        back.classList.add("background");
+                                if(form){
+                                    form.classList.add("background");
+                                }
+                            })
+                }
+})
 
 // Évenement au clique qui permet d'effacer le texte dans la barre de recherche qu'on clique sur la croix
 

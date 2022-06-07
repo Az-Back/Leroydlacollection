@@ -16,8 +16,8 @@ $nomDeLaPage = basename(__FILE__);
 // Allows you to call the action or actions and use it for the database
 
 
-require("../actions/security/securityAction.php");
-require("../actions/commands/getCommandsAction.php");
+require("../actions/security/securityAction2.php");
+require("../actions/commands/getCommandsAdminAction.php");
 ?>
 
 
@@ -82,7 +82,7 @@ require("../actions/commands/getCommandsAction.php");
             // Boucle tant que qui va permettre de recuperer les infos de la commande a chaque nouvel commande crée et de l'afficher
 
             // Loop as long as that will allow to recover the information of the command to each new command created and to display it
-                 while($Commande = $getInfoCommand->fetch()){
+                 while($Commande = $getAllCommand->fetch()){
             ?>
 
                 <!-- Conteneur qui va être crée a chaque nouvelle commande avec les infos de la nouvelle commande a l'intérieur -->
@@ -105,6 +105,7 @@ require("../actions/commands/getCommandsAction.php");
                                     <th>Titre Article</th>
                                     <th>Prix Article</th>
                                     <th>Pseudo_Vendeur</th>
+                                    <th>Pseudo_Acheteur</th>
                                     <th>Date Achat</th>
                                 </tr>
                             </thead>
@@ -118,7 +119,9 @@ require("../actions/commands/getCommandsAction.php");
                                     <td><?= $Commande['title']; ?></td>
                                     <td><?= number_format($Commande['price'], 2); ?> €</td>
                                     <td><?= $Commande['pseudo_auteur']; ?></td>
+                                    <td><?= $Commande['pseudo_acheteur']; ?></td>
                                     <td><?= $Commande['date_buy']; ?></td>
+                                    
                                     
                                 </tr>
                             </tbody>
@@ -127,7 +130,7 @@ require("../actions/commands/getCommandsAction.php");
 
                             <!-- Just a button for delete the command under -->
 
-                            <div class="button"><a href="../actions/commands/deleteCommandsAction.php?id=<?= $Commande['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
+                            <div class="button"><a href="../actions/commands/deleteCommandsAdminAction.php?id=<?= $Commande['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
 </table>
                 </div>
             </div>

@@ -10,7 +10,7 @@ session_start();
 // Allows you to call the action and use it for the database 
 
 require('../actions/security/securityAction.php');
-require('../actions/fav/getArticleFav.php');
+require('../actions/fav/getArticleFavAction.php');
 
 // Permet de recuperer le nom de la page
 
@@ -131,8 +131,8 @@ $nomDeLaPage = basename(__FILE__);
                   <!-- Effectue les actions ecrite dans le a sur la base de données en fonction de l'id de l'article -->
 
                   <!-- Performs the actions written in the a on the database based on the article id -->
-                  <div class="button"><a href="../actions/fav/deleteFavoris.php?id=<?= $article_id; ?>" class="btn2">Supprimer le favoris</a></div>
-                  <div class="button"><a href="../actions/fav/buyArticleFav.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
+                  <div class="button"><a href="../actions/fav/deleteFavorisAction.php?id=<?= $article_id; ?>" class="btn2">Supprimer le favoris</a></div>
+                  <div class="button"><a href="../actions/fav/buyArticleFavAction.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
             <?php
           }
            ?>

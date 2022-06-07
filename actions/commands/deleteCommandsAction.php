@@ -21,9 +21,14 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     // Recovery of the id of the command according to the id recover above
 
-    $checkIfCommandExists = $bdd->prepare('SELECT id FROM commandes WHERE id = ?');
+    $checkIfCommandExists = $bdd->prepare('SELECT id, pseudo_acheteur FROM commandes WHERE id = ?');
     $checkIfCommandExists->execute(array($idOfTheCommand));
+    $CommandInfos = $checkIfCommandExists->fetch();
 
+    // Sécurité
+
+    // Sécurity
+    if($CommandInfos['pseudo_acheteur'] == $_SESSION['pseudo']){
             // Supprimer la commande en fonction de son id rentré en paramétre
 
             // Delete the command according to its id entered in the settings
@@ -31,6 +36,10 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             $deleteThisCommand = $bdd->prepare('DELETE FROM commandes WHERE id = ?');
             $deleteThisCommand->execute(array($idOfTheCommand));
 
-            // Rediriger l'utilisateur vers ses questions
+            // Rediriger l'utilisateur vers ses commandes
+            
             header('Location: ../../pages/MesCommandes.php');
+    } else {
+        header('Location: ../../pages/Utilisateur.php');
+    }        
 }            

@@ -109,21 +109,21 @@ $nomDeLaPage = basename(__FILE__);
    
     <div class="Menu">
             <label for="title" class="form-label">Titre de l'article</label>
-            <input type="text" class="form-control" name="title">
+            <input type="text" class="form-control" name="title" maxlength="20">
     </div>
 
 <!-- INPUT 2 -->  
 
     <div class="Menu">
             <label for="description" class="form-label">Description de l'article</label>
-            <textarea class="form-control" name="description"></textarea>
+            <textarea class="form-control" name="description" maxlength="150"></textarea>
     </div>
 
 <!-- INPUT 3 -->
 
     <div class="Menu">
             <label for="price" class="form-label">Prix de l'article</label>
-            <input type="number" class="form-control" name="price" min="1" placeholder=" 7 chiffres max">
+            <input type='number_format' maxlength="7" class="form-control" name="price" min="1" placeholder=" 7 chiffres max" id="price">
     </div>
 
 <!-- INPUT 4, de type file pour pouvoir avoir un fichier "une image" -->

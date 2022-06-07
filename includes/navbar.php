@@ -90,7 +90,7 @@
 <!-- No definite session so we display Registration and Login -->    
 
         <?php 
-        if(!isset($_SESSION['auth'])){
+        if(!isset($_SESSION['auth']) && !isset($_SESSION['admin'])){
           ?>
     <li class="TextNav">
       <a class="RefNav" href="javascript:setTimeout(()=>{window.location = '../pages/Inscription.php' },1000);">
@@ -106,7 +106,7 @@
     </a>
     </li>
     <?php
-        } 
+        }
           ?>
 
 <!-- isset permet de savoir si la $_SESSION auth est definie
@@ -118,7 +118,7 @@
 <!-- Session defines so we display Sell an article, Favorites as well as the name of the user -->
 
           <?php 
-        if(isset($_SESSION['auth'])){
+        if(isset($_SESSION['auth']) && !isset($_SESSION['admin'])){
           ?>
  
 <!-- LI 7 -->  
@@ -144,9 +144,14 @@
         <span></span>
   </a>
     </li>
+    <?php
+        } 
+          ?>
 
 <!-- LI 9 -->
-
+<?php 
+        if(isset($_SESSION['auth']) && !isset($_SESSION['admin'])){
+          ?>
     <li class="TextNav"><a class="RefNav <?= ($nomDeLaPage == 'Utilisateur.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Utilisateur.php' },1000);">
     <p class="Paragraphe">
     <i class="fa-solid fa-user"></i>
@@ -158,6 +163,23 @@
     </a>
   </li>
     <?php
+        } 
+          ?>
+
+<?php 
+        if(isset($_SESSION['admin']) && !isset($_SESSION['auth'])){
+          ?>
+<li class="TextNav"><a class="RefNav <?= ($nomDeLaPage == 'Admin.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Admin.php' },1000);">
+    <p class="Paragraphe">
+    <i class="fa-solid fa-user"></i>
+      <?= $_SESSION['pseudo']; ?></p>
+        <span></span>  
+        <span></span>  
+        <span></span>  
+        <span></span>
+    </a>
+  </li>
+<?php
         } 
           ?>
 

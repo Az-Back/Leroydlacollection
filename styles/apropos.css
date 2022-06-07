@@ -114,17 +114,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-.BlockTitleSlider 
-{
-    width: 100%;
-}
-
-.titleslider 
-{
-    font-size: 50px;
-    color: #fff;
-    margin-top: 100px;
-}
 
 /* Troisiéme conteneur
 
@@ -138,6 +127,25 @@ h2 {
     margin: 0 auto;
     padding: 50px;
   }
+
+  .BlockTitleSlider 
+{
+    width: 100%;
+    text-align: center;
+}
+
+.titleslider 
+{
+    font-size: 50px;
+    color: #fff;
+    margin-top: 100px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+}
+
   
   .slider img {
     max-width: 100%;
@@ -162,10 +170,12 @@ h2 {
     height: auto;
     display: flex;
     justify-content: center;
+    z-index: 13;
   }
   .btn-nav {
     font-size: 50px;
     color: white;
     margin: 0 15px;
     cursor: pointer;
+    z-index: 13;
   }

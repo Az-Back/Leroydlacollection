@@ -8,7 +8,7 @@
 
 // Allows you to call the action and use it for the database 
     
-    require('../actions/articles/showAllArticles.php');
+    require('../actions/articles/showAllArticlesAction.php');
 
 // Permet de recuperer le nom de la page
 

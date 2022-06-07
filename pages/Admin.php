@@ -15,8 +15,7 @@ $nomDeLaPage = basename(__FILE__);
 
 // Allows you to call the action and use it for the database
 
-require("../actions/security/securityAction.php"); 
-require("../actions/users/getAllInfoUserAction.php");
+require("../actions/security/securityAction2.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -72,69 +71,20 @@ require("../actions/users/getAllInfoUserAction.php");
 
 <div class="block2">
     <div class="block-inside2">
-
-
-                <?php 
-                    // On récupére les infos de l'utilisateur via le fichier require plus haut
-                    
-                    // The user’s information is retrieved via the file require above
-                $user = $getInfoOfUser->fetch()
-                    ?>
-
                     <div class="profil-container">
                         <div class="profil">
                                 <div class="info">
 
-                                <!-- Affichage de l'image de l'article -->
-
-                                <!-- Displaying the image of the article -->
-
-                                <?= '<img class="allimg" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $user['bin'] ) . '" />'; ?></a>
-
                                 <div><a class="RefUse" href="../actions/users/logoutAction.php">Deconnexion</a><div>
 
-                                <div><a class="RefUse" href="../pages/MesArticles.php">Mes Articles</a></div>
+                                <div><a class="RefUse" href="../pages/AllArticles.php">Les Articles</a></div>
 
-                                <div><a class="RefUse" href="../pages/MesCommandes.php">Mes Commandes</a></div>
-
-                                <h3>Nom : 
-                                    <br><br>
-                                    <?= $user['lastname']; ?>
-                                    <br><br> 
-                                </h3>
-
-                                <h3>Prenom : 
-                                    <br><br>
-                                    <?= $user['firstname']; ?>
-                                    <br><br> 
-                                </h3>
-
-                                <p class="Adress">
-                                    Adresse : 
-                                    <br><br>
-                                    <?= $user['adress']; ?>
-                                    <br><br>
-                                </p>
-
-                                <p class="City">
-                                    Ville :
-                                    <br><br>  
-                                    <?= $user['city']; ?>
-                                    <br><br>
-                                </p>
-                                        
-                                <p class="Postal">
-                                    Code postal :
-                                    <br><br> 
-                                    <?= $user['postal']; ?>
-                                </p>
+                                <div><a class="RefUse" href="../pages/AllCommands.php">Les Commandes</a></div>  
 
                                 </div>
                         </div>
                     </div>
-                    <?php
-     ?>
-    </div>
+</div>
 </div>
 
 

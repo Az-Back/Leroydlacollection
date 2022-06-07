@@ -135,7 +135,7 @@ session_start();
 
                     <div class="button"><a href="ModifArticle.php?id=<?= $myArticle['id']; ?>" class="btn1">Modifier l'article</a></div>
                 
-                    <div class="button" id="suppr"><a href="../actions/articles/deleteArticle.php?id=<?= $myArticle['id']; ?>" class="btn2">Supprimer l'article</a></div>
+                    <div class="button" id="suppr"><a href="../actions/articles/deleteArticleAction.php?id=<?= $myArticle['id']; ?>" class="btn2">Supprimer l'article</a></div>
             
             <?php
         } 

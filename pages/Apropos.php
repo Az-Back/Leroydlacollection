@@ -87,16 +87,18 @@ $nomDeLaPage = basename(__FILE__);
       <div class="case" id="presentation" data-aos="fade-in" data-aos-delay="100" data-aos-easing="ease-in-out">
               <div class="video">
                 <h1 class="titlevideo">Video de présentation</h1>
+              </div>
               <div>
                 <video id="presentation-video" controls width="250" muted>
 
                 <source src="../images/présentation.mp4" type="video/mp4">
 
                 </video>
-      </div>
+              </div>
+       </div>
+
 
 <div class="BlockTitleSlider"><h1 class="titleslider">Galerie d'articles</h1></div>
-
 <!-- Troisiéme conteneur !-->
 
 <!-- Third container !-->

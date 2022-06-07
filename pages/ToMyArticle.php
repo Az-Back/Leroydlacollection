@@ -8,7 +8,7 @@ session_start();
 
 // Allows you to call the action and use it for the database 
 
-require('../actions/articles/showArticleContent.php');
+require('../actions/articles/showArticleContentAction.php');
 
 // Permet de recuperer le nom de la page
 

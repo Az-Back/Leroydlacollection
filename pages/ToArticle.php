@@ -8,7 +8,7 @@ session_start();
 
 // Allows you to call the action and use it for the database 
 
-require('../actions/articles/showArticleContent.php');
+require('../actions/articles/showArticleContentAction.php');
 
 // Permet de recuperer le nom de la page
 
@@ -129,8 +129,8 @@ $nomDeLaPage = basename(__FILE__);
                   <!-- Effectue les actions ecrite dans le a sur la base de données en fonction de l'id de l'article -->
 
                   <!-- Performs the actions written in the a on the database based on the article id -->
-                  <div class="button"><a href="../actions/fav/addFav.php?id=<?= $article_id; ?>" class="btn2">Ajouter au favoris</a></div>
-                  <div class="button"><a href="../actions/articles/buyArticle.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
+                  <div class="button"><a href="../actions/fav/addFavAction.php?id=<?= $article_id; ?>" class="btn2">Ajouter au favoris</a></div>
+                  <div class="button"><a href="../actions/articles/buyArticleAction.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
                 <?php
         }
           ?>

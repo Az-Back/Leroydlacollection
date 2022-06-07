@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../security/securityAction.php');
+require('../security/securityAction2.php');
 
 require('../database/database.php');
 // Sert a verifier si la variable est declarer
@@ -17,17 +17,18 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
         // Recuperer les infos de la question
         $questionsInfos = $checkIfQuestionExists->fetch();
-        if($questionsInfos['pseudo_auteur'] == $_SESSION['pseudo']){
+        if(isset($_SESSION['admin'])){
 
             // Supprimer la question en fonction de son id rentré en paramétre
             $deleteThisQuestion = $bdd->prepare('DELETE FROM articles WHERE id = ?');
             $deleteThisQuestion->execute(array($idOfTheQuestion));
             usleep(1800000);
             // Rediriger l'utilisateur vers ses questions
-            header('Location: ../../pages/MesArticles.php');
+            header('Location: ../../pages/AllArticles.php');
 
         } else {
             $errorMsg = "Vous ne pouvez pas supprimer l'article";
+            header('Location: ../../pages/ConnexionAdmin.php');
         }
 
     } else {

@@ -62,7 +62,7 @@ require('../actions/users/signupAction.php');
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                        <input type="text" name="lastname" required="required">
+                        <input type="text" name="lastname" required="required" maxlength="10">
                         <span class="text">Nom</span>
                         <span class="line"></span>
                 </div>
@@ -73,7 +73,7 @@ require('../actions/users/signupAction.php');
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                        <input type="text" name="firstname" required="required">
+                        <input type="text" name="firstname" required="required" maxlength="10">
                         <span class="text">Prenom</span>
                         <span class="line"></span>
                     </div>
@@ -84,7 +84,7 @@ require('../actions/users/signupAction.php');
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                    <input type="text" name="pseudo" required="required">
+                    <input type="text" name="pseudo" required="required" maxlength="10">
                     <span class="text">Pseudo</span>
                     <span class="line"></span>
                 </div>
@@ -95,7 +95,7 @@ require('../actions/users/signupAction.php');
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                    <input type="password" name="password" required="required">
+                    <input type="password" name="password" required="required" maxlength="10">
                     <span class="text">Password</span>
                     <span class="line"></span>
                 </div>
@@ -106,7 +106,7 @@ require('../actions/users/signupAction.php');
             <div class="row100">
                  <div class="col">
                     <div class="inputBox">
-                    <input type="text" name="adress" required="required">
+                    <input type="text" name="adress" required="required" maxlength="30">
                     <span class="text">Adresse</span>
                     <span class="line"></span>
                 </div>
@@ -117,7 +117,7 @@ require('../actions/users/signupAction.php');
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                    <input type="text" name="city" required="required">
+                    <input type="text" name="city" required="required" maxlength="15">
                     <span class="text">Ville</span>
                     <span class="line"></span>
                 </div>
@@ -128,7 +128,7 @@ require('../actions/users/signupAction.php');
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                    <input type="number" name="postal" required="required">
+                    <input type="number_format" name="postal" required="required" maxlength="5">
                     <span class="text">Code Postal</span>
                     <span class="line"></span>
                 </div>
@@ -140,7 +140,7 @@ require('../actions/users/signupAction.php');
 
             <div class="Image">
                 <label for="exampleInputEmail1" class="form-label">Photo</label>
-                <input type="file" class="form-image" name="image" accept="image/png, image/jpeg, image/jpg">
+                <input type="file" class="form-image" name="image" accept="image/png, image/jpeg, image/jpg" max="1">
             </div>
 </div>
 

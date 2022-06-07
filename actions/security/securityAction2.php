@@ -3,6 +3,6 @@
 
 // If no session is set, back to the Connexion.php page
 
-if(!isset($_SESSION['auth']) && !isset($_SESSION['admin'])){
-    header('Location: Connexion.php');
+if(!isset($_SESSION['admin'])){
+    header('Location: ConnexionAdmin.php');
 }
