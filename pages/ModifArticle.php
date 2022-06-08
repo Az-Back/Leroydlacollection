@@ -100,7 +100,7 @@ require("../actions/articles/modifArticleAction.php");
 
             <div class="Menu">
                     <label for="price" class="form-label">Prix de l'article</label>
-                    <input type='number_format' maxlength="7" class="form-control" name="price">
+                    <input type='number' maxlength="7" class="form-control" name="price" id="price">
             </div>
 
 <!-- INPUT 4, de type file pour pouvoir avoir un fichier "une image" -->
@@ -122,5 +122,6 @@ require("../actions/articles/modifArticleAction.php");
             </div>
 </div>        
 </form>
+<script src="../script/formulaire.js"></script>    
 </body>
 </html>

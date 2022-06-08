@@ -118,6 +118,14 @@ input[type="submit"]
     border-radius: 2px;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    background: none;
+    width: 0;
+    border: none;
+}
+
 input:hover 
 {
     color: red;

@@ -97,6 +97,8 @@ require("../actions/users/getAllInfoUserAction.php");
 
                                 <div><a class="RefUse" href="../pages/MesCommandes.php">Mes Commandes</a></div>
 
+                                <div><a class="RefUse" href="../pages/ModifInfo.php">Modifier mes informations</a></div>
+
                                 <h3>Nom : 
                                     <br><br>
                                     <?= $user['lastname']; ?>

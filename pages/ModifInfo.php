@@ -1,9 +1,10 @@
-<?php 
+<?php
+session_start(); 
 // Permet d'appeler l'action et de l'utiliser pour la base de données
 
 // Allows you to call the action and use it for the database 
-
-require('../actions/users/signupAction.php');
+require('../actions/users/getInfosOfEditedUserAction.php');
+require('../actions/users/modifInfoUserAction.php');
 
 ?>
 <!DOCTYPE html>
@@ -128,7 +129,7 @@ require('../actions/users/signupAction.php');
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                    <input type="number_format" name="postal" required="required" maxlength="5" id="postal">
+                    <input type="number" name="postal" id="postal" required="required">
                     <span class="text">Code Postal</span>
                     <span class="line"></span>
                 </div>
@@ -149,21 +150,17 @@ require('../actions/users/signupAction.php');
 <!-- INPUT 9, of type submit to send the data of the form -->
             <div class="row100">
                 <div class="col">
-                    <input type="submit" name="validate" value="Inscription">
+                    <input type="submit" name="validate" value="Modifier">
                 </div>
 
 <!-- Lien de redirection -->
 
 <!-- Redirect link -->
                 <div class="col">
-                <a href="Connexion.php">J'ai deja un compte, je me connecte</a>
-
-                <br><br>
-
-                <a href="Accueil.php">Retour a l'accueil</a>
+                <a href="Utilisateur.php">Retour a utilisateur</a>
                 </div>
             </div>
     </form>
-<script src="../script/formulaire.js"></script>   
+<script src="../script/formulaire.js"></script>    
 </body>
 </html>

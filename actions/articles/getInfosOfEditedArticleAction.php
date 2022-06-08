@@ -24,9 +24,9 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     if($checkIfArticleExists->rowCount() > 0){
 
 
-        // Recuperer les données l'article
+        // Recuperer les données de l'article
 
-        // Retrieve the data
+        // Retrieve the data of the article
         
         $articlesInfos = $checkIfArticleExists->fetch();
         if($articlesInfos['id_auteur'] == $_SESSION['id']){
