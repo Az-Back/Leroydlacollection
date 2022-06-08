@@ -7,12 +7,15 @@
 // Permet d'appeler l'action et de l'utiliser pour la base de données
 
 // Allows you to call the action and use it for the database 
+
+require('../actions/security/securityAction2.php');
     
 require('../actions/users/showAllUsersAction.php');
 
 // Permet de recuperer le nom de la page
 
-// Allow to pick-up the name of the page    
+// Allow to pick-up the name of the page
+
     $nomDeLaPage = basename(__FILE__);
 ?>
 <!DOCTYPE html>
@@ -72,15 +75,16 @@ require('../actions/users/showAllUsersAction.php');
         <div class="block-inside1">
 
         <?php 
-            // Boucle tant que qui va permettre de recuperer les infos de l'article a chaque nouvel article crée et de l'afficher
+            // Boucle tant que qui va permettre de recuperer les infos de l'utilisateur pour chaque utilisateur
 
-            // Loop as long as that will allow to recover the info of the article has each new article created and to display it
+            // Loop as long as that will make it possible to recover the information of the user for each user
+
             while($userS = $getAllUsers->fetch()){
         ?>
 
-            <!-- Conteneur qui va être crée a chaque nouvel article avec les infos du nouvel article a l'intérieur -->
+            <!-- Conteneur qui va être crée pour chaque utilisatuer avec les infos de l'utilisateur a l'intérieur -->
             
-            <!-- Container that will be created with each new article with the info of the new article inside -->
+            <!-- Container that will be created for each user to kill with the information of the user inside -->
 
 
             <div class="menu-container">
@@ -89,45 +93,41 @@ require('../actions/users/showAllUsersAction.php');
                     <div class="menus">
                         <div class="topimg">
 
-                            <!-- Redirection vers l'article selectionner sur une autre page en cliquant sur l'image -->
+                            <!-- Affichage de l'image de l'utilisateur -->
 
-                            <!-- Redirect to article select on another page when you click on the image -->
+                            <!-- Displaying the image of the user -->
 
-                            
-
-                            <!-- Affichage de l'image de l'article -->
-
-                            <!-- Displaying the image of the article -->
                             <?= '<img class="allimg clickimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $userS['bin'] ) . '" />'; ?>
 
                             <br>
 
-                            <!-- Affichage du titre de l'article -->
+                            <!-- Affichage du pseudo de l'utilisateur -->
 
-                            <!-- Displaying the title of the article -->
+                            <!-- Displaying the user’s nickname -->
 
                             <h3><?= $userS['pseudo']; ?> </h3>
 
 
-                            <!-- Affichage du prix de l'article -->
+                            <!-- Affichage du nom de famille de l'utilisateur -->
 
-                            <!-- Displaying the price of the article -->
+                            <!-- Displaying the user lastname-->
 
                             <h3><?= $userS['lastname'] ?> </h3>
 
                             <br>
 
-                            <!-- Affichage de la description de l'article -->
+                            <!-- Affichage du prenom de l'utilisateur -->
 
-                            <!-- Displaying the description of the article -->
+                            <!-- Displaying the user firtsname -->
 
                             <h3><?= $userS['firstname']; ?></h3>
 
                             <br>
 
-                            <!-- Redirection vers l'article selectionner sur une autre page en cliquant sur le bouton -->
+                            <!-- Suppression de l'utilisateur -->
 
-                            <!-- Redirect to article select on another page when you click on the button -->
+                            <!-- Removal the user -->
+                            
                             <div class="button" id="suppr"><a href="../actions/users/deleteUsersAdminAction.php?id=<?= $userS['id']; ?>" class="btn2">Supprimer l'utilisateur</a></div>
                         </div>
                     </div>

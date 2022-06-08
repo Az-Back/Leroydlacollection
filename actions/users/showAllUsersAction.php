@@ -6,9 +6,8 @@
 
 require('../actions/database/database.php');
 
+// Recuperer les information des utilisateurs
 
-// Recuperer les articles par défaut sans recherche
-
-// Recover default articles without searching
+// Retrieve user information
 
 $getAllUsers= $bdd->query('SELECT * FROM users ORDER BY id DESC');

@@ -5,7 +5,6 @@
 
 session_start();
 
-
 require('../security/securityAction2.php');
 
 // Récupération du fichier database.php pour avoir accés a la base de données
@@ -20,12 +19,13 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     
     // Récupération de l'id de l'article
 
-    // // Retrieving the item id
+    //  Retrieving the item id
+
     $idOfTheUser = $_GET['id'];
 
-    // Verifier si l'article existe et récuperer les informations
+    // Selection de l'id de l'utilisateur
 
-    // Check if the item exists and retrieve the information
+    // User ID Selection
 
     $getIdUser = $bdd->prepare('SELECT id FROM users WHERE id = ?');
     $getIdUser->execute(array($idOfTheUser));
@@ -33,15 +33,22 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
         $UserId = $getIdUser->fetch();
         
+        if(isset($_SESSION['admin'])){
 
-            // Supprimer la question en fonction de son id rentré en paramétre
+            // Supprimer l'utilisateur en fonction de l'id
+
+            // Delete the user according to the id
+
             $UserId = $bdd->prepare('DELETE FROM users WHERE id = ?');
             $UserId->execute(array($idOfTheUser));
             usleep(1800000);
-            // Rediriger l'utilisateur vers ses questions
+
+            // Rediriger l'admin
+
             header('Location: ../../pages/Admin.php');
 
         } else {
             $errorMsg = "Vous ne pouvez pas supprimer l'utilisateur";
             header('Location: ../../pages/AllUsers.php');
         }
+    }

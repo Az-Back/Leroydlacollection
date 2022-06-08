@@ -36,6 +36,7 @@ if(isset($_POST['validate'])){
         // Inserer l'article dans la base de données
 
         // Insert the article in the database
+        
         $insertArticleOnWebsite = $bdd->prepare('INSERT INTO articles(title, description, price, nom_image, image_taille, type_image, bin, id_auteur, pseudo_auteur, date_publication)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
         $insertArticleOnWebsite->execute(
             array(

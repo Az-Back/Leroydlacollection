@@ -2,11 +2,13 @@
 // Récupération du fichier database.php pour avoir accés a la base de données
 
 // Recovery of the database.php file to have access to the database
+
 require('../actions/database/database.php');
 
 // Validation du formulaire
 
 // Validation of the form
+
 if(isset($_POST['validate'])){
 
     // Verifier si l'utilisateur a bien completer tous les champs !
@@ -18,6 +20,7 @@ if(isset($_POST['validate'])){
         // Les données de l'utilisateur
 
         // The data of the user
+
         $user_pseudo = htmlspecialchars($_POST['pseudo']);
         $user_lastname = htmlspecialchars($_POST['lastname']);
         $user_firstname = htmlspecialchars($_POST['firstname']);
@@ -30,6 +33,7 @@ if(isset($_POST['validate'])){
         // Verifier si l'utilisateur existe deja
 
         // Check if the user already exists
+
         $checkIfUserAlreadyExists = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
         $checkIfUserAlreadyExists->execute(array($user_pseudo));
 
@@ -44,6 +48,7 @@ if(isset($_POST['validate'])){
             // Récuperer les infos de l'utilisateur (surtout l'id)
 
             // Retrieve user information (especially id)
+
             $getInfosOfThisUserReq = $bdd->prepare('SELECT id, pseudo, lastname, firstname, adress, city, postal, bin FROM users WHERE lastname = ? && firstname = ? && pseudo = ? && adress = ? && city = ? && postal = ? && bin = ?');
             $getInfosOfThisUserReq->execute(array($user_lastname, $user_firstname, $user_pseudo, $user_adress, $user_city, $user_postal, $user_bin_image));
 
@@ -52,6 +57,7 @@ if(isset($_POST['validate'])){
             // Authentifier l'utilisateur sur le site et récuperer ses données dans des variables globales sessions
 
             // Authenticate the user on the site and retrieve his data in global session variables
+
             $_SESSION['auth'] = true;
             $_SESSION['id'] = $userInfos['id'];
             $_SESSION['lastname'] = $userInfos['lastname'];
@@ -65,6 +71,7 @@ if(isset($_POST['validate'])){
             // Redirection sur Accueil.php
 
             // Redirection on Accueil.php
+            
             header('Location: ../pages/Accueil.php');
 
         } else {
