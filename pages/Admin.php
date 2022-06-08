@@ -79,7 +79,9 @@ require("../actions/security/securityAction2.php");
 
                                 <div><a class="RefUse" href="../pages/AllArticles.php">Les Articles</a></div>
 
-                                <div><a class="RefUse" href="../pages/AllCommands.php">Les Commandes</a></div>  
+                                <div><a class="RefUse" href="../pages/AllCommands.php">Les Commandes</a></div>
+                                
+                                <div><a class="RefUse" href="../pages/AllUsers.php">Les Utilisateurs</a></div>
 
                                 </div>
                         </div>
