@@ -2,7 +2,7 @@
 
 // All the necessary variables
 
-const pseudo = prompt("Veuillez indiquer votre nom");
+const pseudo = prompt("Merci d'indiquer votre nom");
 const textBar = document.querySelector(".progress-bar");
 const link = document.querySelector(".LinkButton");
 const video = document.querySelector("#background-video");
@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
 
     setTimeout(() =>{
         textBar.innerHTML = "Bienvenue" + ' ' + pseudo;
-    },6150);
+    },5800);
     
 })
 

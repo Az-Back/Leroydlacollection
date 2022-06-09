@@ -80,7 +80,6 @@ Progress-bar for the text */
       linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
     transition: 0.2s linear;
     transition-property: width, background-color;
-    cursor: pointer;
     width: 100%;
   }
   
