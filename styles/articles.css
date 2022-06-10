@@ -55,16 +55,17 @@ body
     vertical-align: top;
     text-align: center;
     z-index: 2;
+    overflow: hidden;
 }
 
 .menu {
     font-size: 16px;
     padding: 0px;
-    background-color: rgba(0, 0, 0, .7);
     line-height: 1.1em;
-    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
-    border-radius: 10%;
+    overflow: hidden;
+    border: 1px solid white;
 }
 
 .Gate {
@@ -96,6 +97,7 @@ body
     max-width: 180px;
     height: 180px;
     border-radius: 10%;
+    overflow: hidden;
 }
 
 .clickimage:hover 
@@ -169,4 +171,3 @@ h3
     width: 100%;
     padding: 10px;
 }
-

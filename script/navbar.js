@@ -53,15 +53,6 @@ window.addEventListener('scroll', () =>
 toggle.addEventListener('click', () => {
     toggle.classList.toggle("active");
         navList.classList.toggle("active");
-            const scrollTop = window.scrollY;
-                if(navList.classList.contains("active") && scrollTop >= 0){
-                    topNav.forEach(back => {
-                        back.classList.add("background");
-                                if(form){
-                                    form.classList.add("background");
-                                }
-                            })
-                }
 })
 
 // Évenement au clique qui permet d'effacer le texte dans la barre de recherche qu'on clique sur la croix

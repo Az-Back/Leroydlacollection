@@ -84,10 +84,14 @@
 
 
             <div class="menu-container">
+            
                 <div class="menu">
+                
                     <div class="menus">
+                    
                         <div class="topimg">
-
+                        
+                        
                             <!-- Redirection vers l'article selectionner sur une autre page en cliquant sur l'image -->
 
                             <!-- Redirect to article select on another page when you click on the image -->
@@ -128,7 +132,7 @@
                             <!-- Affichage du pseudo du vendeur ainsi que la date de publication de l'article -->
 
                             <!-- Display of the seller’s nickname and the publication date of the article -->
-                            <p class="By"> Publié par <?= $Article['pseudo_auteur']; ?> le <?= $Article['date_publication']; ?></p>
+                            <p class="By"> Publié par <?= $Article['pseudo_auteur']; ?> <br>le <?= $Article['date_publication']; ?></p>
 
                             <!-- Redirection vers l'article selectionner sur une autre page en cliquant sur le bouton -->
 

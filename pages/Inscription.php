@@ -128,7 +128,7 @@ require('../actions/users/signupAction.php');
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
-                    <input type="number_format" name="postal" required="required" maxlength="5" id="postal">
+                    <input type="number" name="postal" required="required" maxlength="5" id="postal">
                     <span class="text">Code Postal</span>
                     <span class="line"></span>
                 </div>
