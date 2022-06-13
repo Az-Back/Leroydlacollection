@@ -29,7 +29,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     // Retrieval of article data according to the ID retrieved above
 
-    $checkIfQuestionExists = $bdd->prepare('SELECT id, title, price, description, bin, pseudo_auteur, date_publication FROM articles WHERE id = ?');
+    $checkIfQuestionExists = $bdd->prepare('SELECT id, title, price, description, bin, id_auteur, pseudo_auteur, date_publication FROM articles WHERE id = ?');
     $checkIfQuestionExists->execute(array($idOfArticle));
 
     $articleInfos = $checkIfQuestionExists->fetch();
@@ -38,6 +38,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     $article_price = $articleInfos['price'];
     $article_description = $articleInfos['description'];
     $article_image = $articleInfos['bin'];
+    $article_id_author = $articleInfos['id_auteur'];
     $article_pseudo_author = $articleInfos['pseudo_auteur'];
     $article_date = $articleInfos['date_publication'];
 
@@ -67,8 +68,8 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
             // Insert all the data of the article in the favorite table   
 
-            $inportAll = $bdd->prepare('INSERT INTO favoris(id_article, id_session, title, price, description, bin, pseudo_auteur, date_publication)VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
-            $inportAll->execute(array($idOfArticle, $get_id, $article_title, $article_price, $article_description, $article_image, $article_pseudo_author, $article_date));
+            $inportAll = $bdd->prepare('INSERT INTO favoris(id_article, id_session, title, price, description, bin, id_auteur, pseudo_auteur, date_publication)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
+            $inportAll->execute(array($idOfArticle, $get_id, $article_title, $article_price, $article_description, $article_image, $article_id_author, $article_pseudo_author, $article_date));
 
             
             header('Location: ../../pages/Favoris.php');

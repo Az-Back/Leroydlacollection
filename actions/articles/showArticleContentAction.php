@@ -30,8 +30,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
         $articlesInfos = $checkIfArticleExists->fetch();
 
-
-        // Stocker les données de la question dans des variables
+        // Stocker les données de l'article dans des variables
         $article_id = $articlesInfos['id'];
         $article_title = $articlesInfos['title'];
         $article_price = $articlesInfos['price'];

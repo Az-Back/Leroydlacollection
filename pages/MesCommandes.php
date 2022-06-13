@@ -53,7 +53,7 @@ require("../actions/commands/getCommandsAction.php");
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background2.mp4" type="video/mp4">
+<source src="../images/background0.mp4" type="video/mp4">
 
 </video>
 

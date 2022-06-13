@@ -33,7 +33,7 @@
   <br>
   <div class="ContainerIn">
     <div class="progress progress-moved">
-      <div class="progress-bar"></div>
+      <div class="allprogress"><img id="portail1" src="images/portail1"><div class="progress-bar"></div><img id="portail1" src="images/portail2"></div>
     </div>
     <div class="Link"><button class="LinkButton">Cliquez <br>ICI</button></div>
   </div>

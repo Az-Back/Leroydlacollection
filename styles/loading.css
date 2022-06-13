@@ -33,6 +33,20 @@ body{
     height: auto;
 }
 
+#portail1 {
+  width: 30px;
+  height: 200px;
+  z-index: 13;
+  opacity: 1;
+}
+
+#portail2 {
+width: 30px;
+height: 200px;
+z-index: 1;
+opacity: 0;
+}
+
 /* Conteneur pour les barres de progressions
 
 Container for progress bars  */
@@ -40,6 +54,16 @@ Container for progress bars  */
 .ContainerIn
 {
     margin-top: 20px;
+    width: 100%;
+}
+
+/* Conteneur pour la progress-bar avec les images */
+
+.allprogress
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     width: 100%;
 }
 
@@ -51,7 +75,6 @@ Background of progress bar */
     padding: 6px;
     border-radius: 30px;
     background: rgba(0, 0, 0, 0.25);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
     animation: slide 6s linear forwards;
     opacity: 0;
     margin-bottom: 20px;
@@ -172,6 +195,8 @@ Color setting of the progress bar */
     z-index: -1;
     opacity: 0;
 }
+
+
 
 /* MediaQueries */
 

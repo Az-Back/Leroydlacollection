@@ -19,7 +19,7 @@ if(isset($_POST['validate'])){
         // Les données de l'utilisateur
 
         // The data of the user
-        $_SESSION['pseudo'] = htmlspecialchars($_POST['pseudo']);
+        $user_pseudo_update = htmlspecialchars($_POST['pseudo']);
         $user_lastname_update = htmlspecialchars($_POST['lastname']);
         $user_firstname_update = htmlspecialchars($_POST['firstname']);
         $user_adress_update = htmlspecialchars($_POST['adress']);
@@ -28,10 +28,14 @@ if(isset($_POST['validate'])){
         $user_bin_image_update = file_get_contents($_FILES['image']['tmp_name']);
         $user_password_update = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        
+        $checkIfUserCanBeModify = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
+        $checkIfUserCanBeModify->execute(array($user_pseudo_update));
+
+        if($checkIfUserCanBeModify->rowCount() == 0){
+
             $newInfoUsers= $bdd->prepare('UPDATE users SET pseudo = ?, lastname = ?, firstname = ?, password = ?, adress = ?, city = ?, postal = ?, bin = ? WHERE id = ?');
             $newInfoUsers->execute(array(
-                $_SESSION['pseudo'], 
+                $user_pseudo_update, 
                 $user_lastname_update, 
                 $user_firstname_update, 
                 $user_password_update, 
@@ -42,10 +46,23 @@ if(isset($_POST['validate'])){
                 $_SESSION['id']
             ));
 
+            $getInfosOfThisUserModify = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ? && id = ?');
+            $getInfosOfThisUserModify->execute(array(
+                $user_pseudo_update, 
+                $_SESSION['id']
+            ));
+
+                $userInfosModify = $getInfosOfThisUserModify->fetch();
+
+                $_SESSION['pseudo'] = $userInfosModify['pseudo'];
+
             header('Location: ../pages/Utilisateur.php');
 
         } else {
             $errorMsg = "L'utilisateur existe deja";
         }
 
-} 
+    } else {
+    $errorMsg = "Veuillez remplir tous les champs";
+    }
+}

@@ -27,7 +27,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     // Retrieval and verification of article data according to the ID retrieved above
 
-    $checkIfFavExists = $bdd->prepare('SELECT title, price, description, id_auteur, bin, pseudo_auteur, date_publication FROM articles WHERE id = ?');
+    $checkIfFavExists = $bdd->prepare('SELECT title, price, description, bin, id_auteur, pseudo_auteur, date_publication FROM favoris WHERE id = ?');
     $checkIfFavExists->execute(array($idOfArticle));
 
     $articleInfos = $checkIfFavExists->fetch();
