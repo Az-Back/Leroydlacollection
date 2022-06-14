@@ -30,7 +30,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     // Check if the article exists and get the article info
 
-    $checkIfArticleExists = $bdd->prepare('SELECT pseudo_auteur FROM articles WHERE id = ?');
+    $checkIfArticleExists = $bdd->prepare('SELECT id FROM articles WHERE id = ?');
     $checkIfArticleExists->execute(array($idOfTheArticle));
 
     if($checkIfArticleExists->rowCount() > 0){

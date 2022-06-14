@@ -70,7 +70,7 @@ require('../actions/users/loginAction.php'); ?>
                 <div class="col">
                     <div class="inputBox">
                         <input type="password" name="password" required="required">
-                        <span class="text">Password</span>
+                        <span class="text">Mot de passe</span>
                         <span class="line"></span>
                     </div>
                 </div>

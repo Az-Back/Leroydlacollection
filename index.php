@@ -28,7 +28,7 @@
 
 <!-- Global container -->
 
-<div class="Head" onClick="setTimeout('RedirectionJavascript()', 3000)"> <!--Sert a la redirection qui s'effectue aprés 9,2s depuis le chargement de la page -->  
+<div class="Head" onClick="setTimeout('RedirectionJavascript()', 3000)"> <!--Sert a la redirection qui s'effectue aprés 3s au clique du bouton -->  
   <img class="Delorean" src="images/Delorean.gif">
   <br>
   <div class="ContainerIn">
