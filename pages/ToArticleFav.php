@@ -100,7 +100,7 @@ $nomDeLaPage = basename(__FILE__);
 
                             <!-- Displaying the price of the article -->
 
-                            <h3 class="contenu"><?= number_format($article_price, 2); ?> €</h3>
+                            <h3 class="contenu"><?= number_format($article_price, 2, ",", " "); ?> €</h3>
 
                             <br>
 
