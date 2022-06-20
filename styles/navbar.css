@@ -88,6 +88,10 @@ html {
     display: block;
 }
 
+#span1{
+    display: contents;
+}
+
 .RefNav.active span:nth-child(5){
     top: 0;
     left: 0;

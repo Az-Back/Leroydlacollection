@@ -130,6 +130,7 @@ $nomDeLaPage = basename(__FILE__);
 
                   <!-- Performs the actions written in the a on the database based on the article id -->
                   <div class="button"><a href="../actions/fav/addFavAction.php?id=<?= $article_id; ?>" class="btn2">Ajouter au favoris</a></div>
+                  <div class="button btn2 panieradd">Ajouter au panier</div>
                   <div class="button"><a href="../actions/articles/buyArticleAction.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
                 <?php
         }
@@ -140,6 +141,6 @@ $nomDeLaPage = basename(__FILE__);
     </div>
 </div>
 <script src="../script/script.js"></script>
-          
+<script src="../script/panier.js"></script>
 </body>
 </html>

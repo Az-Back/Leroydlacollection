@@ -55,22 +55,30 @@ toggle.addEventListener('click', () => {
         navList.classList.toggle("active");
 })
 
-// Évenement au clique qui permet d'effacer le texte dans la barre de recherche qu'on clique sur la croix
-
-// Click event to clear the text in the search bar you click on the cross
-
-clear.addEventListener('click', () => {
-    text.value = '';
-})
-
 // Donne la classe active ou la retire a l'objet de la classe .search en fonction du clique sur .icon
 
 // Gives the active class or removes it from the object .search of the class according to the click on .icon
-
+if(icon){
 icon.onclick = function()
 {
     search.classList.toggle('active')
 }
+}
+// Évenement au clique qui permet d'effacer le texte dans la barre de recherche qu'on clique sur la croix
+
+// Click event to clear the text in the search bar you click on the 
+if(clear){
+    clear.addEventListener('click', () => {
+        text.value = '';
+    })
+    }
+
+let valDepart = localStorage.getItem('#span1');
+localStorage.getItem('#span1');
+document.getElementById('span1').innerHTML = valDepart;
+
+
+
 
 
 

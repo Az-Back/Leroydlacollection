@@ -162,6 +162,18 @@
         <span></span>
     </a>
   </li>
+
+  <li class="TextNav"><a class="RefNav <?= ($nomDeLaPage == 'Panier.php') ? 'active':''; ?>" href="javascript:setTimeout(()=>{window.location = '../pages/Panier.php' },1000);">
+    <p class="Paragraphe">
+    <i class="fa-solid fa-basket-shopping panier"><span id="span1"></span></i>
+    
+        </p>
+        <span></span>  
+        <span></span>  
+        <span></span>  
+        <span></span>
+    </a>
+  </li>
     <?php
         } 
           ?>
@@ -189,7 +201,7 @@
 
 
 <?php 
-        if($nomDeLaPage == 'Articles.php' OR $nomDeLaPage == 'MesArticles.php' OR $nomDeLaPage == 'MesCommandes.php'){
+        if($nomDeLaPage == 'Articles.php' OR $nomDeLaPage == 'MesArticles.php' OR $nomDeLaPage == 'MesCommandes.php' OR $nomDeLaPage == 'Panier.php'){
           ?>
   <form method="GET" class="research">
 
