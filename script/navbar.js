@@ -16,6 +16,8 @@ let toggle = document.querySelector(".toggle");
 
 let navList = document.querySelector(".List");
 
+
+
 // Évenement au scroll qui permet d'ajouter des classes ou des les retirer en fonction de certains paramétres
 
 // Scroll event that allows you to add or remove classes according to certain parameters

@@ -92,6 +92,10 @@ tbody tr:nth-child(even){
     height: 50px;
 }
 
+.tableimage:hover {
+    cursor: pointer;
+}
+
 .btn3
 {
     color: red;
@@ -110,6 +114,90 @@ tbody tr:nth-child(even){
    font-size: 40px;
 }
 
+.up{
+    overflow-x: auto;
+}
+
+#shop {
+    font-size: 40px;
+    
+}
+
+#shop:hover {
+   cursor: pointer;
+}
+
+.fa-cart-arrow-down {
+    width: 50px;
+    height: 50px;
+    color: #03e9f4;
+    z-index: 13;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+    font-size: 30px;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(1)}
+    to {-webkit-transform:scale(2)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0.4)}
+    to {transform:scale(1)}
+}
+
+
+@-webkit-keyframes zoom-out {
+    from {transform:scale(1)}
+    to {transform:scale(0)}
+}
+@keyframes zoom-out {
+    from {transform:scale(1)}
+    to {transform:scale(0)}
+}
+
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.out {
+  animation-name: zoom-out;
+  animation-duration: 0.6s;
+}
+
 /* MediaQueries */
 
 @media screen and (max-width: 1100px) {
@@ -119,7 +207,6 @@ tbody tr:nth-child(even){
   .table-style  {
     width: 100%;
     margin: 0px;
-    display: flex;
   }
   th, td {
     padding: 10px 7px;
@@ -127,7 +214,6 @@ tbody tr:nth-child(even){
 
     tbody tr, td, th {
     border: 1px solid #ddd;
-    display: flow-root;
     font-size: 15px;
     }
 
@@ -140,7 +226,6 @@ tbody tr:nth-child(even){
     .table-style  {
       width: 100%;
       margin: 0px;
-      display: flex;
     }
     th, td {
       padding: 10px 7px;
@@ -148,7 +233,6 @@ tbody tr:nth-child(even){
   
       tbody tr, td, th {
       border: 1px solid #ddd;
-      display: flow-root;
       font-size: 10px;
       }
   }

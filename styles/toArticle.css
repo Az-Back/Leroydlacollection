@@ -149,6 +149,18 @@ h3
     cursor: pointer;
 }
 
+.btn3 {
+    color: #ff007f;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.btn3:hover
+{
+    cursor: pointer;
+}
+
 .By {
     color: #ffff00;
     text-decoration: none;

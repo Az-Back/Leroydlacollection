@@ -76,22 +76,12 @@ require("../actions/panier/getAllArticlesPan.php");
 <div class="block1">
     <div class="block-inside1">
 
-
-            <?php 
-
-            // Boucle tant que qui va permettre de recuperer les infos de la commande a chaque nouvel commande crée et de l'afficher
-
-            // Loop as long as that will allow to recover the information of the command to each new command created and to display it
-                 while($Pan = $getInfoPan->fetch()){
-            ?>
-
                 <!-- Conteneur qui va être crée a chaque nouvelle commande avec les infos de la nouvelle commande a l'intérieur -->
             
                 <!-- Container that will be created with each new order with the information of the new order inside -->
                 <div class="menu-container">
                         <div class="menu">
-                            <div class="menus">    
-
+                            <div class="up">    
 
                             <!-- Creation d'un tableau qui va comporter 6 champs a remplir avec les données recupérer dans la base de données -->
 
@@ -106,37 +96,39 @@ require("../actions/panier/getAllArticlesPan.php");
                                     <th>Titre Article</th>
                                     <th>Prix Article</th>
                                     <th>Pseudo_Vendeur</th>
-                                    
+                                    <th><a href="Utilisateur.php" class="btn3 btnloc"><i id="shop" class="fa-solid fa-cart-arrow-down"></i></a></th>
                                 </tr>
                             </thead>
 
 
                             <tbody>
+                                <?php  foreach($arts as $art){
+                                    ?>
                                 <tr>
                                 
                                     
-                                    <td><?= $Pan['id_article']; ?></td>
-                                    <td><?= '<img class="tableimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $Pan['bin'] ) . '" />'; ?>
-                                    <td><?= $Pan['title']; ?></td>
-                                    <td><?= number_format($Pan['price'], 2,","," "); ?> €</td>
-                                    <td><?= $Pan['pseudo_auteur']; ?></td>
-                                    
-                                    
+                                    <td><?= $art['id_article']; ?></td>
+                                    <td><?= '<img class="tableimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $art['bin'] ) . '" />'; ?>
+                                    <td><?= $art['title']; ?></td>
+                                    <td><?= number_format($art['price'], 2,","," "); ?> €</td>
+                                    <td><?= $art['pseudo_auteur']; ?></td>
+                                    <div id="myModal" class="modal">
+                                        <img class="modal-content" id="img01">
+                                    <div id="caption"></div>
+                                    </div>
+                                    <td><a href="../actions/panier/deletePanierAction.php?id=<?= $art['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></td>
                                 </tr>
+                                <?php
+                                    }
+                                ?>
                             </tbody>
-
-                            <!-- Juste un bouton pour supprimer la commande correspondante "celle du dessous" --> 
-
-                            <!-- Just a button for delete the command under -->
-
+                            
                             
 </table>
                 </div>
             </div>
         </div>
-    <?php
-     }
-?>
+
     </div>
 </div>
 
@@ -145,5 +137,6 @@ require("../actions/panier/getAllArticlesPan.php");
 <!-- Js script with all animations -->
 <script src="../script/script.js"></script>
 <script src="../script/panier.js"></script>
+<script src="../script/modal.js"></script>
 </body>
 </html>

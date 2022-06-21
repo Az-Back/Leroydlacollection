@@ -70,7 +70,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             $inportAll = $bdd->prepare('INSERT INTO panier(id_client, id_article, title, price,  bin, id_auteur, pseudo_auteur)VALUES(?, ?, ?, ?, ?, ?, ?)');
             $inportAll->execute(array($get_id, $idOfArticlePan, $article_title_art, $article_price_art, $article_image_art, $article_id_author_art, $article_pseudo_author_art));
 
-            sleep(2);
+            sleep(0.5);
             header('Location: ../../pages/Panier.php');
 
             }   else {

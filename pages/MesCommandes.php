@@ -90,7 +90,7 @@ require("../actions/commands/getCommandsAction.php");
                 <!-- Container that will be created with each new order with the information of the new order inside -->
                 <div class="menu-container">
                         <div class="menu">
-                            <div class="menus">    
+                            <div class="up">    
 
 
                             <!-- Creation d'un tableau qui va comporter 6 champs a remplir avec les données recupérer dans la base de données -->

@@ -11,6 +11,7 @@ require('../actions/database/database.php');
 
 $getInfoPan = $bdd->prepare('SELECT * FROM panier WHERE id_client = ?');
 $getInfoPan->execute(array($_SESSION['id']));
+$arts = $getInfoPan->fetchAll();
 
 
 // Verifier si une recherche a été rentrée par l'utilisateur
@@ -29,9 +30,9 @@ if(isset($_GET['search']) && !empty($_GET['search'])){
 
     // Retrieve all the commands that correspond to the search (depending on the title)
 
-    $getInfoPan = $bdd->query('SELECT id, id_article, title, price, pseudo_auteur FROM panier WHERE title LIKE "%'.$userSearch.'%" ORDER BY id DESC');
+    $getInfoPan = $bdd->query('SELECT id_article, title, price, pseudo_auteur, bin FROM panier WHERE title LIKE "%'.$userSearch.'%"');
     
 } elseif (isset($_GET['search']) && empty($_GET['search'])) {
 
-    $getInfoPan = $bdd->query('SELECT * FROM commandes ORDER BY id DESC');
+    $getInfoPan = $bdd->query('SELECT * FROM panier');
 }
