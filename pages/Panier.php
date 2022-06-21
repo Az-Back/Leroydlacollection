@@ -96,7 +96,7 @@ require("../actions/panier/getAllArticlesPan.php");
                                     <th>Titre Article</th>
                                     <th>Prix Article</th>
                                     <th>Pseudo_Vendeur</th>
-                                    <th><a href="Utilisateur.php" class="btn3 btnloc"><i id="shop" class="fa-solid fa-cart-arrow-down"></i></a></th>
+                                    <th><a href="../actions/panier/buyPanierAction.php" class="btn3 btnloc"><i id="shop" class="fa-solid fa-cart-arrow-down"></i></a></th>
                                 </tr>
                             </thead>
 
