@@ -76,15 +76,6 @@ require("../actions/commands/getCommandsAction.php");
 <div class="block1">
     <div class="block-inside1">
 
-
-            <?php 
-
-            // Boucle tant que qui va permettre de recuperer les infos de la commande a chaque nouvel commande crée et de l'afficher
-
-            // Loop as long as that will allow to recover the information of the command to each new command created and to display it
-                 while($Commande = $getInfoCommand->fetch()){
-            ?>
-
                 <!-- Conteneur qui va être crée a chaque nouvelle commande avec les infos de la nouvelle commande a l'intérieur -->
             
                 <!-- Container that will be created with each new order with the information of the new order inside -->
@@ -101,10 +92,10 @@ require("../actions/commands/getCommandsAction.php");
                             <thead>
                                 <tr>
                                     <th>Numéro Commande</th>
-                                    <th>Numéro Article</th>
                                     <th>Titre Article</th>
                                     <th>Prix Article</th>
                                     <th>Pseudo_Vendeur</th>
+                                    <th>Montant</th>
                                     <th>Date Achat</th>
                                 </tr>
                             </thead>
@@ -113,12 +104,24 @@ require("../actions/commands/getCommandsAction.php");
                             <tbody>
                                 <tr>
                                 
-                                    <td><?= $Commande['id']; ?></td>
-                                    <td><?= $Commande['id_article']; ?></td>
-                                    <td><?= $Commande['title']; ?></td>
-                                    <td><?= number_format($Commande['price'], 2,","," "); ?> €</td>
-                                    <td><?= $Commande['pseudo_auteur']; ?></td>
-                                    <td><?= $Commande['date_buy']; ?></td>
+                                    <td><?= $getCommand['id']; ?></td>
+
+
+                                    <td>
+                                        <?php foreach($getdamn as $getArt) { echo $getArt['title'].'<br>'; } ?>
+                                    </td>
+
+                                    <td>
+                                        <?php foreach($getdamn as $getArt) { echo number_format($getArt['price'], 2,","," ").' €<br>'; } ?>
+                                    </td>
+
+
+                                    <td>
+                                        <?php foreach($get_new_pseudo as $pseudo) { echo $pseudo['pseudo_auteur'];} ?>
+                                    </td>
+
+                                    <td><?= number_format($getCommand['montant'], 2, ',', ' '); ?></td>
+                                    <td><?= $getCommand['date_buy']; ?></td>
                                     
                                 </tr>
                             </tbody>
@@ -127,14 +130,12 @@ require("../actions/commands/getCommandsAction.php");
 
                             <!-- Just a button for delete the command under -->
 
-                            <div class="button"><a href="../actions/commands/deleteCommandsAction.php?id=<?= $Commande['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
+                            <div class="button"><a href="../actions/commands/deleteCommandsAction.php?id=<?= $getCommand['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
 </table>
                 </div>
             </div>
         </div>
-    <?php
-     }
-?>
+    
     </div>
 </div>
 

@@ -17,61 +17,60 @@ require('../database/database.php');
 // Used to check if the variable exists
 
 
-    $checkIfQuestionExists = $bdd->prepare('SELECT * FROM panier WHERE id_client = ?');
-    $checkIfQuestionExists->execute(array($_SESSION['id']));
+    $checkPan = $bdd->prepare('SELECT * FROM panier WHERE id_client = ?');
+    $checkPan->execute(array($_SESSION['id']));
 
-    $datas = $checkIfQuestionExists->fetchAll();
-
+    $datas = $checkPan->fetchAll();
+    $sum = 0;
     foreach($datas as $data){
+    $sum += $data['price'];
     
-    $data['title'];
-    $data['price'];
-    $data['bin'];
-    $data['id_auteur'];
-    $data['pseudo_auteur'];
-    $data['date_publication'];
-    $new_date_buy = date('d/m/Y');
     }
-
+    $new_date_buy = date('d/m/Y');
     // Récupérer les données de l'utilisateur
 
     // Retrieve the user data
 
-    $getAllInfoUser = $bdd->prepare('SELECT id, pseudo, lastname, firstname FROM users WHERE id = ?');
+    $getAllInfoUser = $bdd->prepare('SELECT id, pseudo FROM users WHERE id = ?');
     $getAllInfoUser->execute(array($_SESSION['id']));
 
     $getAllInfoUser = $getAllInfoUser->fetch();
 
     $get_id = $getAllInfoUser['id'];
     $get_pseudo = $getAllInfoUser['pseudo'];
-    $get_lastname = $getAllInfoUser['lastname'];
-    $get_firstname = $getAllInfoUser['firstname'];
 
-    // Condition
 
-    if($articleInfos['pseudo_auteur'] != $_SESSION['pseudo']){
 
     // Insertion des infos dans la table commande et suppréssion dans la table article
     
     // Inserting information in the command table and delete in the article table  
 
-    $inportAll = $bdd->prepare('INSERT INTO commandes(id_client, id_article, pseudo_acheteur, title, price, description, bin, id_auteur, pseudo_auteur, date_publication, lastname, date_buy, firstname)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-    $inportAll->execute(array($get_id, $, $get_pseudo, $article_title, $article_price, $article_description, $article_image, $article_id_author, $article_pseudo_author, $article_date , $get_lastname, $article_date_buy, $get_firstname));
+    $inportAll = $bdd->prepare('INSERT INTO commandes(id_client, pseudo_acheteur, montant ,date_buy)VALUES(?, ?, ?, ?)');
+    $inportAll->execute(array($get_id, $get_pseudo, $sum, $new_date_buy));
+
+    $getall = $bdd->prepare('SELECT * FROM commandes WHERE id_client = ? ORDER by id DESC LIMIT 1');
+    $getall->execute(array($_SESSION['id']));
+
+    $new_id_commandes = $getall->fetch();
+
+    $new_new_id_commandes = $new_id_commandes['id'];
+
+    foreach($datas as $data){
+        
+        $reinportaAll = $bdd->prepare('INSERT INTO detailcommandes(id_commande, id_article)VALUES(?,?)');
+        $reinportaAll->execute(array($new_new_id_commandes, $data['id_article']));
+    }
 
     $deleteThisArticle = $bdd->prepare('DELETE FROM articles WHERE id = ?');
     $deleteThisArticle->execute(array($idOfArticle));
 
-    $deleteThisArticle = $bdd->prepare('DELETE FROM favoris WHERE id = ?');
-    $deleteThisArticle->execute(array($idOfArticle));
+    $deleteThisTruc = $bdd->prepare('DELETE FROM favoris WHERE id = ?');
+    $deleteThisTruc->execute(array($idOfArticle));
+
+    $deleteThisShit = $bdd->prepare('DELETE FROM panier WHERE id_client = ?');
+    $deleteThisShit->execute(array($_SESSION['id']));
 
     echo '<script type="text/javascript">'; 
-    echo 'alert("Article Acheter");';
-    echo 'window.location.href = "../../pages/Articles.php";';
+    echo 'alert("Article Acheter !");';
+    echo 'window.location.href = "../../pages/MesCommandes.php";';
     echo '</script>';
-    } else {
-    echo '<script type="text/javascript">'; 
-    echo 'alert("Vous ne pouvez pas acheter vos propres articles !");';
-    echo 'window.location.href = "../../pages/Articles.php";';
-    echo '</script>';
-    }
-}
