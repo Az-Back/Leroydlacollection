@@ -114,6 +114,11 @@ tbody tr:nth-child(even){
    font-size: 40px;
 }
 
+#cross:hover
+{
+   cursor: pointer;
+}
+
 .up{
     overflow-x: auto;
 }
