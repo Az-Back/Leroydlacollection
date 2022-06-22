@@ -14,7 +14,7 @@ html {
 }
 
 .color {
-    color: #0f4 !important;
+    color:  #3bff00!important;
 }
 
 .color:hover {
@@ -77,10 +77,14 @@ html {
     padding: 0;
 }
 
+.Paragraphe:hover {
+   cursor: pointer;
+}
+
 
 .RefNav:hover {
     color: white;
-    z-index: 0;          
+    z-index: 0;         
 }               
 
 .RefNav.active span {
