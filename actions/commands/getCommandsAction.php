@@ -30,8 +30,8 @@ $getInfoPan->execute();
 $getdamn = $getInfoPan->fetchAll();
 
 
-$getInfoPseudo = $bdd->query('SELECT DISTINCT pseudo_auteur FROM articles WHERE id IN ('. implode(',', array_map('intval', $tabArt)).')');
-
+$getInfoPseudo = $bdd->prepare('SELECT DISTINCT pseudo_auteur FROM articles WHERE id IN ('. implode(',', array_map('intval', $tabArt)).')');
+$getInfoPseudo->execute();
 $get_new_pseudo = $getInfoPseudo->fetchAll();
 
 
