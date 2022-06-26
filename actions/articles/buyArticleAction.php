@@ -64,8 +64,8 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     
     // Inserting information in the command table and delete in the article table  
 
-    $inportAll = $bdd->prepare('INSERT INTO commandes(id_client, id_article, pseudo_acheteur, title, price, description, bin, id_auteur, pseudo_auteur, date_publication, lastname, date_buy, firstname)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-    $inportAll->execute(array($get_id, $idOfArticle, $get_pseudo, $article_title, $article_price, $article_description, $article_image, $article_id_author, $article_pseudo_author, $article_date , $get_lastname, $article_date_buy, $get_firstname));
+    $inportAll = $bdd->prepare('INSERT INTO commandes(id_client, pseudo_acheteur, title, price, description, bin, id_auteur, pseudo_auteur, date_publication, lastname, date_buy, firstname)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    $inportAll->execute(array($get_id, $get_pseudo, $article_title, $article_price, $article_description, $article_image, $article_id_author, $article_pseudo_author, $article_date , $get_lastname, $article_date_buy, $get_firstname));
 
     $deleteThisArticle = $bdd->prepare('DELETE FROM articles WHERE id = ?');
     $deleteThisArticle->execute(array($idOfArticle));

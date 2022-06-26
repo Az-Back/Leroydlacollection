@@ -9,8 +9,30 @@ require('../actions/database/database.php');
 
 // // Retrieve command data based on current session id
 
-$getInfoCommand = $bdd->prepare('SELECT id, id_article, title, price, pseudo_auteur, date_buy FROM commandes WHERE id_client = ? ORDER BY id DESC');
+$getInfoCommand = $bdd->prepare('SELECT * FROM commandes WHERE id_client = ? ORDER BY id DESC');
 $getInfoCommand->execute(array($_SESSION['id']));
+$getCommand = $getInfoCommand->fetch();
+
+$get_new_Command = $getCommand['id'];
+
+
+$getInfoCom = $bdd->prepare('SELECT id_commande, id_article FROM detailcommandes WHERE id_commande = ?');
+$getInfoCom->execute(array($get_new_Command));
+$Trucs = $getInfoCom->fetchAll();
+$tabArt = [];
+foreach($Trucs as $Truc){
+    array_push($tabArt, $Truc['id_article']);
+}                        
+
+$requestInfoPan = 'SELECT title, price FROM articles WHERE id IN ('. implode(',', array_map('intval', $tabArt)).')';
+$getInfoPan = $bdd->prepare($requestInfoPan);
+$getInfoPan->execute();
+$getdamn = $getInfoPan->fetchAll();
+
+
+$getInfoPseudo = $bdd->prepare('SELECT DISTINCT pseudo_auteur FROM articles WHERE id IN ('. implode(',', array_map('intval', $tabArt)).')');
+$getInfoPseudo->execute();
+$get_new_pseudo = $getInfoPseudo->fetchAll();
 
 
 // Verifier si une recherche a été rentrée par l'utilisateur
