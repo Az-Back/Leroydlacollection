@@ -2,7 +2,7 @@
 
 // All the necessary variables
 
-const pseudo = prompt("Merci d'indiquer votre nom");
+const pseudo = prompt("Merci d'indiquer votre prénom");
 const textBar = document.querySelector(".progress-bar");
 const link = document.querySelector(".LinkButton");
 const video = document.querySelector("#background-video");

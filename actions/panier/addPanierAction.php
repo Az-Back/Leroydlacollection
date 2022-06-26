@@ -67,7 +67,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
             // Insert all the data of the article in the favorite table   
 
-            $inportAll = $bdd->prepare('INSERT INTO panier(id_client, id_article, title, price, bin, id_auteur, pseudo_auteur, id_commande)VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
+            $inportAll = $bdd->prepare('INSERT INTO panier(id_client, id_article, title, price,  bin, id_auteur, pseudo_auteur, id_commande)VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
             $inportAll->execute(array($get_id, $idOfArticlePan, $article_title_art, $article_price_art, $article_image_art, $article_id_author_art, $article_pseudo_author_art, $id_c));
 
             sleep(0.5);

@@ -26,7 +26,7 @@ window.addEventListener('scroll', () =>
 {
     const scrollTop = window.scrollY;
 
-        if((window.innerWidth > 947 && scrollTop > 10) || (window.innerWidth < 947 && scrollTop >= 0)) {
+        if((window.innerWidth > 947 && scrollTop > 10)) {
         
             
                 topNav.forEach(back => {
