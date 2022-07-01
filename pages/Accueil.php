@@ -24,7 +24,7 @@ $nomDeLaPage = basename(__FILE__);
     <link rel="stylesheet" href="../styles/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
-    
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
     <title>Leroy d'la collection</title>
 </head>
 <body>
@@ -46,7 +46,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background8.mp4" type="video/mp4">
+<source src="../images/background1.mp4" type="video/mp4">
 
 </video>
 

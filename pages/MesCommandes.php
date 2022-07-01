@@ -32,7 +32,8 @@ require("../actions/commands/getCommandsAction.php");
 <!-- css needed -->    
     <link rel="stylesheet" href="../styles/all.css">
     <link rel="stylesheet" href="../styles/commandes.css">
-    <title>Document</title>
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+    <title>Mes Commandes</title>
 </head>
 <body>
 
@@ -76,6 +77,10 @@ require("../actions/commands/getCommandsAction.php");
 <div class="block1">
     <div class="block-inside1">
 
+
+
+
+
                 <!-- Conteneur qui va être crée a chaque nouvelle commande avec les infos de la nouvelle commande a l'intérieur -->
             
                 <!-- Container that will be created with each new order with the information of the new order inside -->
@@ -85,53 +90,55 @@ require("../actions/commands/getCommandsAction.php");
 
 
                             <!-- Creation d'un tableau qui va comporter 6 champs a remplir avec les données recupérer dans la base de données -->
-
+                            <?php foreach($getCommand as $getCom): ?>
                             <!-- Creation of a table that will have 6 fields to fill with the data retrieved in the database -->
                             <table class="table-style">
 
-                            <thead>
-                                <tr>
-                                    <th>Numéro Commande</th>
-                                    <th>Titre Article</th>
-                                    <th>Prix Article</th>
-                                    <th>Pseudo_Vendeur</th>
-                                    <th>Montant</th>
-                                    <th>Date Achat</th>
-                                </tr>
-                            </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Numéro Commande</th>
+                                        <th>Titre Article</th>
+                                        <th>Prix Article</th>
+                                        <th>Pseudo_Vendeur</th>
+                                        <th>Montant</th>
+                                        <th>Date Achat</th>
+                                    </tr>
+                                </thead>
 
-
-                            <tbody>
-                                <tr>
                                 
-                                    <td><?= $getCommand['id']; ?></td>
-
-
-                                    <td>
-                                        <?php foreach($getdamn as $getArt) { echo $getArt['title'].'<br>'; } ?>
-                                    </td>
-
-                                    <td>
-                                        <?php foreach($getdamn as $getArt) { echo number_format($getArt['price'], 2,","," ").' €<br>'; } ?>
-                                    </td>
-
-
-                                    <td>
-                                        <?php foreach($get_new_pseudo as $pseudo) { echo $pseudo['pseudo_auteur'];} ?>
-                                    </td>
-
-                                    <td><?= number_format($getCommand['montant'], 2, ',', ' '); ?></td>
-                                    <td><?= $getCommand['date_buy']; ?></td>
+                                <tbody>
+                                    <tr>
                                     
-                                </tr>
-                            </tbody>
+                                        <td><?= $getCom['id_commande']; ?></td>
+
+                                        
+                                        <td>
+                                            <?php /*for($i = 0 ; $i < count($getCom['id_article']) ; $i++) { echo $getdamn[$i]['title'].'<br>'; }*/ echo $getCom['title'] ?> 
+                                        </td>
+
+                                        <td>
+                                            <?php /*for($i = 0 ; $i < count($getdamn) ; $i++) {*/ echo number_format($getCom['price'], 2,","," ").' €<br>'; /*}*/ ?>
+                                        </td>
+
+
+                                        <td>
+                                            <?php /*for($i = 0 ; $i < count($get_new_pseudo) ; $i++) {*/ echo $getCom['pseudo_auteur'];/*}*/ ?>
+                                        </td>
+
+                                        <td><?= number_format($getCom['montant'], 2, ',', ' '); ?></td>
+                                        <td><?= $getCom['date_buy']; ?></td>
+                                        
+                                    </tr>
+                                </tbody>
 
                             <!-- Juste un bouton pour supprimer la commande correspondante "celle du dessous" --> 
 
                             <!-- Just a button for delete the command under -->
 
-                            <div class="button"><a href="../actions/commands/deleteCommandsAction.php?id=<?= $getCommand['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
-</table>
+                            <div class="button"><a href="../actions/commands/deleteCommandsAction.php?id=<?= $getCom['id_commande']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
+                            
+                            </table>
+                        <?php endforeach; ?>
                 </div>
             </div>
         </div>

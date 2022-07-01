@@ -31,6 +31,9 @@ require("../actions/articles/modifArticleAction.php");
 <!-- css needed -->
     <link rel="stylesheet" href="../styles/formulaire2.css">
     <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>Modif Article</title>
 </head>
 <body>
 

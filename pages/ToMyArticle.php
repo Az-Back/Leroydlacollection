@@ -27,6 +27,9 @@ $nomDeLaPage = basename(__FILE__);
     <link rel="stylesheet" href="../styles/toArticle.css">
     <link rel="stylesheet" href="../styles/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>ToMyArticle</title>
 </head>    
 <body>
 

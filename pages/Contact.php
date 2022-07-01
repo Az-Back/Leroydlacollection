@@ -25,7 +25,7 @@ $nomDeLaPage = basename(__FILE__);
 
     <link rel="stylesheet" href="../styles/all.css">
     <link rel="stylesheet" href="../styles/contact.css">
-
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
 
     <title>Contact</title>
 </head>
@@ -47,7 +47,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background0.mp4" type="video/mp4">
+<source src="../images/background10.mp4" type="video/mp4">
 
 </video>
 

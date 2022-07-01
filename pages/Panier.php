@@ -32,7 +32,9 @@ require("../actions/panier/getAllArticlesPan.php");
 <!-- css needed -->    
     <link rel="stylesheet" href="../styles/all.css">
     <link rel="stylesheet" href="../styles/commandes.css">
-    <title>Document</title>
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>Panier</title>
 </head>
 <body>
 

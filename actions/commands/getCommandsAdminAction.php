@@ -5,12 +5,20 @@
 
 require('../actions/database/database.php');
 
-// Récuperation des données de commandes 
+// Récuperation des données de commandes en fonction de l'id de la session actuelle
 
-// // Retrieve command data
-$getAllCommand = $bdd->query('SELECT id, id_article, pseudo_acheteur, title, price, pseudo_auteur, date_buy FROM commandes ORDER BY id DESC');
+// // Retrieve command data based on current session id
 
-
+if(isset($_SESSION['admin'])){
+$getInfoCommand = $bdd->prepare('SELECT id_commande, title, price, pseudo_auteur, montant, date_buy FROM detailcommandes 
+                                    JOIN commandes ON commandes.id = detailcommandes.id_commande
+                                    JOIN articles ON articles.id = detailcommandes.id_article
+                                    ORDER BY detailcommandes.id DESC');
+$getInfoCommand->execute();
+$getCommand = $getInfoCommand->fetchAll();
+} else {
+    header('Location: ../../pages/Accueil.php');
+}
 
 // Verifier si une recherche a été rentrée par l'utilisateur
 
@@ -28,9 +36,9 @@ if(isset($_GET['search']) && !empty($_GET['search'])){
 
     // Retrieve all the commands that correspond to the search (depending on the title)
 
-    $getAllCommand = $bdd->query('SELECT id, id_article, pseudo, title, price, pseudo_auteur, date_buy FROM commandes WHERE title LIKE "%'.$userSearch.'%" ORDER BY id DESC');
+    $getInfoCommand = $bdd->query('SELECT * FROM detailscommandes WHERE title LIKE "%'.$userSearch.'%" ORDER BY id DESC');
     
 } elseif (isset($_GET['search']) && empty($_GET['search'])) {
 
-    $getAllCommand = $bdd->query('SELECT * FROM commandes ORDER BY id DESC');
+    $getInfoCommand = $bdd->query('SELECT * FROM detailcommandes ORDER BY id DESC');
 }

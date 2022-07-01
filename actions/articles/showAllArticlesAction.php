@@ -25,7 +25,7 @@ if(isset($_GET['search']) && !empty($_GET['search'])){
     $usersSearch = $_GET['search'];
 
     // Recuperer tout les articles qui correspondent a la recherche (en fonction du titre)
-    $getAllArticles = $bdd->query('SELECT id, id_auteur, title, description, price, bin, pseudo_auteur, date_publication FROM articles WHERE title LIKE "%'.$usersSearch.'%" ORDER BY id DESC');
+    $getAllArticles = $bdd->query('SELECT * FROM articles WHERE title LIKE "%'.$usersSearch.'%" ORDER BY id DESC');
 
 } elseif (isset($_GET['search']) && empty($_GET['search']))
 

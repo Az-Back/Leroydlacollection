@@ -28,7 +28,9 @@
     <link rel="stylesheet" href="../styles/articles.css">
     <link rel="stylesheet" href="../styles/all.css">
 
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
 
+    <title>Articles</title>
 </head>
 <body>
 <!-- image necessaire pour l'animation de la barre de navigation via le script javascript voir Script.js ligne 46 to 55 -->
@@ -47,7 +49,7 @@
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background4.mp4" type="video/mp4">
+<source src="../images/background5.mp4" type="video/mp4">
 
 </video>
 

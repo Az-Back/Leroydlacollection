@@ -72,7 +72,7 @@ if(isset($_POST['validate'])){
 
             // Redirection on Accueil.php
             
-            header('Location: ../pages/Accueil.php');
+            header('Location: ../pages/Connexion.php');
 
         } else {
             $errorMsg = "L'utilisateur existe deja";

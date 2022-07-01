@@ -18,6 +18,9 @@ require('../actions/users/modifInfoUserAction.php');
 <!-- css needed -->
     
 <link rel="stylesheet" href="../styles/formulaire.css">
+<link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>Modif Info</title>
 </head>  
 <body>
 <br><br>

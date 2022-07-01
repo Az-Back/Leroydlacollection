@@ -33,6 +33,9 @@
 
 <link rel="stylesheet" href="../styles/articles.css">
 <link rel="stylesheet" href="../styles/all.css">
+<link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+<title>Favoris</title>
 </head>
 <body>
 

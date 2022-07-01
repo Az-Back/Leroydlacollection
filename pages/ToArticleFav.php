@@ -31,6 +31,9 @@ $nomDeLaPage = basename(__FILE__);
     <link rel="stylesheet" href="../styles/toArticle.css">
     <link rel="stylesheet" href="../styles/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>To Article Fav</title>
 </head>    
 <body>
 
@@ -132,7 +135,7 @@ $nomDeLaPage = basename(__FILE__);
 
                   <!-- Performs the actions written in the a on the database based on the article id -->
                   <div class="button"><a href="../actions/fav/deleteFavorisAction.php?id=<?= $article_id; ?>" class="btn2">Supprimer le favoris</a></div>
-                  <div class="button"><a href="../actions/fav/buyArticleFavAction.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
+                  <div class="button"><a href="../actions/panier/addPanierAction.php?id=<?= $article_id; ?>" class="btn0 panieradd">Ajouter au panier</a></div>
             <?php
           }
            ?>

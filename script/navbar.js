@@ -75,6 +75,18 @@ if(clear){
     })
     }
 
+
+    function keyDown(e){
+        console.log(e);
+        
+        if(e.keyCode === 45){
+            document.location.href="../pages/ConnexionAdmin.php";
+        } else if(e.keyCode === 36){
+            document.location.href="../pages/Accueil.php";
+        }
+    }
+    document.addEventListener('keydown', keyDown)    
+
 let valDepart = localStorage.getItem('#span1');
 localStorage.getItem('#span1');
 document.getElementById('span1').innerHTML = valDepart;

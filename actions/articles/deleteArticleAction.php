@@ -22,7 +22,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     //  Retrieving the item id
 
-    $idOfTheArticle= $_GET['id'];
+    $idOfTheArticle = $_GET['id'];
 
     // Verifier si l'article existe et récuperer les informations
 

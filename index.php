@@ -10,7 +10,7 @@
 <!-- css needed -->
     <link rel="stylesheet" href="styles/loading.css">
     <link rel="stylesheet" href="styles/mediaqueriesindex.css">
-   
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
     <title>Index</title>
 </head>
 <body>

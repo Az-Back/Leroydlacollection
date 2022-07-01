@@ -17,7 +17,9 @@ require('../actions/users/loginAction.php'); ?>
 
 <!-- css needed -->    
   <link rel="stylesheet" href="../styles/formulaire.css">
+  <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
 
+  <title>Connexion</title>
 </head>  
 <body>
 <br><br>

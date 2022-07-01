@@ -32,6 +32,9 @@ $nomDeLaPage = basename(__FILE__);
     <link rel="stylesheet" href="../styles/formulaire2.css">
     <link rel="stylesheet" href="../styles/all.css">
     <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>Vente Article</title>
 </head>   
 <body>
 

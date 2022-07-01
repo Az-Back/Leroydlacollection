@@ -29,6 +29,9 @@ require("../actions/security/securityAction2.php");
 <!-- css needed -->
     <link rel="stylesheet" href="../styles/all.css">
     <link rel="stylesheet" href="../styles/utilisateur.css">
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>Admin</title>
 </head>
 <body>
 
