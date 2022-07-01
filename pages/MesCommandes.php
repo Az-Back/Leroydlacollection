@@ -106,8 +106,24 @@ require("../actions/commands/getCommandsAction.php");
                                 </thead>
 
                                 
-                                <tbody>
-                                    <tr>
+                                    <td><?= $getCommand['id']; ?></td>
+
+
+                                    <td>
+                                        <?php foreach($getdamn as $getArt) { echo $getArt['title'].'<br>'; } ?>
+                                    </td>
+
+                                    <td>
+                                        <?php foreach($getdamn as $getArt) { echo number_format($getArt['price'], 2,","," ").' €<br>'; } ?>
+                                    </td>
+
+
+                                    <td>
+                                        <?php foreach($get_new_pseudo as $pseudo) { echo $pseudo['pseudo_auteur'];} ?>
+                                    </td>
+
+                                    <td><?= number_format($getCommand['montant'], 2, ',', ' '); ?> €</td>
+                                    <td><?= $getCommand['date_buy']; ?></td>
                                     
                                         <td><?= $getCom['id_commande']; ?></td>
 
