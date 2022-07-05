@@ -21,12 +21,16 @@ $nomDeLaPage = basename(__FILE__);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Author: Leroy Bryan">
 <!-- css necessaire -->
 
 <!-- css needed -->    
     <link rel="stylesheet" href="../styles/toArticle.css">
     <link rel="stylesheet" href="../styles/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>To Article</title>
 </head>    
 <body>
 
@@ -34,7 +38,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- image needed for navigation bar animation via the javascript script see Script.js line 46 to 55 -->
 
-<img class="Ufo" src="../images/soucoupe.gif">
+<img class="Ufo" src="../images/soucoupe.gif" alt="Ufo">
 
 <!-- Permet d'inclure la barre de navigation dans la page sans recopier tout le code -->
 
@@ -61,7 +65,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite"  src="../images/voiture.gif">
+<img id="sprite"  src="../images/voiture.gif" alt="car">
 
 <!-- Permet d'afficher une message si la variable errorMsg existe -->
 
@@ -130,8 +134,7 @@ $nomDeLaPage = basename(__FILE__);
 
                   <!-- Performs the actions written in the a on the database based on the article id -->
                   <div class="button"><a href="../actions/fav/addFavAction.php?id=<?= $article_id; ?>" class="btn1">Ajouter au favoris</a></div>
-                  <div class="button"><a href="../actions/panier/addPanierAction.php?id=<?= $article_id; ?>" class="btn3 panieradd">Ajouter au panier</a></div>
-                  <div class="button"><a href="../actions/articles/buyArticleAction.php?id=<?= $article_id; ?>" class="btn0">Acheter l'article</a></div>
+                  <div class="button"><a href="../actions/panier/addPanierAction.php?id=<?= $article_id; ?>" class="btn0 panieradd">Ajouter au panier</a></div>
                 <?php
         }
           ?>

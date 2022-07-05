@@ -5,55 +5,59 @@
 
 require('../actions/database/database.php');
 
-// Récuperation des données de commandes en fonction de l'id de la session actuelle
+    // Récupére le pseudo de la table users en fonction de l'id de la session
 
-// // Retrieve command data based on current session id
+    $getAllInfoUser = $bdd->prepare('SELECT pseudo FROM users WHERE id = ?');
+    $getAllInfoUser->execute(array($_SESSION['id']));
 
-$getInfoCommand = $bdd->prepare('SELECT * FROM commandes WHERE id_client = ? ORDER BY id DESC');
-$getInfoCommand->execute(array($_SESSION['id']));
-$getCommand = $getInfoCommand->fetch();
+    $getAllInfoUser = $getAllInfoUser->fetch();
 
-$get_new_Command = $getCommand['id'];
-
-
-$getInfoCom = $bdd->prepare('SELECT id_commande, id_article FROM detailcommandes WHERE id_commande = ?');
-$getInfoCom->execute(array($get_new_Command));
-$Trucs = $getInfoCom->fetchAll();
-$tabArt = [];
-foreach($Trucs as $Truc){
-    array_push($tabArt, $Truc['id_article']);
-}                        
-
-$requestInfoPan = 'SELECT title, price FROM articles WHERE id IN ('. implode(',', array_map('intval', $tabArt)).')';
-$getInfoPan = $bdd->prepare($requestInfoPan);
-$getInfoPan->execute();
-$getdamn = $getInfoPan->fetchAll();
+    $get_pseudo = $getAllInfoUser['pseudo'];
 
 
-$getInfoPseudo = $bdd->prepare('SELECT DISTINCT pseudo_auteur FROM articles WHERE id IN ('. implode(',', array_map('intval', $tabArt)).')');
-$getInfoPseudo->execute();
-$get_new_pseudo = $getInfoPseudo->fetchAll();
+    // Si la session pseudo correspond au pseudo récupérer au dessus alors on selectionne toutes les données qui nous interessent de detail commandes
 
+    // Pour cela j'ai besoin de faire correspondre via les jointures l'id des commandes de la table commandes avec id_commande de la table detailcommandes
 
-// Verifier si une recherche a été rentrée par l'utilisateur
+    // Ainsi que l'id des articles dans la table articles a id_article dans la table detailcommandes
 
-// Check if a search was entered by the user
+    // En fonction de l'id_client qui correspond a la session id
 
-if(isset($_GET['search']) && !empty($_GET['search'])){
-
-    // La recherche
-
-    // The research
+if($_SESSION['pseudo'] == $get_pseudo){
+        $getInfoCommand = $bdd->prepare('SELECT id_commande, title, price, pseudo_auteur, montant, date_buy FROM detailcommandes 
+                                        JOIN commandes ON commandes.id = detailcommandes.id_commande
+                                        JOIN articlesup ON articlesup.id_article = detailcommandes.id_article
+                                        WHERE id_client = ?
+                                        ORDER BY detailcommandes.id DESC');
+        $getInfoCommand->execute(array($_SESSION['id']));
+        $getCommand = $getInfoCommand->fetchAll();
+} else {
+    header('Location: ../../pages/Accueil.php');
+}      
+       
     
-    $userSearch = $_GET['search'];
-    
-    // Recuperer toutes les commandes qui correspondent a la recherche (en fonction du titre)
-
-    // Retrieve all the commands that correspond to the search (depending on the title)
-
-    $getInfoCommand = $bdd->query('SELECT id, id_article, title, price, pseudo_auteur, date_buy FROM commandes WHERE title LIKE "%'.$userSearch.'%" ORDER BY id DESC');
-    
-} elseif (isset($_GET['search']) && empty($_GET['search'])) {
-
-    $getInfoCommand = $bdd->query('SELECT * FROM commandes ORDER BY id DESC');
-}
+        /*foreach($getCommand as $getCom)
+        {
+            $tabArt = [];
+            $get_new_Command = $getCom['id_commande'];
+            
+            $getInfoCom = $bdd->prepare('SELECT id_article FROM detailcommandes WHERE id_commande = ?');
+            $getInfoCom->execute(array($get_new_Command));
+            
+            $Trucs = $getInfoCom->fetchAll();
+            
+            foreach($Trucs as $Truc){    
+                array_push($tabArt, $Truc['id_article']);
+            }
+   
+            $requestInfoPan = 'SELECT title, price FROM articles WHERE id IN ('. implode(',', array_map('intval', $tabArt)).')';
+            $getInfoPan = $bdd->prepare($requestInfoPan);
+            $getInfoPan->execute();
+            $getdamn = $getInfoPan->fetchAll();
+            
+            
+            $getInfoPseudo = $bdd->prepare('SELECT DISTINCT pseudo_auteur FROM articles WHERE id IN ('. implode(',', array_map('intval',  $tabArt)).')');
+            $getInfoPseudo->execute();
+            $get_new_pseudo = $getInfoPseudo->fetchAll();
+            print_r($get_new_pseudo);
+        }*/

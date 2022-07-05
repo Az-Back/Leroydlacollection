@@ -16,6 +16,12 @@ let toggle = document.querySelector(".toggle");
 
 let navList = document.querySelector(".List");
 
+let span = document.querySelectorAll(".RefNav.active span");
+
+
+
+
+
 
 
 // Évenement au scroll qui permet d'ajouter des classes ou des les retirer en fonction de certains paramétres
@@ -33,6 +39,10 @@ window.addEventListener('scroll', () =>
                     back.classList.add("background");
                 })
 
+                span.forEach(backG => {
+                    backG.classList.add("colorSpan");
+                })
+
                 topText.forEach(color => {
                     color.classList.add("color");
                 }) 
@@ -45,7 +55,16 @@ window.addEventListener('scroll', () =>
                     topText.forEach(color => {
                         color.classList.remove("color");
                     })
+
+                    span.forEach(backG => {
+                        backG.classList.remove("colorSpan");
+                    })
                 }
+            else if ((window.innerWidth < 947 && scrollTop >= 0)){
+                span.forEach(backG => {
+                    backG.classList.add("colorSpan");
+                })
+            }    
         });   
 
 // Donne la classe active au toggle et a .List si on clique sur le toggle et les retires une fois que l'on clique a nouveau
@@ -75,12 +94,21 @@ if(clear){
     })
     }
 
+
+    function keyDown(e){
+        console.log(e);
+        
+        if(e.keyCode === 45){
+            document.location.href="../pages/ConnexionAdmin.php";
+        } else if(e.keyCode === 36){
+            document.location.href="../pages/Accueil.php";
+        }
+    }
+    document.addEventListener('keydown', keyDown)    
+
 let valDepart = localStorage.getItem('#span1');
 localStorage.getItem('#span1');
 document.getElementById('span1').innerHTML = valDepart;
-
-
-
 
 
 

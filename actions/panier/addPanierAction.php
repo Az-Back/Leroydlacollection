@@ -40,7 +40,6 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     $article_id_author_art = $InfosArt['id_auteur'];
     $article_pseudo_author_art = $InfosArt['pseudo_auteur'];
     
-    $id_c = 1;
     // Recupération de l'id en fonction de l'id de la session actuelle
 
     // Recovery of the id according to the id of the current session
@@ -52,23 +51,27 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     $get_id = $getAllInfoUser['id'];
 
-    // Condition si le pseudo du compte actuellement connecter n'est pas pareil que celui qui a publié l'article alors on crée un article en favoris
+    // Condition pour empecher l'utilisateur de mettre 2x un article dans le panier
 
-    // Condition if the username of the account currently connect is not the same as the one that published the article then we create an article in favorites
+    // Condition to prevent the user from putting 2x an item in the cart
 
     $checkIfThisPanAlreadyExists = $bdd->prepare('SELECT id_article FROM panier WHERE id_article = ?');
         $checkIfThisPanAlreadyExists->execute(array($idOfArticlePan));
 
         if($checkIfThisPanAlreadyExists->rowCount() == 0){
 
+            // Condition pour empecher le créateur de l'article de le mettre dans le panier 
+
+            // Condition to prevent the article creator from putting it in the basket 
+
             if($InfosArt['pseudo_auteur'] != $_SESSION['pseudo']){
 
-            // Insertion de toutes les données de l'article en question dans la table favoris   
+            // Insertion de toutes les données de l'article en question dans la table panier   
 
-            // Insert all the data of the article in the favorite table   
+            // Insert all the data of the article in the basket table   
 
-            $inportAll = $bdd->prepare('INSERT INTO panier(id_client, id_article, title, price,  bin, id_auteur, pseudo_auteur, id_commande)VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
-            $inportAll->execute(array($get_id, $idOfArticlePan, $article_title_art, $article_price_art, $article_image_art, $article_id_author_art, $article_pseudo_author_art, $id_c));
+            $inportAll = $bdd->prepare('INSERT INTO panier(id_client, id_article, title, price,  bin, id_auteur, pseudo_auteur)VALUES(?, ?, ?, ?, ?, ?, ?)');
+            $inportAll->execute(array($get_id, $idOfArticlePan, $article_title_art, $article_price_art, $article_image_art, $article_id_author_art, $article_pseudo_author_art));
 
             sleep(0.5);
             header('Location: ../../pages/Panier.php');

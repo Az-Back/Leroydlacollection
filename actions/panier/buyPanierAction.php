@@ -12,10 +12,9 @@ session_start();
 require('../database/database.php');
 
 
-// Sert a verifier si la variable existe
+// Selection de toutes les données du panier en fonction de l'id de la personne connecté
 
-// Used to check if the variable exists
-
+// Selection of all the data of the cart according to the id of the connected person
 
     $checkPan = $bdd->prepare('SELECT * FROM panier WHERE id_client = ?');
     $checkPan->execute(array($_SESSION['id']));
@@ -27,6 +26,7 @@ require('../database/database.php');
     
     }
     $new_date_buy = date('d/m/Y');
+
     // Récupérer les données de l'utilisateur
 
     // Retrieve the user data
@@ -41,12 +41,16 @@ require('../database/database.php');
 
 
 
-    // Insertion des infos dans la table commande et suppréssion dans la table article
+    // Insertion des infos dans la table commande
     
-    // Inserting information in the command table and delete in the article table  
+    // Insert information in the command table
 
     $inportAll = $bdd->prepare('INSERT INTO commandes(id_client, pseudo_acheteur, montant ,date_buy)VALUES(?, ?, ?, ?)');
     $inportAll->execute(array($get_id, $get_pseudo, $sum, $new_date_buy));
+
+    // Récupération de l'id de la commande
+
+    // Retrieving the order id
 
     $getall = $bdd->prepare('SELECT * FROM commandes WHERE id_client = ? ORDER by id DESC LIMIT 1');
     $getall->execute(array($_SESSION['id']));
@@ -55,17 +59,44 @@ require('../database/database.php');
 
     $new_new_id_commandes = $new_id_commandes['id'];
 
+    // Pour chaque article on insert dans l'id de l'article et de la commande
+
+    // For each item we insert in the item id and the order
+
     foreach($datas as $data){
         
         $reinportaAll = $bdd->prepare('INSERT INTO detailcommandes(id_commande, id_article)VALUES(?,?)');
         $reinportaAll->execute(array($new_new_id_commandes, $data['id_article']));
     }
 
-    $deleteThisArticle = $bdd->prepare('DELETE FROM articles WHERE id = ?');
-    $deleteThisArticle->execute(array($idOfArticle));
+    // On récupére les données des articles qui vont être supprimer pour les reutiliser pour les commandes
 
-    $deleteThisTruc = $bdd->prepare('DELETE FROM favoris WHERE id = ?');
-    $deleteThisTruc->execute(array($idOfArticle));
+    // We recover the data of the items that will be deleted to reuse them for the orders
+
+    $needIdArt = $bdd->prepare('SELECT * FROM panier');
+     $needIdArt->execute();
+
+     $getSuperArt = $needIdArt->fetchAll();
+
+     foreach($getSuperArt as $getArtInfo){
+        $getId = $getArtInfo['id_article'];
+        $getTitle = $getArtInfo['title'];
+        $getPrice = $getArtInfo['price'];
+        $getAuteur = $getArtInfo['pseudo_auteur'];
+
+        $inserTo = $bdd->prepare('INSERT INTO articlesup(title, price, pseudo_auteur, id_article)VALUES(?,?,?,?)');
+        $inserTo->execute(array($getTitle, $getPrice, $getAuteur, $getId));
+
+        $Destroy = $bdd->prepare('DELETE FROM articles WHERE id = ?');
+        $Destroy->execute(array($getId));
+
+        $DestroyFav = $bdd->prepare('DELETE FROM favoris WHERE id_article = ?');
+        $DestroyFav->execute(array($getId));
+     }
+
+    // On supprime ce qu'il y a dans le panier
+
+    // Delete what is in the basket
 
     $deleteThisShit = $bdd->prepare('DELETE FROM panier WHERE id_client = ?');
     $deleteThisShit->execute(array($_SESSION['id']));

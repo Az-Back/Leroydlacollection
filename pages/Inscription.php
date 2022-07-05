@@ -12,11 +12,15 @@ require('../actions/users/signupAction.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Author: Leroy Bryan">
  <!-- css necessaire -->
 
 <!-- css needed -->
     
-<link rel="stylesheet" href="../styles/formulaire.css">
+    <link rel="stylesheet" href="../styles/formulaire.css">
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>Inscription</title>
 </head>  
 <body>
 <br><br>
@@ -58,7 +62,7 @@ require('../actions/users/signupAction.php');
 <div class="container">
 
 <!-- INPUT 1 --> 
-
+        <label for="lastname"></label>
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
@@ -69,7 +73,7 @@ require('../actions/users/signupAction.php');
             </div>
 
  <!-- INPUT 2 --> 
-
+        <label for="firstname"></label>
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
@@ -80,7 +84,7 @@ require('../actions/users/signupAction.php');
                 </div>
 
 <!-- INPUT 3 -->                 
-
+        <label for="pseudo"></label>
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
@@ -91,7 +95,7 @@ require('../actions/users/signupAction.php');
             </div>
 
 <!-- INPUT 4 --> 
-
+        <label for="password"></label>
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
@@ -102,7 +106,7 @@ require('../actions/users/signupAction.php');
             </div>
 
 <!-- INPUT 5 -->             
-
+        <label for="adress"></label>
             <div class="row100">
                  <div class="col">
                     <div class="inputBox">
@@ -113,7 +117,7 @@ require('../actions/users/signupAction.php');
             </div>
 
 <!-- INPUT 6 -->   
-            
+        <label for="city"></label>
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
@@ -124,7 +128,7 @@ require('../actions/users/signupAction.php');
             </div>
 
 <!-- INPUT 7 --> 
-
+        <label for="postal"></label>
             <div class="row100">
                 <div class="col">
                     <div class="inputBox">
@@ -139,7 +143,7 @@ require('../actions/users/signupAction.php');
 <!--  INPUT 8, of file type to be able to have a file "an image" --> 
 
             <div class="Image">
-                <label for="exampleInputEmail1" class="form-label">Photo</label>
+                <label for="image" class="form-label">Photo</label>
                 <input type="file" class="form-image" name="image" accept="image/png, image/jpeg, image/jpg" max="1">
             </div>
 </div>
@@ -147,6 +151,7 @@ require('../actions/users/signupAction.php');
 <!-- INPUT 9, de type submit pour envoyer les données du formulaire -->
 
 <!-- INPUT 9, of type submit to send the data of the form -->
+        <label for="validate"></label>
             <div class="row100">
                 <div class="col">
                     <input type="submit" name="validate" value="Inscription">

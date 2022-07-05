@@ -17,7 +17,7 @@ $nomDeLaPage = basename(__FILE__);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Author: Leroy Bryan">
 <!-- css necessaire -->
 
 <!-- css needed -->
@@ -25,6 +25,8 @@ $nomDeLaPage = basename(__FILE__);
     <link rel="stylesheet" href="../styles/apropos.css">
     <link rel="stylesheet" href="../styles/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
 
     <title>A propos</title>
 </head>
@@ -33,7 +35,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- image needed for navigation bar animation via the javascript script see Script.js line 46 to 55 -->
 
-<img class="Ufo" src="../images/soucoupe.gif">
+<img class="Ufo" src="../images/soucoupe.gif" alt="Ufo">
 
 <!-- Permet d'inclure la barre de navigation dans la page sans recopier tout le code -->
 
@@ -60,7 +62,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite"  src="../images/voiture.gif">
+<img id="sprite"  src="../images/voiture.gif" alt="car">
 
 
 <!-- Premier conteneur -->
@@ -107,17 +109,17 @@ $nomDeLaPage = basename(__FILE__);
 
 <div class="container">
     <div class="slider">
-      <img class="active slide" src="../images/E.T.jpg">
-      <img class="slide" src="../images/batf.jpg">
-      <img class="slide" src="../images/bonnenuit.jpg">
-      <img class="slide" src="../images/alien.jpg">
-      <img class="slide" src="../images/train.jpg">
-      <img class="slide" src="../images/wow.jpg">
-      <img class="slide" src="../images/goldorak.jpg">
-      <img class="slide" src="../images/grue.jpg">
-      <img class="slide" src="../images/console.jpg">
-      <img class="slide" src="../images/camion.jpg">
-      <img class="slide" src="../images/starwars.jpg">
+      <img class="active slide" src="../images/E.T.jpg" alt="E.T">
+      <img class="slide" src="../images/batf.jpg" alt="Delorean">
+      <img class="slide" src="../images/bonnenuit.jpg" alt="Bonne nuit les petits">
+      <img class="slide" src="../images/alien.jpg" alt="Alien">
+      <img class="slide" src="../images/train.jpg" alt="Train">
+      <img class="slide" src="../images/wow.jpg" alt="World Of Warcraft">
+      <img class="slide" src="../images/goldorak.jpg" alt="Goldorak">
+      <img class="slide" src="../images/grue.jpg" alt="Grue">
+      <img class="slide" src="../images/console.jpg" alt="Console">
+      <img class="slide" src="../images/camion.jpg" alt="Camion">
+      <img class="slide" src="../images/starwars.jpg" alt="Star Wars">
     </div>
 
     <div class="cont-btn">

@@ -24,7 +24,7 @@
 
 <video id="background-videonav" autoplay loop muted>
 
-<source src="../images/background7.mp4" type="video/mp4">
+<source src="../images/background6.mp4" type="video/mp4">
 
 </video>
 
@@ -201,7 +201,7 @@
 
 
 <?php 
-        if($nomDeLaPage == 'Articles.php' OR $nomDeLaPage == 'MesArticles.php' OR $nomDeLaPage == 'MesCommandes.php' OR $nomDeLaPage == 'Panier.php'){
+        if($nomDeLaPage == 'Articles.php' OR $nomDeLaPage == 'MesArticles.php'){
           ?>
   <form method="GET" class="research">
 

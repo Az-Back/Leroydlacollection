@@ -41,6 +41,9 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             $deleteThisCommand = $bdd->prepare('DELETE FROM commandes WHERE id = ?');
             $deleteThisCommand->execute(array($idOfTheCommand));
 
+            $deleteThisCommand2 = $bdd->prepare('DELETE FROM detailcommandes WHERE id_commande = ?');
+            $deleteThisCommand2->execute(array($idOfTheCommand));
+
             header('Location: ../../pages/AllCommands.php');
             // Rediriger l'admin vers les commandes
         } else {

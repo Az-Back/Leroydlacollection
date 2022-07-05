@@ -17,6 +17,7 @@ $nomDeLaPage = basename(__FILE__);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Author: Leroy Bryan">
 <!-- css necessaire -->
 
 <!-- css needed -->
@@ -24,16 +25,16 @@ $nomDeLaPage = basename(__FILE__);
     <link rel="stylesheet" href="../styles/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
-    
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
     <title>Leroy d'la collection</title>
 </head>
 <body>
  
-<!-- image necessaire pour l'animation de la barre de navigation via le script javascript voir Script.js ligne 46 to 55 -->
+<!-- image necessaire pour l'animation de la barre de navigation via le script javascript voir Script.js -->
 
-<!-- image needed for navigation bar animation via the javascript script see Script.js line 46 to 55 -->
+<!-- image needed for navigation bar animation via the javascript script see Script.js -->
 
-<img class="Ufo" src="../images/soucoupe.gif">
+<img class="Ufo" src="../images/soucoupe.gif" alt="Ufo">
 
 <!-- Permet d'inclure la barre de navigation dans la page sans recopier tout le code -->
 
@@ -46,21 +47,21 @@ $nomDeLaPage = basename(__FILE__);
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background8.mp4" type="video/mp4">
+<source src="../images/background1.mp4" type="video/mp4">
 
 </video>
 
-<!-- div necessaire pour suivre le mouvement de la souris via le script javascript voir Script.js ligne 46 to 55 -->
+<!-- div necessaire pour suivre le mouvement de la souris via le script javascript voir Script.js -->
 
-<!-- div neeeded to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
+<!-- div neeeded to follow the movement of the mouse via the javascript script see Script.js  -->
 
 <div class="mousemove"></div>
 
-<!-- image necessaire qui suit le mouvement de la souris via le script javascript voir Script.js ligne 46 a 55 -->
+<!-- image necessaire qui suit le mouvement de la souris via le script javascript voir Script.js -->
 
-<!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
+<!-- image needed to follow the movement of the mouse via the javascript script see Script.js -->
 
-<img id="sprite"  src="../images/voiture.gif">
+<img id="sprite"  src="../images/voiture.gif" alt="car">
 
 
 <!-- Premier conteneur -->
@@ -76,7 +77,7 @@ $nomDeLaPage = basename(__FILE__);
       <div class="Text"></div>
 
       
-        <div class="Scroll"><a href="#Infos" class="Fleche">
+        <div class="Scroll"><a href="#Infos">
           <div class="arrow">
             <span></span>
             <span></span>
@@ -97,9 +98,9 @@ $nomDeLaPage = basename(__FILE__);
 
     <div class="Infos1" id="Infos" data-aos="fade-in" data-aos-delay="100" data-aos-easing="ease-in-out">
       <div class="portail1">
-        <img id="portail1" src="../images/portail1.gif">
+        <img id="portail1" src="../images/portail1.gif" alt="portal">
           <h1 id="Text2">LEROY D'LA COLLECTION<h1>
-        <img id="gunorange" src="../images/gunorange.gif">
+        <img id="gunorange" src="../images/gunorange.gif" alt="gunportalorange">
         </div>
       </div>
 
@@ -110,9 +111,9 @@ $nomDeLaPage = basename(__FILE__);
 
     <div class="Infos2" id="Infos2" data-aos="fade-in" data-aos-delay="100" data-aos-easing="ease-in-out">
       <div class="portail2">
-          <img id="portail2" src="../images/portail2.gif">
+          <img id="portail2" src="../images/portail2.gif" alt="portal">
           <h1 id="Text3">BOUTIQUE VINTAGE<h1>
-          <img id="gunbleu" src="../images/gunbleu.gif">
+          <img id="gunbleu" src="../images/gunbleu.gif" alt="gunportalblue">
         </div>
     </div>
 
@@ -122,9 +123,9 @@ $nomDeLaPage = basename(__FILE__);
 
     <div class="Infos3" id="Infos3" data-aos="fade-in" data-aos-delay="100" data-aos-easing="ease-in-out">
       <div class="portail3">
-      <img id="gunnoir" src="../images/gunblack.gif">
+      <img id="gunnoir" src="../images/gunblack.gif" alt="portal">
           <h1 id="Text4">ACHETER/VENDER<h1>
-          <img id="portail3" src="../images/portail3.gif">
+          <img id="portail3" src="../images/portail3.gif" alt="gunportalblack">
       </div>
     </div>
 

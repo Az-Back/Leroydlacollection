@@ -26,12 +26,16 @@ $nomDeLaPage = basename(__FILE__);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Author: Leroy Bryan">
 <!-- css necessaire -->
 
 <!-- css needed -->  
     <link rel="stylesheet" href="../styles/formulaire2.css">
     <link rel="stylesheet" href="../styles/all.css">
     <link href="http://fonts.cdnfonts.com/css/polentical-neon" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>Vente Article</title>
 </head>   
 <body>
 
@@ -45,7 +49,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- image needed for navigation bar animation via the javascript script see Script.js line 46 to 55 -->
 
-<img class="Ufo" src="../images/soucoupe.gif">
+<img class="Ufo" src="../images/soucoupe.gif" alt="Ufo">
 
 <!-- Video en arrière-plan
  Video on background -->
@@ -66,7 +70,7 @@ $nomDeLaPage = basename(__FILE__);
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite"  src="../images/voiture.gif">
+<img id="sprite"  src="../images/voiture.gif" alt="car">
 
 <!-- Conteneur global -->
 

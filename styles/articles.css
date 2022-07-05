@@ -1,4 +1,8 @@
-@import url('http://fonts.cdnfonts.com/css/polentical-neon');
+@font-face {
+    font-family: "Polentical Neon", sans-serif;
+    src: url("../police/Polentical\ Neon\ Bold.woff") format("woff"),
+           url("../police/Polentical\ Neon\ Italic.woff") format("woff");
+   }
 
 body 
 {
@@ -31,6 +35,7 @@ body
     width: 100%;
     height: 100%;
     margin: 0;
+    text-align: center;
 }
 
 

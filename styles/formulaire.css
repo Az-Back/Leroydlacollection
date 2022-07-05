@@ -1,8 +1,10 @@
+
 body 
 {
     overflow-x: hidden;
     margin: 0;
     height: 100vh;
+    
 }
 
 #background-video 

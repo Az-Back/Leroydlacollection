@@ -21,20 +21,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="description" content="Author: Leroy Bryan">
 <!-- css necessaire -->
 
 <!-- css needed -->
     <link rel="stylesheet" href="../styles/articles.css">
     <link rel="stylesheet" href="../styles/all.css">
 
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
 
+    <title>Articles</title>
 </head>
 <body>
 <!-- image necessaire pour l'animation de la barre de navigation via le script javascript voir Script.js ligne 46 to 55 -->
 
 <!-- image needed for navigation bar animation via the javascript script see Script.js line 46 to 55 -->    
-<img class="Ufo" src="../images/soucoupe.gif"> 
+<img class="Ufo" src="../images/soucoupe.gif" alt="Ufo">
 
 <!-- Permet d'inclure la barre de navigation dans la page sans recopier tout le code -->
 
@@ -47,7 +49,7 @@
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background4.mp4" type="video/mp4">
+<source src="../images/background5.mp4" type="video/mp4">
 
 </video>
 
@@ -61,7 +63,7 @@
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite"  src="../images/voiture.gif">
+<img id="sprite"  src="../images/voiture.gif" alt="car">
 
 
 <!-- Conteneur global -->

@@ -27,12 +27,14 @@ require("../actions/commands/getCommandsAction.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Author: Leroy Bryan">
 <!-- css necessaire -->
 
 <!-- css needed -->    
     <link rel="stylesheet" href="../styles/all.css">
     <link rel="stylesheet" href="../styles/commandes.css">
-    <title>Document</title>
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+    <title>Mes Commandes</title>
 </head>
 <body>
 
@@ -40,7 +42,7 @@ require("../actions/commands/getCommandsAction.php");
 
 <!-- image needed for navigation bar animation via the javascript script see Script.js line 46 to 55 -->
 
-<img class="Ufo" src="../images/soucoupe.gif">
+<img class="Ufo" src="../images/soucoupe.gif" alt="Ufo">
 
 <!-- Permet d'inclure la barre de navigation dans la page sans recopier tout le code -->
 
@@ -67,7 +69,7 @@ require("../actions/commands/getCommandsAction.php");
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite"  src="../images/voiture.gif">
+<img id="sprite"  src="../images/voiture.gif" alt="car">
 
 <!-- Conteneur global -->
 
@@ -75,6 +77,10 @@ require("../actions/commands/getCommandsAction.php");
 
 <div class="block1">
     <div class="block-inside1">
+
+
+
+
 
                 <!-- Conteneur qui va être crée a chaque nouvelle commande avec les infos de la nouvelle commande a l'intérieur -->
             
@@ -85,53 +91,55 @@ require("../actions/commands/getCommandsAction.php");
 
 
                             <!-- Creation d'un tableau qui va comporter 6 champs a remplir avec les données recupérer dans la base de données -->
-
+                            <?php foreach($getCommand as $getCom): ?>
                             <!-- Creation of a table that will have 6 fields to fill with the data retrieved in the database -->
                             <table class="table-style">
 
-                            <thead>
-                                <tr>
-                                    <th>Numéro Commande</th>
-                                    <th>Titre Article</th>
-                                    <th>Prix Article</th>
-                                    <th>Pseudo_Vendeur</th>
-                                    <th>Montant</th>
-                                    <th>Date Achat</th>
-                                </tr>
-                            </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Numéro Commande</th>
+                                        <th>Titre Article</th>
+                                        <th>Prix Article</th>
+                                        <th>Pseudo_Vendeur</th>
+                                        <th>Montant</th>
+                                        <th>Date Achat</th>
+                                    </tr>
+                                </thead>
 
-
-                            <tbody>
-                                <tr>
                                 
-                                    <td><?= $getCommand['id']; ?></td>
-
-
-                                    <td>
-                                        <?php foreach($getdamn as $getArt) { echo $getArt['title'].'<br>'; } ?>
-                                    </td>
-
-                                    <td>
-                                        <?php foreach($getdamn as $getArt) { echo number_format($getArt['price'], 2,","," ").' €<br>'; } ?>
-                                    </td>
-
-
-                                    <td>
-                                        <?php foreach($get_new_pseudo as $pseudo) { echo $pseudo['pseudo_auteur'];} ?>
-                                    </td>
-
-                                    <td><?= number_format($getCommand['montant'], 2, ',', ' '); ?></td>
-                                    <td><?= $getCommand['date_buy']; ?></td>
+                                <tbody>
+                                    <tr>
                                     
-                                </tr>
-                            </tbody>
+                                        <td><?= $getCom['id_commande']; ?></td>
+
+                                        
+                                        <td>
+                                            <?php /*for($i = 0 ; $i < count($getCom['id_article']) ; $i++) { echo $getdamn[$i]['title'].'<br>'; }*/ echo $getCom['title'] ?> 
+                                        </td>
+
+                                        <td>
+                                            <?php /*for($i = 0 ; $i < count($getdamn) ; $i++) {*/ echo number_format($getCom['price'], 2,","," ").' €<br>'; /*}*/ ?>
+                                        </td>
+
+
+                                        <td>
+                                            <?php /*for($i = 0 ; $i < count($get_new_pseudo) ; $i++) {*/ echo $getCom['pseudo_auteur'];/*}*/ ?>
+                                        </td>
+
+                                        <td><?= number_format($getCom['montant'], 2, ',', ' '); ?></td>
+                                        <td><?= $getCom['date_buy']; ?></td>
+                                        
+                                    </tr>
+                                </tbody>
 
                             <!-- Juste un bouton pour supprimer la commande correspondante "celle du dessous" --> 
 
                             <!-- Just a button for delete the command under -->
 
-                            <div class="button"><a href="../actions/commands/deleteCommandsAction.php?id=<?= $getCommand['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
-</table>
+                            <div class="button"><a href="../actions/commands/deleteCommandsAction.php?id=<?= $getCom['id_commande']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
+                            
+                            </table>
+                        <?php endforeach; ?>
                 </div>
             </div>
         </div>

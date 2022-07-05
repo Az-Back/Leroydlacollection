@@ -27,12 +27,15 @@ require("../actions/commands/getCommandsAdminAction.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Author: Leroy Bryan">
 <!-- css necessaire -->
 
 <!-- css needed -->    
     <link rel="stylesheet" href="../styles/all.css">
     <link rel="stylesheet" href="../styles/commandes.css">
-    <title>Document</title>
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
+
+    <title>All Commands</title>
 </head>
 <body>
 
@@ -40,7 +43,7 @@ require("../actions/commands/getCommandsAdminAction.php");
 
 <!-- image needed for navigation bar animation via the javascript script see Script.js line 46 to 55 -->
 
-<img class="Ufo" src="../images/soucoupe.gif">
+<img class="Ufo" src="../images/soucoupe.gif" alt="Ufo">
 
 <!-- Permet d'inclure la barre de navigation dans la page sans recopier tout le code -->
 
@@ -53,7 +56,7 @@ require("../actions/commands/getCommandsAdminAction.php");
 
 <video id="background-video" autoplay loop muted>
 
-<source src="../images/background2.mp4" type="video/mp4">
+<source src="../images/background10.mp4" type="video/mp4">
 
 </video>
 
@@ -67,7 +70,7 @@ require("../actions/commands/getCommandsAdminAction.php");
 
 <!-- image needed to follow the movement of the mouse via the javascript script see Script.js line 46 to 55 -->
 
-<img id="sprite"  src="../images/voiture.gif">
+<img id="sprite"  src="../images/voiture.gif" alt="car">
 
 <!-- Conteneur global -->
 
@@ -77,13 +80,7 @@ require("../actions/commands/getCommandsAdminAction.php");
     <div class="block-inside1">
 
 
-            <?php 
-
-            // Boucle tant que qui va permettre de recuperer les infos de la commande a chaque nouvel commande crée et de l'afficher
-
-            // Loop as long as that will allow to recover the information of the command to each new command created and to display it
-                 while($Commande = $getAllCommand->fetch()){
-            ?>
+    
 
                 <!-- Conteneur qui va être crée a chaque nouvelle commande avec les infos de la nouvelle commande a l'intérieur -->
             
@@ -92,7 +89,7 @@ require("../actions/commands/getCommandsAdminAction.php");
                         <div class="menu">
                             <div class="menus">    
 
-
+                            <?php foreach($getCommand as $getCom): ?>
                             <!-- Creation d'un tableau qui va comporter 6 champs a remplir avec les données recupérer dans la base de données -->
 
                             <!-- Creation of a table that will have 6 fields to fill with the data retrieved in the database -->
@@ -100,13 +97,12 @@ require("../actions/commands/getCommandsAdminAction.php");
 
                             <thead>
                                 <tr>
-                                    <th>Numéro Commande</th>
-                                    <th>Numéro Article</th>
-                                    <th>Titre Article</th>
-                                    <th>Prix Article</th>
-                                    <th>Pseudo_Vendeur</th>
-                                    <th>Pseudo_Acheteur</th>
-                                    <th>Date Achat</th>
+                                        <th>Numéro Commande</th>
+                                        <th>Titre Article</th>
+                                        <th>Prix Article</th>
+                                        <th>Pseudo_Vendeur</th>
+                                        <th>Montant</th>
+                                        <th>Date Achat</th>
                                 </tr>
                             </thead>
 
@@ -114,13 +110,24 @@ require("../actions/commands/getCommandsAdminAction.php");
                             <tbody>
                                 <tr>
                                 
-                                    <td><?= $Commande['id']; ?></td>
-                                    <td><?= $Commande['id_article']; ?></td>
-                                    <td><?= $Commande['title']; ?></td>
-                                    <td><?= number_format($Commande['price'], 2,","," "); ?> €</td>
-                                    <td><?= $Commande['pseudo_auteur']; ?></td>
-                                    <td><?= $Commande['pseudo_acheteur']; ?></td>
-                                    <td><?= $Commande['date_buy']; ?></td>
+                                    <td><?= $getCom['id_commande']; ?></td>
+
+                                        
+                                    <td>
+                                        <?php /*for($i = 0 ; $i < count($getCom['id_article']) ; $i++) { echo $getdamn[$i]['title'].'<br>'; }*/ echo $getCom['title'] ?> 
+                                    </td>
+
+                                    <td>
+                                        <?php /*for($i = 0 ; $i < count($getdamn) ; $i++) {*/ echo number_format($getCom['price'], 2,","," ").' €<br>'; /*}*/ ?>
+                                    </td>
+
+
+                                    <td>
+                                        <?php /*for($i = 0 ; $i < count($get_new_pseudo) ; $i++) {*/ echo $getCom['pseudo_auteur'];/*}*/ ?>
+                                    </td>
+
+                                    <td><?= number_format($getCom['montant'], 2, ',', ' '); ?></td>
+                                    <td><?= $getCom['date_buy']; ?></td>
                                     
                                     
                                 </tr>
@@ -130,14 +137,12 @@ require("../actions/commands/getCommandsAdminAction.php");
 
                             <!-- Just a button for delete the command under -->
 
-                            <div class="button"><a href="../actions/commands/deleteCommandsAdminAction.php?id=<?= $Commande['id']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
-</table>
+                            <div class="button"><a href="../actions/commands/deleteCommandsAdminAction.php?id=<?= $getCom['id_commande']; ?>" class="btn3"><i id="cross" class="fa-solid fa-xmark"></i></a></div>
+                        </table>
+                        <?php endforeach; ?>
                 </div>
             </div>
         </div>
-    <?php
-     }
-?>
     </div>
 </div>
 

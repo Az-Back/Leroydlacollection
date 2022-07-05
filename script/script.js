@@ -94,7 +94,7 @@ new Typewriter(txtAnim, {
 .deleteChars(7)
 .typeString('<strong>BIENVENUE CHEZ<br></strong>')
 .pauseFor(200)
-.typeString('<img class="Logo" src="../images/LogoEnd.png"></img>')
+.typeString('<img class="Logo" alt="Logo" src="../images/LogoEnd.png"></img>')
 .pauseFor(1700)
 .deleteChars(40)
 .start()

@@ -12,12 +12,14 @@ require('../actions/users/loginAdminAction.php'); ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+    <meta name="description" content="Author: Leroy Bryan">
 <!-- css necessaire -->
 
 <!-- css needed -->    
   <link rel="stylesheet" href="../styles/formulaire.css">
+  <link rel="icon" type="image/jpg" href="../images/logo.jpg" />
 
+  <title>Connexion Admin</title>
 </head>  
 <body>
 <br><br>
