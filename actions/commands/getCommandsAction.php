@@ -25,7 +25,7 @@ require('../actions/database/database.php');
 if($_SESSION['pseudo'] == $get_pseudo){
         $getInfoCommand = $bdd->prepare('SELECT id_commande, title, price, pseudo_auteur, montant, date_buy FROM detailcommandes 
                                         JOIN commandes ON commandes.id = detailcommandes.id_commande
-                                        JOIN articles ON articles.id = detailcommandes.id_article
+                                        JOIN articlesup ON articlesup.id_article = detailcommandes.id_article
                                         WHERE id_client = ?
                                         ORDER BY detailcommandes.id DESC');
         $getInfoCommand->execute(array($_SESSION['id']));
