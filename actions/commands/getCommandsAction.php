@@ -5,7 +5,7 @@
 
 require('../actions/database/database.php');
 
-    // Récupére le pseudo de la table users en fonction de l'id de la session
+// Récupére le pseudo de la table users en fonction de l'id de la session
 
     $getAllInfoUser = $bdd->prepare('SELECT pseudo FROM users WHERE id = ?');
     $getAllInfoUser->execute(array($_SESSION['id']));
@@ -14,19 +14,18 @@ require('../actions/database/database.php');
 
     $get_pseudo = $getAllInfoUser['pseudo'];
 
+// Si la session pseudo correspond au pseudo récupérer au dessus alors on selectionne toutes les données qui nous interessent de detail commandes
 
-    // Si la session pseudo correspond au pseudo récupérer au dessus alors on selectionne toutes les données qui nous interessent de detail commandes
+// Pour cela j'ai besoin de faire correspondre via les jointures l'id des commandes de la table commandes avec id_commande de la table detailcommandes
 
-    // Pour cela j'ai besoin de faire correspondre via les jointures l'id des commandes de la table commandes avec id_commande de la table detailcommandes
+// Ainsi que l'id des articles dans la table articles a id_article dans la table detailcommandes
 
-    // Ainsi que l'id des articles dans la table articles a id_article dans la table detailcommandes
-
-    // En fonction de l'id_client qui correspond a la session id
+// En fonction de l'id_client qui correspond a la session id
 
 if($_SESSION['pseudo'] == $get_pseudo){
         $getInfoCommand = $bdd->prepare('SELECT id_commande, title, price, pseudo_auteur, montant, date_buy FROM detailcommandes 
                                         JOIN commandes ON commandes.id = detailcommandes.id_commande
-                                        JOIN articlesup ON articlesup.id_article = detailcommandes.id_article
+                                        JOIN articles ON articles.id = detailcommandes.id_article
                                         WHERE id_client = ?
                                         ORDER BY detailcommandes.id DESC');
         $getInfoCommand->execute(array($_SESSION['id']));
@@ -61,3 +60,26 @@ if($_SESSION['pseudo'] == $get_pseudo){
             $get_new_pseudo = $getInfoPseudo->fetchAll();
             print_r($get_new_pseudo);
         }*/
+
+// Verifier si une recherche a été rentrée par l'utilisateur
+
+// Check if a search was entered by the user
+
+if(isset($_GET['search']) && !empty($_GET['search'])){
+
+    // La recherche
+
+    // The research
+    
+    $userSearch = $_GET['search'];
+    
+    // Recuperer toutes les commandes qui correspondent a la recherche (en fonction du titre)
+
+    // Retrieve all the commands that correspond to the search (depending on the title)
+
+    $getInfoCommand = $bdd->query('SELECT * FROM commandes WHERE date_buy LIKE "%'.$userSearch.'%" ORDER BY id DESC');
+    
+} elseif (isset($_GET['search']) && empty($_GET['search'])) {
+
+    $getInfoCommand = $bdd->query('SELECT * FROM detailcommandes ORDER BY id DESC');
+}
